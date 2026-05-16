@@ -12,8 +12,8 @@
   --bg-0: #0a000f;
   --bg-1: #160020;
   --bg-2: #2a0040;
-  --purple: #780090;
-  --deep: #560068;
+  --purple: #B003BE;
+  --deep: #7f0289;
   --gold: #e5c158;
   --gold-deep: #b8923a;
   --gold-light: #f5d676;
@@ -95,7 +95,7 @@ main { position: relative; z-index: 1; }
 .nav {
   background: linear-gradient(
     180deg,
-    rgba(86, 0, 104, 0.92) 0%,
+    rgba(127, 2, 137, 0.92) 0%,
     rgba(42, 0, 64, 0.90) 100%
   ) !important;
   border: 0.5px solid rgba(229, 193, 88, 0.40) !important;
@@ -175,9 +175,9 @@ main { position: relative; z-index: 1; }
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.5),
     inset 0 -2px 4px rgba(0,0,0,0.18),
-    0 12px 40px -10px rgba(229,193,88,0.5);
+    0 4px 12px rgba(20,4,32,0.10);
 }
-.btn--gold:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 4px rgba(0,0,0,0.2), 0 18px 50px -10px rgba(229,193,88,0.65); }
+.btn--gold:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 4px rgba(0,0,0,0.2), 0 8px 18px rgba(20,4,32,0.14); }
 .btn--gold::after {
   content: ""; position: absolute; inset: 0;
   background: linear-gradient(120deg, transparent 35%, rgba(255,255,255,0.5) 50%, transparent 65%);
@@ -246,7 +246,7 @@ main { position: relative; z-index: 1; }
   font-size: 12px; letter-spacing: 0.08em; color: var(--purple);
   margin-bottom: 32px;
   background: #ffffff !important;
-  border: 1px solid rgba(86,0,104,0.18) !important;
+  border: 1px solid rgba(127,2,137,0.18) !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
   box-shadow: 0 4px 14px rgba(20,4,32,0.18) !important;
@@ -279,7 +279,7 @@ main { position: relative; z-index: 1; }
 .hero-stats { display: flex; align-items: center; gap: 32px; margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--line); }
 .stat-num { font-size: 38px; color: var(--ink); }
 .stat-num .pct { font-size: 24px; color: var(--gold); }
-.stat-label { font-size: 11px; color: var(--ink-mute); letter-spacing: 0.1em; margin-top: 8px; line-height: 1.4; }
+.stat-label { font-size: 11px; color: #ffffff; letter-spacing: 0.1em; margin-top: 8px; line-height: 1.4; text-shadow: 0 1px 8px rgba(20,4,32,0.55); }
 .stat-sep { width: 1px; height: 50px; background: var(--line); }
 
 /* Hero floating cards */
@@ -306,7 +306,7 @@ main { position: relative; z-index: 1; }
 .fc-gold-card {
   background: linear-gradient(135deg, rgba(245,214,118,0.42) 0%, rgba(229,193,88,0.28) 50%, rgba(184,146,58,0.20) 100%);
   border: 1px solid rgba(245,214,118,0.70);
-  box-shadow: 0 8px 32px rgba(229,193,88,0.30), inset 0 1px 0 rgba(255,255,255,0.60), inset 0 -1px 0 rgba(255,255,255,0.20);
+  box-shadow: 0 6px 18px rgba(20,4,32,0.18), 0 2px 4px rgba(20,4,32,0.10), inset 0 1px 0 rgba(255,255,255,0.60), inset 0 -1px 0 rgba(255,255,255,0.20);
   backdrop-filter: blur(40px) saturate(200%) brightness(1.08);
   -webkit-backdrop-filter: blur(40px) saturate(200%) brightness(1.08);
 }
@@ -318,8 +318,8 @@ main { position: relative; z-index: 1; }
 .fc-gold-stat { background: rgba(255,255,255,0.18); border-radius: 12px; padding: 10px 12px; border: 1px solid rgba(255,255,255,0.30); }
 .fc-gold-stat-val { font-size: 22px; font-weight: 700; color: #ffffff; font-family: var(--display-font); line-height: 1; }
 .fc-gold-stat-lbl { font-size: 10px; color: rgba(255,255,255,0.70); letter-spacing: 0.05em; margin-top: 4px; line-height: 1.3; }
-.fc-gold-cta { display: block; margin-top: 16px; text-align: center; padding: 9px; background: rgba(86,0,104,0.85); border-radius: 100px; font-size: 12px; font-weight: 600; color: #f5d676; letter-spacing: 0.06em; text-decoration: none; transition: background 0.2s; }
-.fc-gold-cta:hover { background: rgba(120,0,144,0.95); }
+.fc-gold-cta { display: block; margin-top: 16px; text-align: center; padding: 9px; background: rgba(127,2,137,0.85); border-radius: 100px; font-size: 12px; font-weight: 600; color: #f5d676; letter-spacing: 0.06em; text-decoration: none; transition: background 0.2s; }
+.fc-gold-cta:hover { background: rgba(176,3,190,0.95); }
 /* Offering nav link */
 .nav-offering-link {
   padding: 6px 14px; font-size: 12px; font-weight: 600; letter-spacing: 0.04em;
@@ -434,7 +434,7 @@ main { position: relative; z-index: 1; }
 /* ── BRIGHT-MODE CARD THEMES ────────────────────── */
 .card-purple {
   background: #ffffff !important;
-  border: 1px solid rgba(86,0,104,0.18) !important;
+  border: 1px solid rgba(127,2,137,0.18) !important;
   box-shadow: 0 6px 18px rgba(20,4,32,0.08), 0 2px 4px rgba(20,4,32,0.04) !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
@@ -462,7 +462,7 @@ main { position: relative; z-index: 1; }
 .card-purple .fc-trend,
 .card-purple .fc-meta,
 .card-purple .fc-bar-meta { color: var(--gold-deep) !important; }
-.card-purple .fc-bar { background: rgba(86,0,104,0.10) !important; }
+.card-purple .fc-bar { background: rgba(127,2,137,0.10) !important; }
 .card-purple .fc-bar-fill { background: linear-gradient(90deg, var(--gold-deep), var(--gold)) !important; }
 .card-purple .value-desc,
 .card-purple .reason-desc,
@@ -504,14 +504,14 @@ main { position: relative; z-index: 1; }
 .card-purple .small { color: rgba(74,52,80,0.70) !important; }
 .card-purple .article-tag { border-color: rgba(184,146,58,0.45) !important; background: rgba(245,214,118,0.10) !important; }
 .card-purple .btn--glass {
-  background: rgba(86,0,104,0.06) !important;
-  border: 1px solid rgba(86,0,104,0.40) !important;
+  background: rgba(127,2,137,0.06) !important;
+  border: 1px solid rgba(127,2,137,0.40) !important;
   color: var(--purple) !important;
 }
 
 .card-gold {
   background: linear-gradient(145deg, #f5d676 0%, #e5c158 45%, #b8923a 100%) !important;
-  border: 1px solid rgba(86,0,104,0.30) !important;
+  border: 1px solid rgba(127,2,137,0.30) !important;
   box-shadow: 0 6px 18px rgba(20,4,32,0.10), 0 2px 4px rgba(20,4,32,0.06) !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
@@ -531,7 +531,7 @@ main { position: relative; z-index: 1; }
 .card-gold .fb-name,
 .card-gold h2,
 .card-gold h3,
-.card-gold .section-title { color: #4a0058 !important; }
+.card-gold .section-title { color: #6b0273 !important; }
 .card-gold .value-desc,
 .card-gold .reason-desc,
 .card-gold .choose-desc,
@@ -546,7 +546,7 @@ main { position: relative; z-index: 1; }
 .card-gold .ps-key,
 .card-gold .info-tiny,
 .card-gold p,
-.card-gold .section-sub { color: rgba(74,0,88,0.88) !important; }
+.card-gold .section-sub { color: rgba(107,2,115,0.88) !important; }
 .card-gold .value-roman,
 .card-gold .reason-index,
 .card-gold .choose-num,
@@ -561,26 +561,26 @@ main { position: relative; z-index: 1; }
 .card-gold .article-tag,
 .card-gold .eyebrow,
 .card-gold .gold,
-.card-gold .gold-shimmer { color: #560068 !important; -webkit-text-fill-color: #560068 !important; background: transparent !important; }
-.card-gold .eyebrow-dot { background: #560068 !important; box-shadow: 0 0 8px #560068 !important; }
-.card-gold .gold-divider { background: linear-gradient(90deg, transparent, #560068 50%, transparent) !important; }
-.card-gold .article-tag { border-color: rgba(86,0,104,0.40) !important; }
+.card-gold .gold-shimmer { color: #7f0289 !important; -webkit-text-fill-color: #7f0289 !important; background: transparent !important; }
+.card-gold .eyebrow-dot { background: #7f0289 !important; box-shadow: 0 0 8px #7f0289 !important; }
+.card-gold .gold-divider { background: linear-gradient(90deg, transparent, #7f0289 50%, transparent) !important; }
+.card-gold .article-tag { border-color: rgba(127,2,137,0.40) !important; }
 .card-gold .ib-big,
 .card-gold .fb-credentials,
 .card-gold .article-foot,
 .card-gold .article-foot span,
 .card-gold .pd-val,
 .card-gold .muted,
-.card-gold .small { color: rgba(74,0,88,0.70) !important; }
+.card-gold .small { color: rgba(107,2,115,0.70) !important; }
 
 /* Card-themed buttons inherit the contrasting accent */
 .card-gold .btn--glass {
-  background: rgba(86,0,104,0.10) !important;
-  border: 1px solid rgba(86,0,104,0.40) !important;
-  color: #4a0058 !important;
+  background: rgba(127,2,137,0.10) !important;
+  border: 1px solid rgba(127,2,137,0.40) !important;
+  color: #6b0273 !important;
 }
 .card-gold .btn--gold {
-  background: linear-gradient(135deg, #560068, #780090) !important;
+  background: linear-gradient(135deg, #7f0289, #B003BE) !important;
   color: var(--gold-light) !important;
   border-color: rgba(245,214,118,0.5) !important;
 }
@@ -588,7 +588,7 @@ main { position: relative; z-index: 1; }
 .values-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 .value-card {
   padding: 36px 28px; border-radius: 24px; text-align: center; position: relative; transition: transform .4s, box-shadow .4s;
-  background: linear-gradient(145deg, #780090 0%, #560068 100%);
+  background: linear-gradient(145deg, #B003BE 0%, #7f0289 100%);
   border: 1px solid rgba(255,255,255,0.15);
   box-shadow: 0 6px 18px rgba(20,4,32,0.10), 0 2px 4px rgba(20,4,32,0.06);
 }
@@ -618,7 +618,7 @@ main { position: relative; z-index: 1; }
 }
 .reason-card {
   border-radius: 24px; overflow: hidden; display: flex; flex-direction: column; transition: transform .4s, box-shadow .4s; animation: float 6s ease-in-out infinite;
-  background: linear-gradient(145deg, #780090 0%, #560068 100%);
+  background: linear-gradient(145deg, #B003BE 0%, #7f0289 100%);
   border: 1px solid rgba(255,255,255,0.15);
   box-shadow: 0 6px 18px rgba(20,4,32,0.10), 0 2px 4px rgba(20,4,32,0.06);
 }
@@ -634,12 +634,7 @@ main { position: relative; z-index: 1; }
 
 /* ── DEAL BANNER ────────────────────────────────── */
 .deal-banner { padding: 60px; border-radius: 32px; position: relative; overflow: hidden; }
-.deal-orbs { position: absolute; inset: 0; pointer-events: none;
-  background:
-    radial-gradient(circle at 10% 50%, rgba(124,58,237,0.27), transparent 40%),
-    radial-gradient(circle at 90% 50%, rgba(229,193,88,0.2), transparent 40%);
-  filter: blur(40px);
-}
+.deal-orbs { display: none; }
 .deal-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1.4fr; gap: 60px; align-items: center; }
 .deal-badge { display: inline-block; padding: 6px 14px; border: 1px solid var(--gold); color: var(--gold-light); font-size: 10px; letter-spacing: 0.3em; border-radius: 100px; }
 .deal-title { font-size: 36px; line-height: 1.1; margin-top: 16px; color: var(--ink); }
@@ -661,8 +656,15 @@ main { position: relative; z-index: 1; }
 .choose-ornament { margin-top: 24px; opacity: 0.5; }
 
 /* ── BOOK CALL ──────────────────────────────────── */
-.book-call { padding: 60px; border-radius: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.book-call { padding: 48px; border-radius: 32px; display: grid; grid-template-columns: 1fr 1.8fr; gap: 40px; align-items: center; }
 .calendar-mock { padding: 24px; border-radius: 20px; }
+.book-call .meetings-iframe-container { width: 100%; min-height: 680px; border-radius: 16px; overflow: hidden; }
+.book-call .meetings-iframe-container iframe { width: 100% !important; min-height: 680px !important; border: 0 !important; }
+@media (max-width: 980px) {
+  .book-call { grid-template-columns: 1fr; gap: 28px; padding: 36px 24px; }
+  .book-call .meetings-iframe-container { min-height: 720px; }
+  .book-call .meetings-iframe-container iframe { min-height: 720px !important; }
+}
 .cm-head { display: flex; justify-content: space-between; align-items: center; color: var(--gold-light); font-size: 12px; letter-spacing: 0.2em; margin-bottom: 20px; }
 .cm-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
 .cm-day-label { font-size: 10px; color: var(--ink-mute); text-align: center; padding: 6px 0; letter-spacing: 0.1em; }
@@ -739,7 +741,7 @@ main { position: relative; z-index: 1; }
 .track-record {
   padding: 60px; border-radius: 32px; text-align: center;
   background: #fdf8f5 !important;
-  border: 1px solid rgba(120,0,144,0.10) !important;
+  border: 1px solid rgba(176,3,190,0.10) !important;
   backdrop-filter: none !important;
   box-shadow: 0 6px 18px rgba(20,4,32,0.08) !important;
 }
@@ -843,13 +845,13 @@ main { position: relative; z-index: 1; }
 .footer-headline { font-size: clamp(36px, 5vw, 56px); line-height: 1.05; font-weight: 500; color: #1a001f; margin-bottom: 20px; }
 .footer-banner p { color: var(--ink-soft); max-width: 580px; margin: 0 auto 32px; line-height: 1.6; }
 
-.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 60px; padding: 60px 0 40px; border-top: 1px solid rgba(86,0,104,0.18); }
+.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 60px; padding: 60px 0 40px; border-top: 1px solid rgba(127,2,137,0.18); }
 .footer-brand .nav-brand { margin-bottom: 20px; }
 .footer-tag { color: var(--gold-deep); font-family: var(--display-font); font-style: italic; font-size: 18px; }
 .footer-col h4 { font-size: 12px; letter-spacing: 0.3em; color: var(--gold-deep); text-transform: uppercase; margin-bottom: 16px; }
 .footer-col a, .footer-col span { display: block; color: #4a3450; padding: 6px 0; font-size: 14px; transition: color .2s; }
 .footer-col a:hover { color: var(--purple); }
-.footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; border-top: 1px solid rgba(86,0,104,0.15); font-size: 12px; color: #5a4060; gap: 24px; }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; border-top: 1px solid rgba(127,2,137,0.15); font-size: 12px; color: #5a4060; gap: 24px; }
 .footer-disclaim { max-width: 600px; text-align: right; line-height: 1.5; }
 
 /* ── RESPONSIVE ─────────────────────────────────── */
@@ -1058,7 +1060,7 @@ const PALETTES = {
   amethyst: {
     name: "Amethyst & Gold",
     bg0: "#0a000f", bg1: "#160020", bg2: "#2a0040",
-    purple: "#780090", deep: "#560068",
+    purple: "#B003BE", deep: "#7f0289",
     gold: "#e5c158", goldDeep: "#b8923a", goldLight: "#f5d676",
   },
   plum: {
@@ -1189,10 +1191,19 @@ function Btn({ variant = "gold", onClick, children, href = "#" }) {
 }
 
 function HomePage({ setPage }) {
+  useEffect(() => {
+    const SRC = "https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js";
+    if (document.querySelector(`script[src="${SRC}"]`)) return;
+    const script = document.createElement("script");
+    script.src = SRC;
+    script.type = "text/javascript";
+    document.body.appendChild(script);
+  }, []);
   return (
     <>
       <div className="hero-video-wrap">
       <video className="hero-bg-video" autoPlay loop muted playsInline>
+        <source src="bannervideo.mp4" type="video/mp4"/>
         <source src="bannervideo.webm" type="video/webm"/>
       </video>
       <div className="hero-video-overlay"></div>
@@ -1255,8 +1266,8 @@ function HomePage({ setPage }) {
           </div>
           <div className="floating-card card-gold fc-3" style={{maxWidth:"280px"}}>
             <div className="fc-tiny">INVESTOR TESTIMONIAL</div>
-            <div className="fc-big serif" style={{fontSize:"15px",lineHeight:"1.6",fontWeight:"400",marginTop:"8px",fontStyle:"italic",color:"#4a0058"}}>"Working with Kynectic has been tremendously easy. I am always excited to see distributions in my bank."</div>
-            <div className="fc-trend" style={{marginTop:"10px",color:"rgba(74,0,88,0.75)"}}>— Thomas J., Investor</div>
+            <div className="fc-big serif" style={{fontSize:"15px",lineHeight:"1.6",fontWeight:"400",marginTop:"8px",fontStyle:"italic",color:"#6b0273"}}>"Working with Kynectic has been tremendously easy. I am always excited to see distributions in my bank."</div>
+            <div className="fc-trend" style={{marginTop:"10px",color:"rgba(107,2,115,0.75)"}}>— Thomas J., Investor</div>
           </div>
         </div>
       </section>
@@ -1283,7 +1294,7 @@ function HomePage({ setPage }) {
                 </div>
                 <div className="image-badge card-gold">
                   <div className="ib-tiny">OUR PROMISE</div>
-                  <div className="serif" style={{fontSize:"16px",lineHeight:"1.55",fontStyle:"italic",marginTop:"8px",maxWidth:"210px",color:"#4a0058"}}>"We put in the work so you don't have to."</div>
+                  <div className="serif" style={{fontSize:"16px",lineHeight:"1.55",fontStyle:"italic",marginTop:"8px",maxWidth:"210px",color:"#6b0273"}}>"We put in the work so you don't have to."</div>
                 </div>
                 <div className="image-orb-1"></div>
                 <div className="image-orb-2"></div>
@@ -1309,7 +1320,7 @@ function HomePage({ setPage }) {
             ].map((v, i) => (
               <div className={`value-card ${i % 2 === 0 ? "card-purple" : "card-gold"}`} key={v.name}>
                 <div className="value-roman serif">{["I","II","III","IV"][i]}</div>
-                <div className="value-icon" style={{color: i % 2 === 0 ? "var(--gold-light)" : "#560068"}}>
+                <div className="value-icon" style={{color: i % 2 === 0 ? "var(--gold-light)" : "#7f0289"}}>
                   <svg viewBox="0 0 64 64" width="48" height="48" aria-hidden="true">
                     {i === 0 && <path d="M32 8 L52 18 V34 C52 46 42 54 32 58 C22 54 12 46 12 34 V18 Z" fill="none" stroke="currentColor" strokeWidth="2"/>}
                     {i === 1 && <><circle cx="32" cy="32" r="22" fill="none" stroke="currentColor" strokeWidth="2"/><circle cx="32" cy="32" r="10" fill="none" stroke="currentColor" strokeWidth="2"/></>}
@@ -1329,7 +1340,7 @@ function HomePage({ setPage }) {
         <div className="container">
           <div style={{position:"relative", borderRadius:"28px", overflow:"hidden", aspectRatio:"21/7", boxShadow:"0 8px 24px rgba(20,4,32,0.12), 0 2px 6px rgba(20,4,32,0.06)", border:"1px solid rgba(184,146,58,0.30)"}}>
             <img src="cheerful-medical-professionals-.jpeg" alt="Healthcare professionals investing for their future" style={{width:"100%", height:"100%", objectFit:"cover", objectPosition:"center 30%", display:"block"}}/>
-            <div style={{position:"absolute", inset:0, background:"linear-gradient(90deg, rgba(86,0,104,0.55) 0%, rgba(86,0,104,0.15) 45%, transparent 70%)", pointerEvents:"none"}}></div>
+            <div style={{position:"absolute", inset:0, background:"linear-gradient(90deg, rgba(127,2,137,0.55) 0%, rgba(127,2,137,0.15) 45%, transparent 70%)", pointerEvents:"none"}}></div>
             <div style={{position:"absolute", left:"6%", top:"50%", transform:"translateY(-50%)", maxWidth:"460px", color:"var(--gold-light)"}}>
               <div style={{fontSize:"11px", letterSpacing:"0.35em", color:"var(--gold-light)", textTransform:"uppercase", marginBottom:"14px", fontWeight:600}}>BUILT FOR HIGH EARNERS</div>
               <div className="serif" style={{fontSize:"clamp(22px, 2.6vw, 36px)", lineHeight:"1.15", fontWeight:500, color:"#ffffff", textShadow:"0 2px 14px rgba(20,4,32,0.55)"}}>Doctors, attorneys, founders — investors whose time is worth more than another side hustle.</div>
@@ -1375,7 +1386,7 @@ function HomePage({ setPage }) {
                 </div>
                 <div className="image-badge card-gold">
                   <div className="ib-tiny">TAX-ADVANTAGED INVESTING</div>
-                  <div className="serif" style={{fontSize:"15px",lineHeight:"1.55",fontStyle:"italic",marginTop:"8px",maxWidth:"230px",color:"#4a0058"}}>Roll over your old 401K or IRA with no taxable event.</div>
+                  <div className="serif" style={{fontSize:"15px",lineHeight:"1.55",fontStyle:"italic",marginTop:"8px",maxWidth:"230px",color:"#6b0273"}}>Roll over your old 401K or IRA with no taxable event.</div>
                 </div>
                 <div className="image-orb-1"></div>
                 <div className="image-orb-2"></div>
@@ -1511,23 +1522,12 @@ function HomePage({ setPage }) {
               <Eyebrow>SPEAK WITH OUR TEAM</Eyebrow>
               <h2 className="section-title serif">Book a Free Call</h2>
               <p className="section-sub">A 20-minute conversation. No pressure. Just clarity on whether passive multifamily fits into your wealth plan.</p>
-              <div className="hero-ctas"><Btn variant="gold" onClick={() => setPage("contact")}>Schedule a Call</Btn></div>
             </div>
             <div className="bc-visual">
-              <div className="calendar-mock" style={{background:"rgba(255,255,255,0.35)", border:"1px solid rgba(86,0,104,0.30)", borderRadius:"20px"}}>
-                <div className="cm-head" style={{color:"#4a0058"}}><span>NOVEMBER 2025</span><span>›</span></div>
-                <div className="cm-grid">
-                  {["S","M","T","W","T","F","S"].map((d,i)=>(<div key={i} className="cm-day-label" style={{color:"rgba(74,0,88,0.65)"}}>{d}</div>))}
-                  {Array.from({length: 30}).map((_, i) => (
-                    <div key={i} className={`cm-day ${[5,12,18,25].includes(i) ? "available" : ""} ${i === 18 ? "selected" : ""}`} style={i === 18 ? {background:"linear-gradient(135deg,#780090,#560068)", color:"#f5d676", border:"none", fontWeight:600} : [5,12,18,25].includes(i) ? {color:"#4a0058", border:"1px solid rgba(86,0,104,0.40)"} : {color:"rgba(74,0,88,0.78)"}}>{i+1}</div>
-                  ))}
-                </div>
-                <div className="cm-slots">
-                  <div className="cm-slot" style={{border:"1px solid rgba(86,0,104,0.25)", color:"rgba(74,0,88,0.78)"}}>9:00 AM</div>
-                  <div className="cm-slot active" style={{background:"rgba(86,0,104,0.15)", borderColor:"#560068", color:"#4a0058"}}>11:30 AM</div>
-                  <div className="cm-slot" style={{border:"1px solid rgba(86,0,104,0.25)", color:"rgba(74,0,88,0.78)"}}>2:00 PM</div>
-                </div>
-              </div>
+              <div
+                className="meetings-iframe-container"
+                data-src="https://meetings-na2.hubspot.com/anita-akpunku?embed=true"
+              ></div>
             </div>
           </div>
         </div>
@@ -1586,7 +1586,7 @@ function AboutPage({ setPage }) {
             </div>
             <div className="image-badge card-gold">
               <div className="ib-tiny">ANITA · FOUNDER</div>
-              <div className="serif" style={{fontSize:"15px",lineHeight:"1.6",color:"#4a0058",fontStyle:"italic",margin:"10px 0 8px",maxWidth:"220px"}}>"Every dollar we raise, I invest alongside. That's not a policy — it's a promise."</div>
+              <div className="serif" style={{fontSize:"15px",lineHeight:"1.6",color:"#6b0273",fontStyle:"italic",margin:"10px 0 8px",maxWidth:"220px"}}>"Every dollar we raise, I invest alongside. That's not a policy — it's a promise."</div>
             </div>
           </div>
         </div>
@@ -1799,7 +1799,7 @@ function EducationPage({ setPage }) {
               <p style={{fontSize:"16px",color:"#4a3450",lineHeight:"1.85"}}>{s.p}</p>
             </div>
           ))}
-          <div style={{marginTop:"56px",paddingTop:"40px",borderTop:"1px solid rgba(86,0,104,0.12)"}}>
+          <div style={{marginTop:"56px",paddingTop:"40px",borderTop:"1px solid rgba(127,2,137,0.12)"}}>
             <p style={{fontSize:"13px",color:"#5a4060",marginBottom:"24px"}}>Ready to put this knowledge to work?</p>
             <div className="hero-ctas">
               <Btn variant="gold" onClick={() => setPage("contact")}>Invest with Kynectic</Btn>
@@ -1873,9 +1873,15 @@ function FAQPage() {
 }
 
 function ContactPage() {
-  const [sent, setSent] = useState(false);
-  const [form, setForm] = useState({ name: "", email: "", phone: "", invest: "", message: "" });
-  const onChange = (k) => (e) => setForm({ ...form, [k]: e.target.value });
+  useEffect(() => {
+    const SRC = "https://js-na2.hsforms.net/forms/embed/245594548.js";
+    // Avoid double-loading if user navigates between pages
+    if (document.querySelector(`script[src="${SRC}"]`)) return;
+    const script = document.createElement("script");
+    script.src = SRC;
+    script.defer = true;
+    document.body.appendChild(script);
+  }, []);
   return (
     <>
       <section className="page-hero"><div className="container">
@@ -1887,48 +1893,17 @@ function ContactPage() {
       <section className="section section--white"><div className="container">
         <div className="contact-grid">
           <div className="contact-form card-purple">
-            {!sent ? (
-              <form onSubmit={(e) => { e.preventDefault(); setSent(true); }}>
-                <div className="field"><label>Full Name</label><input type="text" required value={form.name} onChange={onChange("name")} placeholder="Jane Smith"/></div>
-                <div className="field-row">
-                  <div className="field"><label>Email</label><input type="email" required value={form.email} onChange={onChange("email")} placeholder="jane@example.com"/></div>
-                  <div className="field"><label>Phone</label><input type="tel" value={form.phone} onChange={onChange("phone")} placeholder="(555) 123-4567"/></div>
-                </div>
-                <div className="field">
-                  <label>Investment range</label>
-                  <select value={form.invest} onChange={onChange("invest")}>
-                    <option value="">Select a range</option>
-                    <option>$50K – $100K</option><option>$100K – $250K</option>
-                    <option>$250K – $500K</option><option>$500K+</option>
-                  </select>
-                </div>
-                <div className="field"><label>What would you like to discuss?</label><textarea rows="4" value={form.message} onChange={onChange("message")} placeholder="A bit about your goals…"/></div>
-                <div className="accred" style={{background:"rgba(245,214,118,0.12)", border:"1px solid rgba(245,214,118,0.30)"}}>
-                  <input type="checkbox" id="accred" required/>
-                  <label htmlFor="accred" style={{color:"var(--gold-light)"}}>I confirm I am an accredited investor or qualified to participate.</label>
-                </div>
-                <button type="submit" className="btn btn--gold btn--full">
-                  <span>Submit & Join Investor List</span>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-                </button>
-              </form>
-            ) : (
-              <div className="sent-state">
-                <div className="sent-glyph" style={{color:"var(--gold-light)"}}>
-                  <svg viewBox="0 0 64 64" width="80" height="80">
-                    <circle cx="32" cy="32" r="30" fill="none" stroke="currentColor" strokeWidth="1.5"/>
-                    <path d="M20 32 L28 40 L44 24" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
-                  </svg>
-                </div>
-                <h3 className="serif">Thank you, {form.name || "investor"}.</h3>
-                <p>We've received your details. A member of the Kynectic team will reach out shortly.</p>
-              </div>
-            )}
+            <div
+              className="hs-form-frame"
+              data-region="na2"
+              data-form-id="61a25393-f1ec-4a8a-8ab8-f650a18aa3c5"
+              data-portal-id="245594548"
+            ></div>
           </div>
           <aside className="contact-info">
             <div className="info-card card-gold"><div className="info-tiny">EMAIL</div><a className="info-big" href="mailto:anita@kynecticcap.com">anita@kynecticcap.com</a></div>
             <div className="info-card card-purple"><div className="info-tiny">PHONE</div><a className="info-big" href="tel:+14302437221">+1 (430) 243‑7221</a></div>
-            <div className="info-card card-gold"><div className="info-tiny">OFFICE</div><div className="info-big">1800 S Loop 288<br/>396 670, Denton, TX 76208</div></div>
+            <div className="info-card card-gold"><div className="info-tiny">OFFICE</div><div className="info-big">1800 S Loop 288 #396-673<br/>Denton, Texas 76202</div></div>
             <div className="info-card card-purple"><div className="info-tiny">FOLLOW</div><a className="info-big" href="https://www.instagram.com/kynecticcapital/" target="_blank" rel="noreferrer">@kynecticcapital</a></div>
           </aside>
         </div>
@@ -1987,7 +1962,7 @@ function IRAPage({ setPage }) {
               </div>
               <div className="image-badge card-gold">
                 <div className="ib-tiny">NO TAXABLE EVENT</div>
-                <div className="serif" style={{fontSize:"15px",lineHeight:"1.55",fontStyle:"italic",marginTop:"8px",maxWidth:"230px",color:"#4a0058"}}>"Rollovers preserve every dollar of principal."</div>
+                <div className="serif" style={{fontSize:"15px",lineHeight:"1.55",fontStyle:"italic",marginTop:"8px",maxWidth:"230px",color:"#6b0273"}}>"Rollovers preserve every dollar of principal."</div>
               </div>
               <div className="image-orb-1"></div>
               <div className="image-orb-2"></div>
@@ -2104,7 +2079,7 @@ function Footer({ setPage, page }) {
         <div className="footer-grid">
           <div className="footer-brand">
             <div className="nav-brand">
-              <img src="LogoNew.png" alt="Kynectic Capital" style={{ height: "48px", width: "auto" }} />
+              <img src="logoblack.png" alt="Kynectic Capital" style={{ height: "48px", width: "auto" }} />
             </div>
             <p className="footer-tag">Invest with Clarity. Thrive with Momentum.</p>
           </div>
@@ -2127,7 +2102,7 @@ function Footer({ setPage, page }) {
             <a href="mailto:anita@kynecticcap.com">anita@kynecticcap.com</a>
             <a href="tel:+14302437221">+1 (430) 243‑7221</a>
             <a href="https://www.instagram.com/kynecticcapital/" target="_blank" rel="noreferrer">Instagram</a>
-            <span className="muted">1800 S Loop 288 396 670<br/>Denton, TX 76208, USA</span>
+            <span className="muted">1800 S Loop 288 #396-673<br/>Denton, Texas 76202, USA</span>
           </div>
         </div>
         <div className="footer-bottom">

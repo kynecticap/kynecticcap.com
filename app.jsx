@@ -1090,7 +1090,7 @@ function ContactPage() {
               </div>
               <div className="info-card glass glass--strong">
                 <div className="info-tiny">OFFICE</div>
-                <div className="info-big">1800 S Loop 288<br/>396 670, Denton, TX 76208</div>
+                <div className="info-big">1800 S Loop 288 #396-673<br/>Denton, Texas 76202</div>
               </div>
               <div className="info-card glass glass--strong">
                 <div className="info-tiny">FOLLOW</div>
@@ -1172,7 +1172,7 @@ function Footer({ setPage }) {
             <a href="mailto:anita@kynecticcap.com">anita@kynecticcap.com</a>
             <a href="tel:+14302437221">+1 (430) 243‑7221</a>
             <a href="https://www.instagram.com/kynecticcapital/" target="_blank" rel="noreferrer">Instagram</a>
-            <span className="muted">1800 S Loop 288 396 670<br/>Denton, TX 76208, USA</span>
+            <span className="muted">1800 S Loop 288 #396-673<br/>Denton, Texas 76202, USA</span>
           </div>
         </div>
 
