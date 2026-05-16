@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harmony Grove | Investment Opportunity | Kynectic Capital</title>
+    <meta name="description" content="Harmony Grove Apartments — a 75-unit multifamily value-add opportunity in Marietta, GA. Presented by Kynectic Capital.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #faf8f5;
+            --bg-sec: #f5f0ea;
+            /* Kynectic Purple */
+            --purple: #780090;
+            --deep: #560068;
+            --purple-light: #9A00B4;
+            --purple-dim: rgba(120,0,144,0.09);
+            --purple-border: rgba(120,0,144,0.22);
+            /* Kynectic Gold */
+            --gold: #e5c158;
+            --gold-dk: #b8923a;
+            --gold-lt: #f5d676;
+            --gold-dim: rgba(229,193,88,0.12);
+            --gold-border: rgba(229,193,88,0.32);
+            /* Dark */
+            --navy: #0a000f;
+            --navy-2: #160020;
+            /* Text */
+            --text: #1a001f;
+            --t70: rgba(26,0,31,0.70);
+            --t50: rgba(26,0,31,0.50);
+            --t30: rgba(26,0,31,0.30);
+            --t10: rgba(26,0,31,0.10);
+            --t06: rgba(26,0,31,0.06);
+            /* Glass */
+            --glass: rgba(255,255,255,0.55);
+            --glass-b: rgba(255,255,255,0.82);
+            --r-card: 20px;
+            --r-pill: 100px;
+            --ff-d: 'Cormorant Garamond', Georgia, serif;
+            --ff-b: 'Jost', -apple-system, sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+        body { background: var(--bg); color: var(--text); font-family: var(--ff-b); font-size: 16px; line-height: 1.6; overflow-x: hidden; }
+
+        /* ── Ambient orbs ── */
+        .amb { position: fixed; border-radius: 50%; pointer-events: none; z-index: 0; filter: blur(90px); }
+        .amb-1 { width:800px;height:800px;top:-10%;right:-5%; background:radial-gradient(circle,rgba(120,0,144,0.08) 0%,transparent 68%); }
+        .amb-2 { width:600px;height:600px;bottom:10%;left:-8%; background:radial-gradient(circle,rgba(229,193,88,0.06) 0%,transparent 68%); }
+
+        /* ── NAV ── */
+        .nav-wrap {
+            position: fixed; top: 24px; left: 0; right: 0; z-index: 1000;
+            padding: 0 32px; pointer-events: none;
+        }
+        #nav {
+            max-width: 1320px; margin: 0 auto;
+            display: flex; align-items: center; gap: 32px;
+            padding: 12px 12px 12px 24px; border-radius: 100px;
+            pointer-events: all;
+            background: linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.04) 100%);
+            border: 0.5px solid rgba(255,255,255,0.16);
+            backdrop-filter: blur(64px) saturate(200%) brightness(1.06) contrast(1.04);
+            -webkit-backdrop-filter: blur(64px) saturate(200%) brightness(1.06) contrast(1.04);
+            box-shadow:
+                inset 0 0.5px 0 rgba(255,255,255,0.28),
+                inset 0 -1px 0 rgba(255,255,255,0.08),
+                inset 1px 0 0 rgba(255,255,255,0.10),
+                inset -1px 0 0 rgba(255,255,255,0.10),
+                0 2px 4px rgba(0,0,0,0.08),
+                0 12px 40px rgba(0,0,0,0.22),
+                0 0 0 0.5px rgba(0,0,0,0.10);
+        }
+        .nav-brand { display:flex; align-items:center; gap:10px; text-decoration:none; }
+        .nav-logo { height:34px; width:auto; object-fit:contain; }
+        .nav-brand-name { font-family:'Cormorant Garamond', Georgia, serif; font-size:20px; letter-spacing:0.02em; color:#fff; }
+        .nav-links { display:flex; gap:4px; flex:1; justify-content:center; list-style:none; margin:0; padding:0; }
+        .nav-link { font-size:13px; font-weight:500; color:rgba(255,255,255,0.65); text-decoration:none; letter-spacing:0.04em; padding:8px 14px; border-radius:100px; transition:color .2s, background .2s; }
+        .nav-link:hover { color:#fff; background:rgba(255,255,255,0.06); }
+        .nav-offering-link { font-size:12px; font-weight:600; letter-spacing:0.04em; color:#f5d676; text-decoration:none; padding:6px 14px; border-radius:100px; border:1px solid rgba(229,193,88,0.35); background:rgba(229,193,88,0.08); transition:all .2s; }
+        .nav-offering-link:hover { background:rgba(229,193,88,0.16); border-color:rgba(229,193,88,0.55); }
+        .nav-cta { display:inline-flex; align-items:center; gap:8px; padding:10px 22px; border-radius:100px; font-size:13px; font-weight:600; letter-spacing:0.02em; text-decoration:none; background:linear-gradient(135deg,#e5c158,#b8923a); color:#1a001f; transition:all .25s; }
+        .nav-cta:hover { transform:translateY(-1px); box-shadow:0 6px 24px rgba(229,193,88,0.40); }
+        .nav-actions { display:flex; gap:10px; align-items:center; }
+        @media(max-width:860px){ .nav-links{display:none} }
+
+        /* ── BUTTONS ── */
+        .btn { text-decoration:none; display:inline-block; cursor:pointer; font-family:var(--ff-b); letter-spacing:.02em; transition:all .26s ease; border:none; }
+        .btn-primary {
+            padding:13px 30px; font-size:14px; font-weight:600;
+            background: linear-gradient(135deg, #780090 0%, #560068 100%);
+            color:#fff; border-radius:var(--r-pill);
+            box-shadow: 0 4px 20px rgba(120,0,144,0.38);
+        }
+        .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 32px rgba(120,0,144,0.50); filter:brightness(1.07); }
+        .btn-primary-lg { padding:16px 40px; font-size:15.5px; font-weight:600; border-radius:var(--r-pill); background:linear-gradient(135deg,#780090,#560068); color:#fff; box-shadow:0 6px 28px rgba(120,0,144,0.40); }
+        .btn-primary-lg:hover { transform:translateY(-3px); box-shadow:0 12px 40px rgba(120,0,144,0.50); }
+        .btn-gold-lg {
+            padding:16px 40px; font-size:15.5px; font-weight:600; border-radius:var(--r-pill);
+            background:linear-gradient(135deg,#e5c158,#b8923a);
+            color:#1a001f; box-shadow:0 6px 28px rgba(229,193,88,0.40);
+        }
+        .btn-gold-lg:hover { transform:translateY(-3px); box-shadow:0 12px 40px rgba(229,193,88,0.50); }
+        .btn-ghost {
+            padding:12px 28px; font-size:13.5px; font-weight:500;
+            background:rgba(255,255,255,0.75); border:1.5px solid rgba(26,0,31,0.18);
+            color:var(--text); border-radius:var(--r-pill); backdrop-filter:blur(12px);
+        }
+        .btn-ghost:hover { background:rgba(255,255,255,0.96); border-color:rgba(26,0,31,0.30); transform:translateY(-1px); }
+        .btn-ghost-lg { padding:15px 36px; font-size:15.5px; font-weight:500; border-radius:var(--r-pill); background:rgba(255,255,255,0.80); border:1.5px solid rgba(26,0,31,0.20); color:var(--text); backdrop-filter:blur(14px); }
+        .btn-ghost-lg:hover { background:rgba(255,255,255,0.96); border-color:rgba(26,0,31,0.35); transform:translateY(-2px); box-shadow:0 8px 24px rgba(26,0,31,0.10); }
+        .btn-hero-white {
+            padding:16px 38px; font-size:15.5px; font-weight:600; border-radius:var(--r-pill);
+            background:rgba(255,255,255,0.16); border:1.5px solid rgba(255,255,255,0.50);
+            color:#fff; backdrop-filter:blur(12px);
+        }
+        .btn-hero-white:hover { background:rgba(255,255,255,0.26); border-color:rgba(255,255,255,0.80); transform:translateY(-2px); }
+
+        /* ── HERO ── */
+        .hero {
+            position:relative;
+            display:flex; flex-direction:column; align-items:stretch; overflow:hidden;
+        }
+        .hero-vid-wrap { position:absolute; inset:0; z-index:0; }
+        .hero-vid-wrap video { width:100%; height:100%; object-fit:cover; object-position:center; }
+        .hero-vid-wrap::after {
+            content:''; position:absolute; inset:0;
+            background: linear-gradient(
+                130deg,
+                rgba(10,0,15,0.94) 0%,
+                rgba(10,0,15,0.82) 38%,
+                rgba(10,0,15,0.55) 65%,
+                rgba(10,0,15,0.25) 100%
+            );
+        }
+        .hero-content {
+            position:relative; z-index:2;
+            max-width:1200px; margin:0 auto;
+            padding:130px 48px 32px; width:100%;
+            display:grid;
+            grid-template-columns:1fr 460px;
+            gap:40px;
+            align-items:start;
+        }
+        .hero-text { padding-top:8px; }
+        .hero-gallery {
+            position:relative; z-index:2;
+            max-width:1200px; margin:0 auto;
+            padding:0 48px 50px; width:100%;
+            display:grid;
+            grid-template-columns:1fr 2fr;
+            gap:14px;
+        }
+        .hg-photo {
+            border-radius:18px; overflow:hidden;
+            border:1px solid rgba(229,193,88,0.30);
+            box-shadow:0 18px 50px -16px rgba(0,0,0,0.55);
+            aspect-ratio:1 / 1;
+            background:#0a000f;
+        }
+        .hg-photo.hg-photo--wide { aspect-ratio: auto; height:100%; }
+        .hg-photo img { width:100%; height:100%; object-fit:cover; display:block; }
+        @media (max-width:980px) {
+            .hero-gallery { grid-template-columns:1fr; padding-bottom:32px; }
+            .hg-photo, .hg-photo.hg-photo--wide { aspect-ratio:16/10; height:auto; }
+        }
+        .hero-text { display:flex; flex-direction:column; }
+        .hero-tag {
+            display:inline-block; padding:5px 16px; margin-bottom:14px;
+            background:rgba(255,255,255,0.10); border:1px solid rgba(255,255,255,0.22);
+            border-radius:var(--r-pill); font-size:12px; font-weight:500; letter-spacing:.10em;
+            text-transform:uppercase; color:rgba(255,255,255,0.72); width:fit-content;
+        }
+        .hero-title {
+            font-family:var(--ff-d); font-size:clamp(42px,5.8vw,78px);
+            font-weight:600; line-height:1.10; letter-spacing:-.020em;
+            margin-bottom:20px; color:#fff;
+        }
+        .hero-title em { font-style:italic; color:#f5d676; }
+        .hero-sub {
+            font-size:clamp(15px,1.8vw,18px); color:rgba(255,255,255,0.72);
+            max-width:500px; line-height:1.75; margin-bottom:32px; font-weight:300;
+        }
+        .hero-ctas { display:flex; gap:14px; flex-wrap:wrap; }
+
+        /* ── HERO BENTO CARDS ── */
+        .hero-bento {
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            grid-template-rows:auto auto auto;
+            gap:10px;
+        }
+        .hb-card {
+            border-radius:18px;
+            padding:22px 24px;
+            backdrop-filter:blur(32px) saturate(200%);
+            -webkit-backdrop-filter:blur(32px) saturate(200%);
+            position:relative; overflow:hidden;
+        }
+        .hb-frost {
+            background:rgba(240,235,245,0.16);
+            border:1px solid rgba(255,255,255,0.30);
+        }
+        .hb-navy-card {
+            background:linear-gradient(145deg, rgba(120,0,144,0.55), rgba(86,0,104,0.65));
+            border:1px solid rgba(229,193,88,0.45);
+            display:flex; flex-direction:column; justify-content:space-between;
+        }
+        .hb-tax-card {
+            background:linear-gradient(135deg,rgba(16,185,129,0.38),rgba(4,120,87,0.28));
+            border:1px solid rgba(52,211,153,0.55);
+            box-shadow:0 0 24px rgba(16,185,129,0.18);
+        }
+        .hb-gold-card {
+            background:linear-gradient(135deg,rgba(229,193,88,0.40),rgba(184,146,58,0.32));
+            border:1px solid rgba(229,193,88,0.50);
+        }
+        .hb-wide {
+            grid-column:span 2;
+            background:rgba(240,235,245,0.12);
+            border:1px solid rgba(255,255,255,0.22);
+            display:flex; align-items:center; gap:24px;
+        }
+        .hb-lbl {
+            font-family:var(--ff-d); font-size:13.5px; font-style:italic;
+            color:rgba(255,255,255,0.55); margin-bottom:8px; display:block;
+        }
+        .hb-val {
+            font-family:var(--ff-d); font-size:clamp(30px,3.2vw,46px);
+            font-weight:700; color:#fff; line-height:1; margin-bottom:6px; display:block;
+        }
+        .hb-accent { color:#f5d676; }
+        .hb-sub {
+            font-size:12px; color:rgba(255,255,255,0.50); line-height:1.45; display:block;
+        }
+        .hb-sparkline { margin:14px 0 10px; }
+        .hb-sparkline svg { display:block; }
+        .hb-timeline {
+            display:flex; align-items:center; gap:0; margin:14px 0 10px; flex-wrap:nowrap;
+        }
+        .hb-yr-dot {
+            width:10px; height:10px; border-radius:50%;
+            background:rgba(255,255,255,0.22); border:1.5px solid rgba(255,255,255,0.30);
+            flex-shrink:0;
+        }
+        .hb-yr-dot.active { background:#f5d676; border-color:#f5d676; box-shadow:0 0 8px rgba(245,214,118,0.60); }
+        .hb-yr-line { flex:1; height:1.5px; background:rgba(255,255,255,0.18); min-width:8px; }
+        .hb-exit { font-size:10px; color:rgba(255,255,255,0.45); margin-left:8px; letter-spacing:.05em; }
+        .hb-wide-val { flex-shrink:0; }
+        .hb-wide-text { font-size:13px; color:rgba(255,255,255,0.55); line-height:1.55; }
+
+        /* ── STATS DARK BANNER ── */
+        .stats-dark {
+            background:linear-gradient(135deg,#0a000f,#160020 50%,#0e0018);
+            padding:56px 0; position:relative; z-index:1;
+        }
+        .stats-dark::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 50% 50%,rgba(120,0,144,0.16) 0%,transparent 68%); pointer-events:none; }
+        .stats-dark-inner { max-width:1200px; margin:0 auto; padding:0 48px; }
+        .stats-dark-top { font-size:12px; font-weight:500; letter-spacing:.14em; text-transform:uppercase; color:rgba(255,255,255,0.38); margin-bottom:6px; }
+        .stats-dark-title { font-family:var(--ff-d); font-size:clamp(28px,3.5vw,46px); font-weight:600; color:#fff; margin-bottom:36px; font-style:italic; }
+        .stats-dark-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(255,255,255,0.08); border-radius:16px; overflow:hidden; }
+        .sd-stat { padding:28px 30px; background:#0a000f; transition:background .3s; }
+        .sd-stat:hover { background:#160020; }
+        .sd-val { font-family:var(--ff-d); font-size:clamp(28px,3vw,42px); font-weight:700; line-height:1; margin-bottom:8px; }
+        .sd-val.purple-val { color:#c47de0; }
+        .sd-val.gold-val { color:#f5d676; }
+        .sd-lbl { font-size:12px; color:rgba(255,255,255,0.50); letter-spacing:.04em; line-height:1.4; }
+
+        /* ── GENERIC LAYOUT ── */
+        section { position:relative; z-index:1; }
+        .container { max-width:1200px; margin:0 auto; padding:0 48px; }
+        .sec { padding:64px 0; }
+        .sec-lbl { font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--gold-dk); margin-bottom:14px; }
+        .sec-title { font-family:var(--ff-d); font-size:clamp(32px,4vw,54px); font-weight:600; line-height:1.13; letter-spacing:-.012em; margin-bottom:22px; }
+        .sec-body { font-size:17px; color:var(--t70); line-height:1.78; max-width:680px; }
+        .rule { width:44px; height:2.5px; background:linear-gradient(90deg,var(--gold),transparent); margin-bottom:22px; border-radius:2px; }
+
+        /* ── GLASS CARD ── */
+        .gc {
+            background:rgba(255,255,255,0.52);
+            backdrop-filter:blur(32px) saturate(220%) brightness(1.02);
+            -webkit-backdrop-filter:blur(32px) saturate(220%) brightness(1.02);
+            border:1px solid rgba(255,255,255,0.82);
+            border-radius:var(--r-card);
+            box-shadow:0 8px 32px rgba(26,0,31,0.07),0 2px 6px rgba(26,0,31,0.04),inset 0 1px 0 rgba(255,255,255,0.96),inset 0 -1px 0 rgba(255,255,255,0.22);
+            transition:transform .32s ease,box-shadow .32s ease,background .32s ease;
+        }
+        .gc:hover {
+            background:rgba(255,255,255,0.70);
+            transform:translateY(-5px);
+            box-shadow:0 20px 52px rgba(120,0,144,0.10),0 6px 16px rgba(26,0,31,0.06),inset 0 1px 0 rgba(255,255,255,0.98);
+        }
+
+        /* ── WHY SECTION ── */
+        .why-intro { max-width:680px; margin-bottom:40px; }
+        .why-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+        .why-card { padding:38px; }
+        .why-icon { width:48px; height:48px; border-radius:13px; display:flex; align-items:center; justify-content:center; background:var(--gold-dim); border:1px solid var(--gold-border); font-size:22px; margin-bottom:22px; }
+        .why-card h3 { font-family:var(--ff-d); font-size:23px; font-weight:600; margin-bottom:12px; line-height:1.32; }
+        .why-card p { font-size:15px; color:var(--t70); line-height:1.75; }
+
+        /* ── DEAL HIGHLIGHTS ── */
+        .hl-sec { background:linear-gradient(180deg,rgba(245,240,234,0.70) 0%,rgba(250,248,245,0.10) 100%); }
+        .hl-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:36px; }
+        .hl-card { padding:34px 28px; text-align:center; }
+        .hl-val { font-family:var(--ff-d); font-size:40px; font-weight:700; color:var(--purple); line-height:1; margin-bottom:8px; }
+        .hl-lbl { font-size:13px; color:var(--t70); letter-spacing:.04em; line-height:1.45; }
+        .hl-rule { width:30px; height:2px; background:linear-gradient(90deg,var(--gold),transparent); margin:13px auto; border-radius:2px; }
+        .hl-desc { font-size:13px; color:var(--t30); line-height:1.5; }
+        .upside-strip {
+            margin-top:28px; padding:28px 36px;
+            background:linear-gradient(135deg,#0a000f,#160020);
+            border-radius:18px;
+            display:flex; align-items:center; justify-content:space-around; flex-wrap:wrap; gap:24px;
+        }
+        .u-stat { text-align:center; }
+        .u-val { font-family:var(--ff-d); font-size:34px; font-weight:700; color:#f5d676; }
+        .u-lbl { font-size:11px; color:rgba(255,255,255,0.48); text-transform:uppercase; letter-spacing:.07em; margin-top:4px; }
+
+        /* ── DUE DILIGENCE VIDEO ── */
+        .dd-section { padding:72px 0; background:linear-gradient(135deg,#0a000f,#160020); overflow:hidden; position:relative; z-index:1; }
+        .dd-section::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 65% 50%,rgba(120,0,144,0.18) 0%,transparent 65%); pointer-events:none; }
+        .dd-inner { max-width:1100px; margin:0 auto; padding:0 48px; }
+        .dd-tag { display:inline-flex; align-items:center; gap:8px; padding:6px 16px; background:rgba(229,193,88,0.22); border:1px solid rgba(229,193,88,0.45); border-radius:var(--r-pill); font-size:12px; font-weight:600; letter-spacing:.10em; text-transform:uppercase; color:#f5d676; margin-bottom:18px; }
+        .dd-title { font-family:var(--ff-d); font-size:clamp(32px,4vw,52px); font-weight:600; color:#fff; margin-bottom:14px; line-height:1.12; }
+        .dd-sub { font-size:16px; color:rgba(255,255,255,0.60); max-width:600px; line-height:1.72; margin-bottom:36px; font-weight:300; }
+        .dd-video-wrap { position:relative; border-radius:20px; overflow:hidden; box-shadow:0 24px 64px rgba(0,0,0,0.55); border:1px solid rgba(255,255,255,0.10); }
+        .dd-video-wrap video { width:100%; display:block; }
+        .dd-sound-indicator { position:absolute; bottom:20px; right:20px; display:flex; align-items:center; gap:8px; padding:8px 16px; border-radius:var(--r-pill); background:rgba(10,0,15,0.75); border:1px solid rgba(255,255,255,0.16); backdrop-filter:blur(12px); font-size:12.5px; font-weight:500; color:#fff; transition:all .4s ease; }
+        .dd-sound-indicator.sound-on { background:rgba(120,0,144,0.75); border-color:rgba(196,125,224,0.45); }
+        .scroll-hint { margin-top:20px; display:flex; align-items:center; gap:8px; font-size:13px; color:rgba(255,255,255,0.40); justify-content:center; }
+
+        /* ── BEFORE / AFTER ── */
+        .ba-section { padding:80px 0; position:relative; z-index:1; background:linear-gradient(180deg,var(--bg-sec) 0%,var(--bg) 100%); border-top:1px solid rgba(120,0,144,0.10); }
+        .ba-alert-bar { width:100%; padding:16px 28px; margin-bottom:36px; background:linear-gradient(135deg,rgba(229,193,88,0.12),rgba(245,214,118,0.08)); border:1.5px solid rgba(229,193,88,0.30); border-radius:14px; display:flex; align-items:center; gap:16px; }
+        .ba-alert-icon { font-size:26px; flex-shrink:0; }
+        .ba-alert-text { font-size:14px; color:#3a2800; line-height:1.55; }
+        .ba-alert-text strong { color:#2a1a00; display:block; font-size:15px; margin-bottom:2px; }
+        .ba-slider-wrap { margin-bottom:36px; }
+        .ba-slider-label { font-size:12px; font-weight:600; letter-spacing:.10em; text-transform:uppercase; color:var(--t50); margin-bottom:14px; }
+        .ba-compare { position:relative; border-radius:18px; overflow:hidden; box-shadow:0 16px 48px rgba(26,0,31,0.14); user-select:none; cursor:ew-resize; aspect-ratio:16/9; max-height:540px; }
+        .ba-before-img,.ba-after-img { position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; }
+        .ba-after-clip { position:absolute; top:0; left:0; right:0; bottom:0; overflow:hidden; clip-path:inset(0 50% 0 0); }
+        .ba-after-clip img { width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0; }
+        .ba-divider { position:absolute; top:0; bottom:0; left:50%; width:3px; background:#fff; transform:translateX(-50%); box-shadow:0 0 12px rgba(0,0,0,0.45); pointer-events:none; }
+        .ba-divider-btn { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:44px; height:44px; background:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:18px; box-shadow:0 4px 16px rgba(0,0,0,0.30); pointer-events:none; }
+        .ba-label-before,.ba-label-after { position:absolute; bottom:16px; padding:6px 14px; border-radius:var(--r-pill); font-size:12px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; }
+        .ba-label-before { left:16px; background:rgba(10,0,15,0.75); color:#fff; border:1px solid rgba(255,255,255,0.22); }
+        .ba-label-after { right:16px; background:rgba(120,0,144,0.80); color:#fff; border:1px solid rgba(196,125,224,0.40); }
+        .rendering-badge { position:absolute; top:16px; right:16px; padding:5px 12px; background:rgba(120,0,144,0.92); border-radius:var(--r-pill); font-size:11px; font-weight:700; color:#fff; letter-spacing:.05em; text-transform:uppercase; }
+        .ba-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:36px; }
+        .ba-grid-item { position:relative; border-radius:16px; overflow:hidden; aspect-ratio:4/3; box-shadow:0 8px 28px rgba(26,0,31,0.12); }
+        .ba-grid-item img { width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
+        .ba-grid-item:hover img { transform:scale(1.04); }
+        .ba-item-tag { position:absolute; bottom:14px; left:14px; padding:5px 12px; border-radius:var(--r-pill); font-size:11.5px; font-weight:600; letter-spacing:.06em; text-transform:uppercase; backdrop-filter:blur(8px); }
+        .ba-item-tag.current { background:rgba(10,0,15,0.75); color:#fff; border:1px solid rgba(255,255,255,0.20); }
+        .ba-item-tag.rendering { background:rgba(120,0,144,0.82); color:#fff; border:1px solid rgba(196,125,224,0.35); }
+        .ba-rend-overlay { position:absolute; top:12px; right:12px; padding:4px 10px; background:rgba(120,0,144,0.92); border-radius:var(--r-pill); font-size:10px; font-weight:700; color:#fff; letter-spacing:.04em; text-transform:uppercase; }
+
+        /* ── VALUE-ADD ── */
+        .reno-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:36px; }
+        .reno-card { padding:30px 32px; }
+        .badge { display:inline-block; padding:5px 14px; border-radius:var(--r-pill); font-size:11px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; margin-bottom:22px; }
+        .badge-b { background:var(--t06); border:1px solid rgba(26,0,31,0.12); color:var(--t70); }
+        .badge-a { background:var(--gold-dim); border:1px solid var(--gold-border); color:var(--gold-dk); }
+        .reno-card h3 { font-family:var(--ff-d); font-size:24px; font-weight:600; margin-bottom:22px; }
+        .reno-list { list-style:none; display:flex; flex-direction:column; gap:10px; }
+        .reno-list li { display:flex; align-items:center; gap:10px; font-size:15px; color:var(--t70); }
+        .reno-list li::before { content:'→'; color:var(--gold-dk); flex-shrink:0; }
+
+        /* ── HUBSPOT FORM SECTION ── */
+        .form-section { padding:72px 0; position:relative; z-index:1; }
+        .form-header { text-align:center; margin-bottom:48px; }
+        .form-tag { display:inline-flex; align-items:center; gap:8px; padding:6px 16px; background:var(--purple-dim); border:1px solid var(--purple-border); border-radius:var(--r-pill); font-size:12px; font-weight:600; letter-spacing:.10em; text-transform:uppercase; color:var(--purple); margin-bottom:18px; }
+        .form-title { font-family:var(--ff-d); font-size:clamp(36px,4.5vw,58px); font-weight:600; line-height:1.12; letter-spacing:-.014em; margin-bottom:14px; }
+        .form-sub { font-size:17px; color:var(--t70); line-height:1.72; max-width:600px; margin:0 auto; font-weight:300; }
+        .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:28px; max-width:1100px; margin:0 auto; }
+        .hs-embed-wrap {
+            background:rgba(255,255,255,0.52);
+            border:1px solid var(--glass-b);
+            border-radius:var(--r-card);
+            overflow:hidden;
+            box-shadow:0 8px 32px rgba(26,0,31,0.08),inset 0 1px 0 rgba(255,255,255,0.96);
+            backdrop-filter:blur(24px);
+            padding:32px;
+        }
+        .hs-embed-header { margin-bottom:24px; padding-bottom:20px; border-bottom:1px solid rgba(26,0,31,0.08); }
+        .hs-embed-title { font-weight:600; font-size:16px; color:var(--text); margin-bottom:4px; }
+        .hs-embed-sub { font-size:13px; color:var(--t50); }
+        /* HubSpot overrides */
+        .hs-embed-wrap .hs-form input,
+        .hs-embed-wrap .hs-form select,
+        .hs-embed-wrap .hs-form textarea {
+            border-radius:10px !important;
+            border:1.5px solid rgba(26,0,31,0.14) !important;
+            font-family:var(--ff-b) !important;
+        }
+        .hs-embed-wrap .hs-button {
+            background:linear-gradient(135deg,#780090,#560068) !important;
+            border-radius:var(--r-pill) !important;
+            font-family:var(--ff-b) !important;
+            letter-spacing:.02em !important;
+        }
+        .form-details { display:flex; flex-direction:column; gap:20px; }
+        .form-deal-card { padding:32px; background:linear-gradient(135deg,#0a000f,#160020); border-radius:var(--r-card); color:#fff; }
+        .form-deal-label { font-size:11px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,0.45); margin-bottom:6px; }
+        .form-deal-title { font-family:var(--ff-d); font-size:28px; font-weight:600; margin-bottom:18px; font-style:italic; color:#fff; }
+        .form-detail-row { display:flex; align-items:center; gap:12px; padding:10px 0; border-bottom:1px solid rgba(255,255,255,0.08); font-size:14px; }
+        .form-detail-row:last-child { border-bottom:none; }
+        .form-detail-icon { font-size:18px; flex-shrink:0; width:28px; text-align:center; }
+        .form-detail-val { color:rgba(255,255,255,0.88); }
+        .form-detail-val strong { color:#fff; }
+        .form-will-cover { padding:28px; background:rgba(255,255,255,0.50); border:1px solid var(--glass-b); border-radius:var(--r-card); backdrop-filter:blur(20px); box-shadow:0 4px 20px rgba(26,0,31,0.06),inset 0 1px 0 rgba(255,255,255,0.96); }
+        .form-cover-title { font-size:12px; font-weight:600; letter-spacing:.10em; text-transform:uppercase; color:var(--purple); margin-bottom:16px; }
+        .form-cover-list { list-style:none; display:flex; flex-direction:column; gap:10px; }
+        .form-cover-list li { display:flex; align-items:center; gap:10px; font-size:14.5px; color:var(--t70); }
+        .form-cover-list li::before { content:'✓'; color:var(--gold-dk); font-weight:700; flex-shrink:0; }
+
+        /* ── DISCLAIMER ── */
+        .disc-sec { padding:48px 0; border-top:1px solid var(--t10); }
+        .disc-title { font-size:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--t70); margin-bottom:14px; }
+        .disc-text { font-size:11.5px; color:rgba(26,0,31,0.42); line-height:1.80; }
+        .disc-text + .disc-text { margin-top:12px; }
+
+        /* ── FOOTER ── */
+        footer { padding:44px 0; border-top:1px solid var(--t10); position:relative; z-index:1; }
+        .footer-inner { display:flex; align-items:center; justify-content:space-between; gap:22px; flex-wrap:wrap; }
+        .footer-logo { height:32px; width:auto; opacity:0.70; }
+        .footer-copy { font-size:13px; color:var(--t30); }
+        .footer-links { display:flex; gap:22px; flex-wrap:wrap; }
+        .fl { font-size:13px; color:var(--t30); text-decoration:none; transition:color .2s; }
+        .fl:hover { color:var(--t70); }
+
+        /* ── SCROLL ANIMATION ── */
+        .fu { opacity:0; transform:translateY(28px); transition:opacity .72s ease,transform .72s ease; }
+        .fu.vis { opacity:1; transform:translateY(0); }
+
+        /* ── RESPONSIVE ── */
+        @media(max-width:1024px){
+            .hero-content { grid-template-columns:1fr; gap:36px; }
+            .hero-bento { max-width:500px; }
+        }
+        @media(max-width:960px){
+            .why-grid,.hl-grid,.reno-grid,.stats-dark-grid,.form-grid,.ba-grid { grid-template-columns:1fr !important; }
+        }
+        @media(max-width:680px){
+            #nav { padding:13px 20px; }
+            .nav-logo { height:26px; }
+            .btn-ghost { display:none !important; }
+            .hero-content,.container,.dd-inner,.stats-dark-inner { padding-left:20px; padding-right:20px; }
+            .hero-bento { grid-template-columns:1fr; }
+            .hb-wide { grid-row:span 1; grid-column:span 1; }
+            .ba-compare { aspect-ratio:4/3; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="amb amb-1"></div>
+<div class="amb amb-2"></div>
+
+<!-- ═══════════════ NAV ═══════════════ -->
+<div class="nav-wrap">
+    <nav id="nav">
+        <a href="index.html" class="nav-brand">
+            <img src="LogoNew.png" alt="Kynectic Capital" class="nav-logo" style="height:44px;width:auto;">
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="index.html#about" class="nav-link">About Us</a></li>
+            <li><a href="index.html#portfolio" class="nav-link">Portfolio</a></li>
+            <li><a href="index.html#education" class="nav-link">Investor Education</a></li>
+            <li><a href="index.html#faq" class="nav-link">FAQ</a></li>
+            <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <a href="#" class="nav-offering-link">✦ Open for Investing</a>
+            <a href="#form-start" class="nav-cta">Express Interest →</a>
+        </div>
+    </nav>
+</div>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="hero" id="hero">
+    <div class="hero-vid-wrap">
+        <video autoplay muted loop playsinline poster="harmony-grove-marietta-ga-building-photo-2.jpg">
+            <source src="https://pub-fb7596bf9b6d4fc6805c980aef6c6709.r2.dev/Due%20Diligence.mov" type="video/mp4">
+            <img src="harmony-grove-marietta-ga-building-photo-2.jpg" alt="Harmony Grove">
+        </video>
+    </div>
+    <div class="hero-content">
+        <!-- LEFT: Text -->
+        <div class="hero-text">
+            <div class="hero-tag">Private Offering · Accredited Investors · Marietta, GA</div>
+            <h1 class="hero-title">
+                It's time to wake up<br>your <em>sleeping capital.</em>
+            </h1>
+            <p class="hero-sub">
+                Harmony Grove Apartments — a 75-unit multifamily asset in one of Atlanta's most resilient corridors. Structured for the physician and high-income professional who has earned the right to own without managing.
+            </p>
+            <div class="hero-ctas">
+                <a href="#form-start" class="btn btn-gold-lg">Join the Investment Group →</a>
+                <a href="#due-diligence" class="btn btn-hero-white">Watch Due Diligence Video</a>
+            </div>
+        </div>
+
+        <!-- RIGHT: Bento stat cards -->
+        <div class="hero-bento">
+            <div class="hb-card hb-frost">
+                <span class="hb-lbl">AAR</span>
+                <span class="hb-val"><span class="hb-accent">20%</span></span>
+                <span class="hb-sub">Annual Average Return</span>
+            </div>
+            <div class="hb-card hb-tax-card">
+                <span class="hb-lbl">Tax Savings</span>
+                <span class="hb-val">At least <span class="hb-accent">$35,000</span></span>
+                <span class="hb-sub">Figures shown are year 1 tax savings</span>
+            </div>
+            <div class="hb-card hb-gold-card">
+                <span class="hb-lbl">Occupancy</span>
+                <span class="hb-val">97<span class="hb-accent">%</span></span>
+                <span class="hb-sub">Current Resident Occupancy</span>
+            </div>
+            <div class="hb-card hb-navy-card">
+                <div>
+                    <span class="hb-lbl">Hold Period</span>
+                    <span class="hb-val">5<span class="hb-accent"> Yrs</span></span>
+                </div>
+                <div class="hb-timeline">
+                    <div class="hb-yr-dot active"></div>
+                    <div class="hb-yr-line"></div>
+                    <div class="hb-yr-dot active"></div>
+                    <div class="hb-yr-line"></div>
+                    <div class="hb-yr-dot"></div>
+                    <div class="hb-yr-line"></div>
+                    <div class="hb-yr-dot"></div>
+                    <div class="hb-yr-line"></div>
+                    <div class="hb-yr-dot"></div>
+                    <span class="hb-exit">→ EXIT</span>
+                </div>
+                <span class="hb-sub">Targeted exit horizon</span>
+            </div>
+            <div class="hb-card hb-wide">
+                <div class="hb-wide-val">
+                    <span class="hb-lbl">Economic Engine</span>
+                    <span class="hb-val" style="font-size:clamp(26px,2.8vw,38px);">$22.5<span class="hb-accent">B</span></span>
+                </div>
+                <div class="hb-wide-text">Combined annual economic impact of just 2 of the market's many drivers — The Battery Atlanta &amp; Lockheed Martin</div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-gallery">
+        <div class="hg-photo">
+            <img src="hg-hero-portrait.jpg" alt="Harmony Grove Apartments — community detail" loading="lazy"/>
+        </div>
+        <div class="hg-photo hg-photo--wide">
+            <img src="hg-hero-wide.jpg" alt="Harmony Grove Apartments — Marietta, GA exterior" loading="lazy"/>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════ STATS DARK BANNER ═══════════════ -->
+<div class="stats-dark" id="deal-overview">
+    <div class="stats-dark-inner">
+        <div class="stats-dark-top">By the numbers · Harmony Grove Apartments</div>
+        <div class="stats-dark-title">The Opportunity <em>at a glance</em></div>
+        <div class="stats-dark-grid">
+            <div class="sd-stat">
+                <div class="sd-val gold-val">75</div>
+                <div class="sd-lbl">Total Residential Units<br>Studio, 1BR &amp; 2BR mix</div>
+            </div>
+            <div class="sd-stat">
+                <div class="sd-val purple-val">$1,092</div>
+                <div class="sd-lbl">Avg. In-Place Rent<br>vs. $1,435 comp set avg.</div>
+            </div>
+            <div class="sd-stat">
+                <div class="sd-val gold-val">$281K</div>
+                <div class="sd-lbl">Upside Revenue<br>at Stabilization</div>
+            </div>
+            <div class="sd-stat">
+                <div class="sd-val purple-val">$18B</div>
+                <div class="sd-lbl">Battery Atlanta<br>Annual Economic Impact</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══════════════ WHY ═══════════════ -->
+<section class="sec">
+    <div class="container">
+        <div class="why-intro fu">
+            <div class="sec-lbl">For the Discerning Investor</div>
+            <h2 class="sec-title">Your income is high.<br>Your time is finite.<br>Your capital deserves more.</h2>
+            <p class="sec-body">For decades, physicians and high-income professionals could anchor their wealth through practice ownership and real estate. Those paths have narrowed. This is the alternative.</p>
+        </div>
+        <div class="why-grid">
+            <div class="why-card gc fu">
+                <div class="why-icon">🛡️</div>
+                <h3>A Portfolio Uncoupled From Market Anxiety</h3>
+                <p>Multifamily real estate has historically held its value through economic cycles — anchored by the one thing that never goes away: the fundamental need for housing.</p>
+            </div>
+            <div class="why-card gc fu">
+                <div class="why-icon">📊</div>
+                <h3>One of Your Largest Expenses Is Your Tax Bill</h3>
+                <p>Real estate syndications offer depreciation deductions that can shelter a meaningful portion of your passive distributions — strategies once available only to institutional investors, now structured for you.</p>
+            </div>
+            <div class="why-card gc fu">
+                <div class="why-icon">🏛️</div>
+                <h3>Institutional Ownership Without the Overhead</h3>
+                <p>As a limited partner, you hold equity in a professionally managed apartment community — no tenant calls, no maintenance decisions, no leasing complexity. You invest once. A dedicated team operates on your behalf.</p>
+            </div>
+            <div class="why-card gc fu">
+                <div class="why-icon">🌱</div>
+                <h3>Wealth That Outlives Your Career</h3>
+                <p>Generational wealth is built through assets that compound quietly — cash-flowing, appreciating, and providing your family with options that cannot be taken away.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════ DUE DILIGENCE VIDEO ═══════════════ -->
+<section class="dd-section" id="due-diligence">
+    <div class="dd-inner">
+        <div class="fu">
+            <div class="dd-tag">🎬 Due Diligence</div>
+            <h2 class="dd-title">See the Property.<br>Hear the Thesis.</h2>
+            <p class="dd-sub">A full on-the-ground walkthrough of Harmony Grove — the asset, the market, and the opportunity, explained by the operators who know it best. Scroll into view to unmute.</p>
+        </div>
+        <div class="dd-video-wrap fu">
+            <video id="dd-video" autoplay muted playsinline loop controls preload="auto">
+                <source src="https://pub-fb7596bf9b6d4fc6805c980aef6c6709.r2.dev/Due%20Diligence%20Main.mov" type="video/mp4">
+            </video>
+            <div class="dd-sound-indicator" id="sound-indicator">
+                <span id="sound-icon">🔇</span> <span id="sound-label">Scroll to unmute</span>
+            </div>
+        </div>
+        <div class="scroll-hint fu">
+            <span>↓</span> Sound activates automatically as you scroll into this section
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════ BEFORE / AFTER ═══════════════ -->
+<section class="ba-section" id="transformation">
+    <div class="container">
+        <div class="fu">
+            <div class="sec-lbl">The Transformation Vision</div>
+            <h2 class="sec-title">From Classic<br>to Contemporary</h2>
+            <p class="sec-body">With 100% of units in original, un-renovated condition, Harmony Grove presents a rare opportunity to execute a full-property transformation. The playbook is clear. The upside is measurable.</p>
+        </div>
+
+        <div class="ba-alert-bar fu">
+            <div class="ba-alert-icon">⚠️</div>
+            <div class="ba-alert-text">
+                <strong>Artist Renderings &amp; Comparable Examples — Not Actual Photographs</strong>
+                The "vision" images shown below are artist renderings, architectural concepts, or comparable renovated properties used to illustrate the planned transformation. They do not represent the current state of Harmony Grove and are subject to change. Actual renovation outcomes may vary.
+            </div>
+        </div>
+
+        <div class="ba-slider-wrap fu">
+            <div class="ba-slider-label">Drag to Compare — Playground Area · Current State vs. Vision</div>
+            <div class="ba-compare" id="ba-playground">
+                <img class="ba-before-img" src="before%20after/Picture1new.png" alt="Playground Vision - Artist Rendering">
+                <div class="ba-after-clip" id="ba-clip">
+                    <img src="before%20after/Picture1.png" alt="Current Playground - Before">
+                </div>
+                <div class="rendering-badge">Artist Rendering</div>
+                <div class="ba-divider" id="ba-divider">
+                    <div class="ba-divider-btn">⟺</div>
+                </div>
+                <div class="ba-label-before">Current State</div>
+                <div class="ba-label-after">✨ Vision</div>
+                <input type="range" min="0" max="100" value="50" id="ba-range" style="position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0;">
+            </div>
+        </div>
+
+        <div class="fu" style="margin-top:10px;">
+            <div class="sec-lbl" style="margin-bottom:16px;">Property — Current State &amp; Vision</div>
+        </div>
+        <div class="ba-grid">
+            <div class="ba-grid-item fu">
+                <img src="before%20after/PHOTO-2026-04-09-14-10-17%203.jpg" alt="Current State">
+                <div class="ba-item-tag current">Current State</div>
+            </div>
+            <div class="ba-grid-item fu">
+                <img src="before%20after/PHOTO-2026-04-09-14-10-17.jpg" alt="Vision">
+                <div class="ba-item-tag rendering">✨ Vision</div>
+                <div class="ba-rend-overlay">Artist Rendering</div>
+            </div>
+            <div class="ba-grid-item fu">
+                <img src="before%20after/PHOTO-2026-04-09-14-10-17%202.jpg" alt="Current State">
+                <div class="ba-item-tag current">Current State</div>
+            </div>
+            <div class="ba-grid-item fu">
+                <img src="before%20after/PHOTO-2026-04-09-14-10-17%204.jpg" alt="Vision">
+                <div class="ba-item-tag rendering">✨ Vision</div>
+                <div class="ba-rend-overlay">Artist Rendering</div>
+            </div>
+            <div class="ba-grid-item fu">
+                <img src="before%20after/harmony-grove-marietta-ga-building-photo-3.jpg" alt="Current State">
+                <div class="ba-item-tag current">Current State</div>
+            </div>
+            <div class="ba-grid-item fu">
+                <img src="before%20after/PHOTO-2026-04-09-14-10-17%205.jpg" alt="Vision">
+                <div class="ba-item-tag rendering">✨ Vision</div>
+                <div class="ba-rend-overlay">Artist Rendering</div>
+            </div>
+        </div>
+
+        <div class="reno-grid" style="margin-top:28px;">
+            <div class="reno-card gc fu">
+                <span class="badge badge-b">Current State — Classic Units</span>
+                <h3>Original Interiors</h3>
+                <ul class="reno-list">
+                    <li>Laminate countertops throughout</li>
+                    <li>White appliance package</li>
+                    <li>Grey-painted original wood cabinetry</li>
+                    <li>Vinyl plank flooring (kitchen) + carpet (bedrooms)</li>
+                    <li>W/D connections in select units (~20 units)</li>
+                    <li>Classic bathrooms with tile surround</li>
+                </ul>
+            </div>
+            <div class="reno-card gc fu">
+                <span class="badge badge-a">Post-Renovation — Upgraded Package</span>
+                <h3>Contemporary Finishes</h3>
+                <ul class="reno-list">
+                    <li>Speckled granite countertops</li>
+                    <li>Upgraded stainless steel appliance package</li>
+                    <li>New white shaker-style cabinet boxes</li>
+                    <li>Modern subway tile backsplash</li>
+                    <li>Upgraded plumbing hardware throughout</li>
+                    <li>Enhanced finishes aligned with submarket comps</li>
+                </ul>
+            </div>
+        </div>
+        <p style="font-size:11.5px;color:var(--t30);margin-top:14px;font-style:italic;">*Renovation projections based on comparable renovated properties in the immediate trade area. All figures are estimates subject to material variation.</p>
+    </div>
+</section>
+
+<!-- ═══════════════ FORM SECTION ═══════════════ -->
+<section class="form-section" id="register">
+    <div class="container">
+        <div class="form-header fu">
+            <div class="form-tag">📋 Express Interest</div>
+            <h2 class="form-title">Contact <em>Us</em></h2>
+            <p class="form-sub">Submit your details to receive the full Harmony Grove opportunity package — financials, market analysis, and next steps to participate.</p>
+        </div>
+
+        <div class="form-grid">
+            <!-- HubSpot Form Embed -->
+            <div class="hs-embed-wrap fu" id="form-start">
+                <div class="hs-embed-header">
+                    <div class="hs-embed-title">Harmony Grove — Investor Inquiry</div>
+                    <div class="hs-embed-sub">Kynectic Capital · Marietta, GA · 75 Units</div>
+                </div>
+
+                <!-- ╔══════════════════════════════════════════════╗
+                     ║  HUBSPOT FORM EMBED — REPLACE THIS BLOCK     ║
+                     ║                                              ║
+                     ║  1. Add this script to <head>:               ║
+                     ║     <script src="//js.hsforms.net/forms/     ║
+                     ║     embed/v2.js"></script>                   ║
+                     ║                                              ║
+                     ║  2. Replace the block below with:            ║
+                     ║     <script>                                 ║
+                     ║       hbspt.forms.create({                   ║
+                     ║         region: "na1",                       ║
+                     ║         portalId: "YOUR_PORTAL_ID",          ║
+                     ║         formId: "YOUR_FORM_ID"               ║
+                     ║       });                                    ║
+                     ║     </script>                                ║
+                     ╚══════════════════════════════════════════════╝ -->
+                <div style="padding:40px 24px;text-align:center;color:var(--t50);">
+                    <div style="font-size:36px;margin-bottom:16px;">📋</div>
+                    <p style="font-size:14px;line-height:1.6;"><strong style="color:var(--text);">HubSpot form goes here.</strong><br>Replace this block with your HubSpot embed code.</p>
+                </div>
+            </div>
+
+            <!-- Deal Details -->
+            <div class="form-details">
+                <div class="form-deal-card fu">
+                    <div class="form-deal-label">The Opportunity</div>
+                    <div class="form-deal-title">Harmony Grove<br>Apartments</div>
+                    <div class="form-detail-row"><span class="form-detail-icon">📍</span><span class="form-detail-val"><strong>Marietta, GA</strong> · Cobb County</span></div>
+                    <div class="form-detail-row"><span class="form-detail-icon">🏠</span><span class="form-detail-val"><strong>75 Units</strong> · Studio, 1BR &amp; 2BR</span></div>
+                    <div class="form-detail-row"><span class="form-detail-icon">📈</span><span class="form-detail-val"><strong>20%+</strong> Projected AAR</span></div>
+                    <div class="form-detail-row"><span class="form-detail-icon">📅</span><span class="form-detail-val"><strong>5-Year</strong> Target Hold Period</span></div>
+                    <div class="form-detail-row"><span class="form-detail-icon">🔒</span><span class="form-detail-val">Accredited Investors Only · Private Offering</span></div>
+                </div>
+                <div class="gc fu" style="padding:22px 26px;display:flex;align-items:center;gap:14px;">
+                    <span style="font-size:26px;flex-shrink:0;">🔒</span>
+                    <p style="font-size:13.5px;color:var(--t70);line-height:1.60;">This offering is limited to accredited investors. Your information is held in strict confidence.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════ DISCLAIMER ═══════════════ -->
+<section class="disc-sec">
+    <div class="container">
+        <div class="disc-title">Important Disclosures &amp; Legal Disclaimer</div>
+        <p class="disc-text">This webpage is for informational purposes only and does not constitute an offer to sell, or a solicitation of an offer to purchase, any securities. Any offering of securities will be made only pursuant to a formal offering memorandum, private placement memorandum, and/or subscription agreement containing important information including material risk factors, fees, and potential conflicts of interest.</p>
+        <p class="disc-text">All financial projections, assumptions, pro forma figures, and forward-looking statements are based on information believed to be reliable but subject to material variation. No representation, warranty, or guarantee of any specific return is made or implied by Kynectic Capital, or any of their affiliates. Past performance is not indicative of future results.</p>
+        <p class="disc-text">This opportunity is available exclusively to "accredited investors" as defined under Rule 501(a) of Regulation D under the Securities Act of 1933. Investments in private real estate syndications are illiquid, speculative, involve a high degree of risk, and may result in the partial or complete loss of invested principal. Artist renderings and before/after imagery are illustrative concepts only and do not represent guaranteed outcomes. Deal highlights sourced from the CBRE Offering Memorandum (January 6, 2026). © 2026 Kynectic Capital. All Rights Reserved.</p>
+    </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer>
+    <div class="container">
+        <div class="footer-inner">
+            <img src="Logo.png.webp" alt="Kynectic Capital" class="footer-logo">
+            <div class="footer-copy">© 2026 Kynectic Capital · All Rights Reserved</div>
+            <div class="footer-links">
+                <a href="#form-start" class="fl">Express Interest</a>
+                <a href="#due-diligence" class="fl">Due Diligence</a>
+                <a href="#transformation" class="fl">The Vision</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- ═══════════════ SCRIPTS ═══════════════ -->
+<script>
+// ── Scroll-in fade-up
+const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+}, { threshold: 0.07, rootMargin: '0px 0px -48px 0px' });
+document.querySelectorAll('.fu').forEach(el => obs.observe(el));
+
+// Stagger grid children
+document.querySelectorAll('.why-grid,.hl-grid,.reno-grid,.ba-grid,.stats-dark-grid').forEach(grid => {
+    grid.querySelectorAll('.fu').forEach((child, i) => { child.style.transitionDelay = `${i * 0.075}s`; });
+});
+
+// ── Nav scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) {
+        nav.style.background = 'linear-gradient(180deg, rgba(10,0,15,0.72) 0%, rgba(10,0,15,0.60) 100%)';
+        nav.style.borderColor = 'rgba(255,255,255,0.12)';
+        nav.style.backdropFilter = 'blur(64px) saturate(200%) brightness(1.06) contrast(1.04)';
+    } else {
+        nav.style.background = 'linear-gradient(180deg, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.04) 100%)';
+        nav.style.borderColor = 'rgba(255,255,255,0.16)';
+        nav.style.backdropFilter = 'blur(64px) saturate(200%) brightness(1.06) contrast(1.04)';
+    }
+}, { passive: true });
+
+// ── Before/After Slider
+(function() {
+    const container = document.getElementById('ba-playground');
+    const clip = document.getElementById('ba-clip');
+    const divider = document.getElementById('ba-divider');
+    const range = document.getElementById('ba-range');
+    let dragging = false;
+
+    function setPos(pct) {
+        pct = Math.max(0, Math.min(100, pct));
+        clip.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
+        divider.style.left = pct + '%';
+        range.value = pct;
+    }
+
+    range.addEventListener('input', function() { setPos(parseFloat(this.value)); });
+
+    function onMove(clientX) {
+        const rect = container.getBoundingClientRect();
+        setPos(((clientX - rect.left) / rect.width) * 100);
+    }
+
+    container.addEventListener('mousedown', e => { dragging = true; onMove(e.clientX); });
+    window.addEventListener('mousemove', e => { if (dragging) onMove(e.clientX); });
+    window.addEventListener('mouseup', () => { dragging = false; });
+    container.addEventListener('touchstart', e => { dragging = true; onMove(e.touches[0].clientX); }, { passive: true });
+    window.addEventListener('touchmove', e => { if (dragging) onMove(e.touches[0].clientX); }, { passive: true });
+    window.addEventListener('touchend', () => { dragging = false; });
+
+    setPos(50);
+})();
+
+// ── Due Diligence Video — Autoplay + Scroll to Unmute
+(function() {
+    const vid = document.getElementById('dd-video');
+    const indicator = document.getElementById('sound-indicator');
+    const icon = document.getElementById('sound-icon');
+    const label = document.getElementById('sound-label');
+    if (!vid) return;
+    let unmuted = false;
+
+    vid.muted = true;
+    vid.play().catch(() => {});
+    vid.addEventListener('canplay', () => { vid.play().catch(() => {}); }, { once: true });
+
+    const ddObs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) { vid.play().catch(() => {}); }
+            if (entry.intersectionRatio >= 0.55 && !unmuted) {
+                vid.muted = false; unmuted = true;
+                indicator.classList.add('sound-on');
+                icon.textContent = '🔊'; label.textContent = 'Sound on';
+            } else if (entry.intersectionRatio < 0.30 && unmuted) {
+                vid.muted = true; unmuted = false;
+                indicator.classList.remove('sound-on');
+                icon.textContent = '🔇'; label.textContent = 'Scroll to unmute';
+            }
+        });
+    }, { threshold: [0.0, 0.30, 0.55, 1.0] });
+
+    ddObs.observe(vid);
+})();
+
+// ── Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+        const t = document.querySelector(a.getAttribute('href'));
+        if (t) {
+            e.preventDefault();
+            window.scrollTo({ top: t.getBoundingClientRect().top + window.pageYOffset - 88, behavior: 'smooth' });
+        }
+    });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,2253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Kynectic Capital — Invest with Clarity. Thrive with Momentum.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Serif+Display:ital@0;1&family=Manrope:wght@200;300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg-0: #0a000f;
+  --bg-1: #160020;
+  --bg-2: #2a0040;
+  --purple: #780090;
+  --deep: #560068;
+  --gold: #e5c158;
+  --gold-deep: #b8923a;
+  --gold-light: #f5d676;
+  --ink: #f4ecff;
+  --ink-soft: #cdb8e4;
+  --ink-mute: #9a86b8;
+  --line: rgba(229, 193, 88, 0.18);
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-bg-strong: rgba(255, 255, 255, 0.06);
+  --glass-border: rgba(255, 255, 255, 0.10);
+  --glass-blur: 18px;
+  --display-font: 'Cormorant Garamond', serif;
+  --sans: 'Manrope', system-ui, sans-serif;
+  --max: 1280px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--bg-0); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+body { overflow-x: hidden; }
+a { color: inherit; text-decoration: none; cursor: pointer; }
+button { font-family: inherit; cursor: pointer; }
+img { max-width: 100%; display: block; }
+
+.serif { font-family: var(--display-font); font-weight: 500; letter-spacing: -0.01em; }
+.gold-shimmer {
+  background: linear-gradient(110deg, var(--gold-deep) 0%, var(--gold-light) 35%, var(--gold) 55%, var(--gold-light) 75%, var(--gold-deep) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 8s linear infinite;
+}
+@keyframes shimmer { to { background-position: 200% center; } }
+
+.container { max-width: var(--max); margin: 0 auto; padding: 0 32px; position: relative; z-index: 2; }
+.container--narrow { max-width: 880px; }
+main { position: relative; z-index: 1; }
+
+/* ── ATMOSPHERE ─────────────────────────────────── */
+.atmosphere { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
+  background: radial-gradient(120% 80% at 50% 0%, var(--bg-2) 0%, var(--bg-1) 40%, var(--bg-0) 80%);
+}
+.bg-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(229,193,88,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(229,193,88,0.04) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+}
+.vignette {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at center, transparent 0%, var(--bg-0) 95%);
+  z-index: 3;
+}
+.orb { position: absolute; border-radius: 50%; filter: blur(60px); opacity: 0.55; will-change: transform; }
+.orb--a { width: 800px; height: 800px; top: -200px; left: -200px; animation: drift1 28s ease-in-out infinite; }
+.orb--b { width: 700px; height: 700px; top: 30%; right: -250px; animation: drift2 32s ease-in-out infinite; }
+.orb--c { width: 600px; height: 600px; bottom: -150px; left: 30%; opacity: 0.4; animation: drift3 36s ease-in-out infinite; }
+.orb--d { width: 500px; height: 500px; top: 60%; left: 10%; opacity: 0.35; animation: drift1 40s ease-in-out infinite reverse; }
+@keyframes drift1 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(120px,80px) scale(1.1); } }
+@keyframes drift2 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-100px,120px) scale(0.9); } }
+@keyframes drift3 { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-80px,-100px); } }
+.grain {
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='200' height='200' filter='url(%23n)' opacity='0.7'/></svg>");
+  opacity: 0.05; mix-blend-mode: overlay; pointer-events: none;
+}
+
+/* ── GLASS BASE ─────────────────────────────────── */
+.glass {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(var(--glass-blur)) saturate(1.4);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.4);
+  border-radius: 24px;
+  position: relative;
+}
+.nav {
+  background: linear-gradient(
+    180deg,
+    rgba(86, 0, 104, 0.88) 0%,
+    rgba(42, 0, 64, 0.86) 100%
+  ) !important;
+  border: 0.5px solid rgba(229, 193, 88, 0.35) !important;
+  backdrop-filter: blur(24px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(180%) !important;
+  box-shadow:
+    inset 0 0.5px 0 rgba(255,255,255,0.18),
+    inset 0 -1px 0 rgba(0,0,0,0.25),
+    0 8px 28px rgba(86, 0, 104, 0.35),
+    0 2px 6px rgba(0,0,0,0.18) !important;
+}
+.nav-links a { color: rgba(245, 214, 118, 0.85); }
+.nav-links a:hover { color: var(--gold-light); background: rgba(229,193,88,0.10); }
+.nav-links a.active { color: var(--gold-light); }
+.brand-name { color: #ffffff; }
+.glass--strong {
+  background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.18),
+    inset 0 -1px 0 rgba(0,0,0,0.2),
+    0 30px 80px -30px rgba(0,0,0,0.6);
+}
+.glass--strong::before {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  background: linear-gradient(135deg, rgba(229,193,88,0.22), transparent 30%, transparent 70%, rgba(229,193,88,0.10));
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: xor; -webkit-mask-composite: xor;
+  padding: 1px;
+  opacity: 0.6;
+}
+.glass--soft {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ── NAV ─────────────────────────────────────────── */
+.nav-wrap { position: fixed; top: 24px; left: 0; right: 0; z-index: 100; padding: 0 32px; transition: top 0.3s ease; }
+.nav-wrap.is-scrolled { top: 12px; }
+.nav {
+  max-width: 1320px; margin: 0 auto;
+  display: flex; align-items: center; gap: 32px;
+  padding: 12px 12px 12px 24px; border-radius: 100px;
+}
+.nav-brand { display: flex; align-items: center; gap: 12px; }
+.brand-mark { display: flex; }
+.brand-text { display: flex; flex-direction: column; line-height: 1; }
+.brand-name { font-family: var(--display-font); font-size: 22px; letter-spacing: 0.02em; color: var(--ink); }
+.brand-sub { font-size: 10px; letter-spacing: 0.3em; color: var(--gold); margin-top: 4px; }
+
+.nav-links { list-style: none; display: flex; gap: 4px; flex: 1; justify-content: center; }
+.nav-links a {
+  position: relative; padding: 8px 14px; font-size: 13px; letter-spacing: 0.04em;
+  color: var(--ink-soft); border-radius: 100px; transition: color .25s, background .25s;
+}
+.nav-links a:hover { color: var(--ink); background: rgba(255,255,255,0.04); }
+.nav-links a.active { color: var(--gold-light); }
+.nav-underline {
+  position: absolute; left: 14px; right: 14px; bottom: 4px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+.nav-cta { padding: 10px 20px; font-size: 13px; }
+.nav-burger { display: none; background: none; border: none; flex-direction: column; gap: 5px; padding: 10px; }
+.nav-burger span { width: 22px; height: 1.5px; background: var(--gold-light); border-radius: 2px; }
+.mobile-menu { display: none; }
+
+/* ── BUTTONS ────────────────────────────────────── */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 14px 26px; border-radius: 100px;
+  font-size: 14px; letter-spacing: 0.04em; font-weight: 500;
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+  position: relative; overflow: hidden;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn--gold {
+  background: linear-gradient(135deg, var(--gold-light), var(--gold) 50%, var(--gold-deep));
+  color: #1a0a2e;
+  border: 1px solid rgba(255,255,255,0.5);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.5),
+    inset 0 -2px 4px rgba(0,0,0,0.18),
+    0 12px 40px -10px rgba(229,193,88,0.5);
+}
+.btn--gold:hover { box-shadow: inset 0 1px 0 rgba(255,255,255,0.6), inset 0 -2px 4px rgba(0,0,0,0.2), 0 18px 50px -10px rgba(229,193,88,0.65); }
+.btn--gold::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(120deg, transparent 35%, rgba(255,255,255,0.5) 50%, transparent 65%);
+  transform: translateX(-100%); transition: transform .8s;
+}
+.btn--gold:hover::after { transform: translateX(100%); }
+.btn--glass {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(229,193,88,0.35);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  color: var(--gold-light);
+}
+.btn--glass:hover { background: rgba(229,193,88,0.08); border-color: var(--gold); }
+.btn--full { width: 100%; justify-content: center; }
+
+/* ── COMMON ─────────────────────────────────────── */
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 11px; letter-spacing: 0.4em; color: var(--gold);
+  text-transform: uppercase; margin-bottom: 28px;
+}
+.eyebrow-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 12px var(--gold);
+}
+.gold-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold) 50%, transparent);
+  margin: 32px 0;
+}
+.center { text-align: center; }
+.center-flex { justify-content: center; }
+.mt-48 { margin-top: 48px; }
+.muted { color: var(--ink-mute); }
+.small { font-size: 12px; }
+.gold { color: var(--gold-light); }
+
+.section { padding: 60px 0; position: relative; }
+.section-head { margin-bottom: 56px; }
+.section-head.center { text-align: center; }
+.section-head.center .eyebrow { justify-content: center; }
+.section-title { font-size: clamp(36px, 5vw, 64px); line-height: 1.05; font-weight: 300; letter-spacing: -0.02em; color: var(--ink); }
+.section-sub { font-size: 18px; line-height: 1.6; color: var(--ink-soft); margin-top: 20px; max-width: 640px; }
+.section-head.center .section-sub { margin-left: auto; margin-right: auto; }
+
+/* ── HERO ───────────────────────────────────────── */
+.hero-video-wrap { position: relative; overflow: hidden; }
+.hero-bg-video {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; z-index: 0; pointer-events: none;
+  filter: brightness(1.12) saturate(1.15) contrast(1.05);
+}
+.hero-video-overlay {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background:
+    radial-gradient(55% 50% at 25% 45%, rgba(229,193,88,0.14) 0%, rgba(229,193,88,0.04) 40%, transparent 70%),
+    linear-gradient(180deg, transparent 0%, transparent 65%, rgba(12,4,24,0.55) 100%),
+    linear-gradient(90deg, rgba(12,4,24,0.72) 0%, rgba(12,4,24,0.55) 20%, rgba(12,4,24,0.28) 45%, transparent 60%);
+}
+.hero {
+  padding: 130px 32px 50px; max-width: var(--max); margin: 0 auto;
+  position: relative; z-index: 2; min-height: auto;
+  display: grid; grid-template-columns: 1.2fr 1fr; gap: 64px; align-items: center;
+}
+.hero-inner { max-width: 720px; }
+.hero-pill {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 8px 18px; border-radius: 100px;
+  font-size: 12px; letter-spacing: 0.08em; color: var(--ink-soft);
+  margin-bottom: 32px;
+}
+.pill-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 10px var(--gold); animation: pulse 2s ease-in-out infinite; }
+.pill-label { color: var(--gold-light); font-weight: 600; letter-spacing: 0.15em; }
+.pill-sep { color: var(--ink-mute); }
+@keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.6; transform: scale(1.3); } }
+
+.hero-title { font-size: clamp(44px, 6.5vw, 84px); line-height: 1.02; font-weight: 200; letter-spacing: -0.03em; color: var(--ink); text-shadow: 0 2px 18px rgba(20,4,32,0.55), 0 1px 3px rgba(20,4,32,0.40); }
+.hero-title .serif { display: inline-block; font-weight: 500; font-style: italic; }
+.hero-title .gold-shimmer {
+  background: linear-gradient(110deg, #f5d676 0%, #ffe896 30%, #fff2b8 50%, #ffe896 70%, #f5d676 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 12px rgba(245,214,118,0.35));
+}
+.hero-sub { font-size: 18px; line-height: 1.7; color: var(--ink-soft); margin-top: 32px; max-width: 560px; text-shadow: 0 1px 10px rgba(20,4,32,0.55); }
+.hero-pill { text-shadow: 0 1px 6px rgba(20,4,32,0.45); }
+.stat-num { text-shadow: 0 2px 14px rgba(20,4,32,0.55); }
+.stat-label { text-shadow: 0 1px 6px rgba(20,4,32,0.50); }
+
+.hero-ctas { display: flex; gap: 16px; margin-top: 40px; flex-wrap: wrap; }
+.hero-ctas.center-flex { justify-content: center; }
+
+.hero-stats { display: flex; align-items: center; gap: 32px; margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--line); }
+.stat-num { font-size: 38px; color: var(--ink); }
+.stat-num .pct { font-size: 24px; color: var(--gold); }
+.stat-label { font-size: 11px; color: var(--ink-mute); letter-spacing: 0.1em; margin-top: 8px; line-height: 1.4; }
+.stat-sep { width: 1px; height: 50px; background: var(--line); }
+
+/* Hero floating cards */
+.hero-card-frame { position: relative; height: 600px; }
+.floating-card { position: absolute; padding: 24px; border-radius: 24px; min-width: 220px; }
+.fc-1 { top: 20px; right: 0; width: 320px; animation: float 6s ease-in-out infinite; }
+.fc-2 { top: 220px; left: -20px; width: 240px; animation: float 7s ease-in-out infinite 1s; }
+.fc-3 { bottom: 30px; right: 40px; width: 260px; animation: float 8s ease-in-out infinite 0.5s; }
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+.fc-row { display: flex; align-items: center; gap: 8px; }
+.fc-dot { width: 8px; height: 8px; border-radius: 50%; background: #4ade80; box-shadow: 0 0 10px #4ade80; }
+.fc-label { font-size: 11px; letter-spacing: 0.15em; color: #4ade80; text-transform: uppercase; }
+.fc-title { font-size: 18px; font-weight: 500; margin-top: 12px; color: var(--ink); }
+.fc-meta { font-size: 12px; color: var(--ink-mute); margin-top: 4px; }
+.fc-bar { height: 4px; background: rgba(255,255,255,0.08); border-radius: 4px; margin-top: 18px; overflow: hidden; }
+.fc-bar-fill { height: 100%; background: linear-gradient(90deg, var(--gold-deep), var(--gold-light)); border-radius: 4px; }
+.fc-bar-meta { display: flex; justify-content: space-between; font-size: 11px; margin-top: 8px; color: var(--ink-mute); letter-spacing: 0.05em; }
+.fc-bar-meta span:last-child { color: var(--gold-light); }
+.fc-tiny { font-size: 10px; letter-spacing: 0.2em; color: var(--ink-mute); text-transform: uppercase; }
+.fc-big { font-size: 32px; color: var(--ink); margin-top: 8px; line-height: 1; }
+.fc-trend { font-size: 12px; color: #4ade80; margin-top: 8px; }
+.fc-trend.gold { color: var(--gold-light); }
+/* Gold liquid glass offering card */
+.fc-gold-card {
+  background: linear-gradient(135deg, rgba(245,214,118,0.42) 0%, rgba(229,193,88,0.28) 50%, rgba(184,146,58,0.20) 100%);
+  border: 1px solid rgba(245,214,118,0.70);
+  box-shadow: 0 8px 32px rgba(229,193,88,0.30), inset 0 1px 0 rgba(255,255,255,0.60), inset 0 -1px 0 rgba(255,255,255,0.20);
+  backdrop-filter: blur(40px) saturate(200%) brightness(1.08);
+  -webkit-backdrop-filter: blur(40px) saturate(200%) brightness(1.08);
+}
+.fc-gold-dot { width: 8px; height: 8px; border-radius: 50%; background: #4ade80; box-shadow: 0 0 10px #4ade80; }
+.fc-gold-label { font-size: 11px; letter-spacing: 0.15em; color: #4ade80; text-transform: uppercase; font-weight: 600; }
+.fc-gold-name { font-size: 20px; font-weight: 600; margin-top: 12px; color: #ffffff; line-height: 1.2; font-family: var(--display-font); }
+.fc-gold-loc { font-size: 12px; color: rgba(255,255,255,0.70); margin-top: 4px; }
+.fc-gold-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 16px; }
+.fc-gold-stat { background: rgba(255,255,255,0.18); border-radius: 12px; padding: 10px 12px; border: 1px solid rgba(255,255,255,0.30); }
+.fc-gold-stat-val { font-size: 22px; font-weight: 700; color: #ffffff; font-family: var(--display-font); line-height: 1; }
+.fc-gold-stat-lbl { font-size: 10px; color: rgba(255,255,255,0.70); letter-spacing: 0.05em; margin-top: 4px; line-height: 1.3; }
+.fc-gold-cta { display: block; margin-top: 16px; text-align: center; padding: 9px; background: rgba(86,0,104,0.85); border-radius: 100px; font-size: 12px; font-weight: 600; color: #f5d676; letter-spacing: 0.06em; text-decoration: none; transition: background 0.2s; }
+.fc-gold-cta:hover { background: rgba(120,0,144,0.95); }
+/* Offering nav link */
+.nav-offering-link {
+  padding: 6px 14px; font-size: 12px; font-weight: 600; letter-spacing: 0.04em;
+  background: linear-gradient(135deg, rgba(245,214,118,0.22), rgba(229,193,88,0.14));
+  border: 1px solid rgba(229,193,88,0.45);
+  border-radius: 100px; color: var(--gold-light) !important;
+  transition: background 0.2s, border-color 0.2s;
+}
+.nav-offering-link:hover { background: linear-gradient(135deg, rgba(245,214,118,0.35), rgba(229,193,88,0.25)) !important; border-color: rgba(229,193,88,0.70) !important; }
+
+/* ── MARQUEE ─────────────────────────────────────── */
+.marquee {
+  overflow: hidden; padding: 28px 0;
+  border-top: 1px solid rgba(184,146,58,0.25); border-bottom: 1px solid rgba(184,146,58,0.25);
+  background: #ffffff; position: relative; z-index: 2;
+}
+.marquee-track {
+  display: flex; gap: 60px; white-space: nowrap; animation: scroll 30s linear infinite;
+  mask: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+  -webkit-mask: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+}
+.marquee-item { font-family: var(--display-font); font-size: 28px; font-style: italic; color: var(--gold-deep); letter-spacing: 0.05em; }
+.marquee-item em { color: var(--purple); font-style: normal; margin: 0 12px; }
+@keyframes scroll { to { transform: translateX(-50%); } }
+
+/* ── PROMISE GRID ────────────────────────────────── */
+.promise-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.promise-copy .lede { font-size: 22px; line-height: 1.5; color: var(--ink); margin-bottom: 20px; font-weight: 300; }
+.promise-copy p { color: var(--ink-soft); line-height: 1.7; margin-bottom: 16px; }
+.promise-visual { position: relative; }
+.image-stack { position: relative; aspect-ratio: 1/1; }
+.image-card { position: absolute; inset: 0; border-radius: 28px; overflow: hidden; padding: 12px; }
+.image-card img, .image-card video { width: 100%; height: 100%; object-fit: cover; border-radius: 20px; }
+.image-badge {
+  position: absolute; bottom: -30px; right: -30px;
+  padding: 24px 32px; border-radius: 20px; z-index: 2;
+  min-width: 220px; text-align: left;
+}
+.ib-tiny { font-size: 10px; letter-spacing: 0.2em; color: var(--ink-mute); text-transform: uppercase; }
+.ib-big { font-size: 42px; color: var(--gold-light); margin-top: 6px; line-height: 1; }
+.ib-mini { font-size: 11px; color: var(--ink-soft); margin-top: 6px; letter-spacing: 0.05em; }
+.image-orb-1 { display: none; }
+.image-orb-2 { display: none; }
+
+/* ── VALUES ─────────────────────────────────────── */
+.section--light,
+.section--warm,
+.section--white {
+  background: #ffffff;
+  position: relative;
+  z-index: 2;
+}
+.section--light .eyebrow,
+.section--warm .eyebrow,
+.section--white .eyebrow { color: var(--gold-deep); }
+.section--light .eyebrow-dot,
+.section--warm .eyebrow-dot,
+.section--white .eyebrow-dot { background: var(--gold-deep); box-shadow: 0 0 8px var(--gold-deep); }
+.section--light .section-title,
+.section--warm .section-title,
+.section--white .section-title { color: #1a001f; }
+.section--light .section-sub,
+.section--warm .section-sub,
+.section--white .section-sub { color: #4a3450; }
+.section--light .gold-divider,
+.section--warm .gold-divider,
+.section--white .gold-divider { background: linear-gradient(90deg, transparent, var(--gold-deep) 50%, transparent); }
+.section--light .gold-shimmer,
+.section--warm .gold-shimmer,
+.section--white .gold-shimmer {
+  background: linear-gradient(110deg, var(--gold-deep) 0%, var(--gold) 35%, var(--gold-deep) 55%, var(--gold) 75%, var(--gold-deep) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.section--light .lede,
+.section--warm .lede,
+.section--white .lede { color: #1a001f; }
+.section--light .promise-copy p,
+.section--warm .promise-copy p,
+.section--white .promise-copy p,
+.section--light .founder-copy p,
+.section--warm .founder-copy p,
+.section--white .founder-copy p,
+.section--light .about-copy p,
+.section--warm .about-copy p,
+.section--white .about-copy p,
+.section--light .ebook-copy p,
+.section--warm .ebook-copy p,
+.section--white .ebook-copy p { color: #4a3450; }
+.section--light .about-mission,
+.section--warm .about-mission,
+.section--white .about-mission { color: var(--gold-deep); }
+.section--light .footer-headline,
+.section--warm .footer-headline,
+.section--white .footer-headline { color: #1a001f; }
+.section--light .tr-big,
+.section--warm .tr-big,
+.section--white .tr-big {
+  background: linear-gradient(110deg, var(--gold-deep) 0%, var(--gold) 40%, var(--gold-deep) 70%, var(--gold) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+.section--light .tr-label,
+.section--warm .tr-label,
+.section--white .tr-label { color: #4a3450; }
+
+/* ── BRIGHT-MODE CARD THEMES ────────────────────── */
+.card-purple {
+  background: linear-gradient(145deg, #780090 0%, #560068 100%) !important;
+  border: 1px solid rgba(229,193,88,0.40) !important;
+  box-shadow: 0 6px 18px rgba(20,4,32,0.10), 0 2px 4px rgba(20,4,32,0.06) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+.card-purple::before { display: none !important; }
+.card-purple .value-name,
+.card-purple .reason-title,
+.card-purple .choose-title,
+.card-purple .step-title,
+.card-purple .deal-title,
+.card-purple .faq-q-text,
+.card-purple .info-big,
+.card-purple .article-title,
+.card-purple .property-name,
+.card-purple .ps-val,
+.card-purple .deal-stat-big,
+.card-purple .fb-name,
+.card-purple h2,
+.card-purple h3,
+.card-purple .section-title { color: var(--gold-light) !important; }
+.card-purple .value-desc,
+.card-purple .reason-desc,
+.card-purple .choose-desc,
+.card-purple .step-desc,
+.card-purple .deal-sub,
+.card-purple .faq-a,
+.card-purple .article-desc,
+.card-purple .property-detail-row,
+.card-purple .pd-key,
+.card-purple .pd-val,
+.card-purple .deal-stat-label,
+.card-purple .ps-key,
+.card-purple .info-tiny,
+.card-purple p,
+.card-purple .section-sub { color: rgba(245,214,118,0.85) !important; }
+.card-purple .value-roman,
+.card-purple .reason-index,
+.card-purple .choose-num,
+.card-purple .step-num,
+.card-purple .faq-num,
+.card-purple .deal-check,
+.card-purple .property-loc,
+.card-purple .fc-tiny,
+.card-purple .ib-tiny,
+.card-purple .fb-tiny,
+.card-purple .eb-tiny,
+.card-purple .article-tag,
+.card-purple .eyebrow,
+.card-purple .eyebrow-dot,
+.card-purple .gold,
+.card-purple .gold-shimmer { color: var(--gold-light) !important; -webkit-text-fill-color: var(--gold-light) !important; background: transparent !important; }
+.card-purple .eyebrow-dot { background: var(--gold-light) !important; box-shadow: 0 0 10px var(--gold-light) !important; }
+.card-purple .gold-divider { background: linear-gradient(90deg, transparent, var(--gold-light) 50%, transparent) !important; }
+.card-purple .ib-big,
+.card-purple .fb-credentials,
+.card-purple .article-foot,
+.card-purple .article-foot span,
+.card-purple .pd-val,
+.card-purple .muted,
+.card-purple .small,
+.card-purple .deal-stat-label { color: rgba(245,214,118,0.75) !important; }
+
+.card-gold {
+  background: linear-gradient(145deg, #f5d676 0%, #e5c158 45%, #b8923a 100%) !important;
+  border: 1px solid rgba(86,0,104,0.30) !important;
+  box-shadow: 0 6px 18px rgba(20,4,32,0.10), 0 2px 4px rgba(20,4,32,0.06) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+.card-gold::before { display: none !important; }
+.card-gold .value-name,
+.card-gold .reason-title,
+.card-gold .choose-title,
+.card-gold .step-title,
+.card-gold .deal-title,
+.card-gold .faq-q-text,
+.card-gold .info-big,
+.card-gold .article-title,
+.card-gold .property-name,
+.card-gold .ps-val,
+.card-gold .deal-stat-big,
+.card-gold .fb-name,
+.card-gold h2,
+.card-gold h3,
+.card-gold .section-title { color: #4a0058 !important; }
+.card-gold .value-desc,
+.card-gold .reason-desc,
+.card-gold .choose-desc,
+.card-gold .step-desc,
+.card-gold .deal-sub,
+.card-gold .faq-a,
+.card-gold .article-desc,
+.card-gold .property-detail-row,
+.card-gold .pd-key,
+.card-gold .pd-val,
+.card-gold .deal-stat-label,
+.card-gold .ps-key,
+.card-gold .info-tiny,
+.card-gold p,
+.card-gold .section-sub { color: rgba(74,0,88,0.88) !important; }
+.card-gold .value-roman,
+.card-gold .reason-index,
+.card-gold .choose-num,
+.card-gold .step-num,
+.card-gold .faq-num,
+.card-gold .deal-check,
+.card-gold .property-loc,
+.card-gold .fc-tiny,
+.card-gold .ib-tiny,
+.card-gold .fb-tiny,
+.card-gold .eb-tiny,
+.card-gold .article-tag,
+.card-gold .eyebrow,
+.card-gold .gold,
+.card-gold .gold-shimmer { color: #560068 !important; -webkit-text-fill-color: #560068 !important; background: transparent !important; }
+.card-gold .eyebrow-dot { background: #560068 !important; box-shadow: 0 0 8px #560068 !important; }
+.card-gold .gold-divider { background: linear-gradient(90deg, transparent, #560068 50%, transparent) !important; }
+.card-gold .article-tag { border-color: rgba(86,0,104,0.40) !important; }
+.card-gold .ib-big,
+.card-gold .fb-credentials,
+.card-gold .article-foot,
+.card-gold .article-foot span,
+.card-gold .pd-val,
+.card-gold .muted,
+.card-gold .small { color: rgba(74,0,88,0.70) !important; }
+
+/* Card-themed buttons inherit the contrasting accent */
+.card-purple .btn--glass {
+  background: rgba(245,214,118,0.12) !important;
+  border: 1px solid rgba(245,214,118,0.55) !important;
+  color: var(--gold-light) !important;
+}
+.card-gold .btn--glass {
+  background: rgba(86,0,104,0.10) !important;
+  border: 1px solid rgba(86,0,104,0.40) !important;
+  color: #4a0058 !important;
+}
+.card-gold .btn--gold {
+  background: linear-gradient(135deg, #560068, #780090) !important;
+  color: var(--gold-light) !important;
+  border-color: rgba(245,214,118,0.5) !important;
+}
+.card-gold .btn--gold::after { display: none; }
+.values-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.value-card {
+  padding: 36px 28px; border-radius: 24px; text-align: center; position: relative; transition: transform .4s, box-shadow .4s;
+  background: linear-gradient(145deg, #780090 0%, #560068 100%);
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 6px 18px rgba(20,4,32,0.10), 0 2px 4px rgba(20,4,32,0.06);
+}
+.value-card:hover { transform: translateY(-6px); box-shadow: 0 12px 28px rgba(20,4,32,0.15), 0 4px 8px rgba(20,4,32,0.08); }
+.value-roman { position: absolute; top: 16px; right: 20px; font-size: 14px; color: var(--gold-light); opacity: 0.7; letter-spacing: 0.1em; }
+.value-icon { display: flex; justify-content: center; margin-bottom: 20px; }
+.value-name { font-size: 20px; font-weight: 500; color: #ffffff; margin-bottom: 10px; }
+.value-desc { font-size: 13px; line-height: 1.6; color: rgba(255,255,255,0.75); }
+
+/* ── BANNER ─────────────────────────────────────── */
+.banner-glass { padding: 80px 60px; border-radius: 32px; text-align: center; position: relative; overflow: hidden; }
+.banner-glow {
+  position: absolute; inset: -50%; pointer-events: none;
+  background: radial-gradient(circle at 50% 50%, rgba(229,193,88,0.15), transparent 50%);
+}
+.banner-inner { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+.banner-inner .eyebrow { justify-content: center; display: inline-flex; }
+.banner-inner .section-title { margin-bottom: 0; }
+.banner-inner .section-sub { margin-left: auto; margin-right: auto; }
+.banner-inner .hero-ctas { justify-content: center; }
+
+/* ── REASONS ────────────────────────────────────── */
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.reason-card {
+  border-radius: 24px; overflow: hidden; display: flex; flex-direction: column; transition: transform .4s, box-shadow .4s; animation: float 6s ease-in-out infinite;
+  background: linear-gradient(145deg, #780090 0%, #560068 100%);
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 6px 18px rgba(20,4,32,0.10), 0 2px 4px rgba(20,4,32,0.06);
+}
+.reason-card:hover { transform: translateY(-6px); box-shadow: 0 12px 28px rgba(20,4,32,0.15), 0 4px 8px rgba(20,4,32,0.08); }
+.reason-img { position: relative; height: 260px; overflow: hidden; }
+.reason-img img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; transition: transform .8s; }
+.reason-card:hover .reason-img img { transform: scale(1.06); }
+.reason-img-overlay { display: none; }
+.reason-body { padding: 28px; flex: 1; }
+.reason-index { color: var(--gold-light); font-size: 14px; letter-spacing: 0.1em; }
+.reason-title { font-size: 22px; font-weight: 500; margin: 8px 0 12px; color: #ffffff; }
+.reason-desc { color: rgba(255,255,255,0.75); line-height: 1.6; font-size: 14px; }
+
+/* ── DEAL BANNER ────────────────────────────────── */
+.deal-banner { padding: 60px; border-radius: 32px; position: relative; overflow: hidden; }
+.deal-orbs { position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(circle at 10% 50%, rgba(124,58,237,0.27), transparent 40%),
+    radial-gradient(circle at 90% 50%, rgba(229,193,88,0.2), transparent 40%);
+  filter: blur(40px);
+}
+.deal-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1.4fr; gap: 60px; align-items: center; }
+.deal-badge { display: inline-block; padding: 6px 14px; border: 1px solid var(--gold); color: var(--gold-light); font-size: 10px; letter-spacing: 0.3em; border-radius: 100px; }
+.deal-title { font-size: 36px; line-height: 1.1; margin-top: 16px; color: var(--ink); }
+.deal-sub { color: var(--ink-soft); margin-top: 12px; }
+.deal-right { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.deal-right .btn { grid-column: span 2; justify-self: start; }
+.deal-stat { display: flex; gap: 12px; align-items: flex-start; }
+.deal-check { color: var(--gold); font-size: 18px; }
+.deal-stat-big { font-size: 28px; color: var(--ink); line-height: 1; }
+.deal-stat-label { font-size: 11px; color: var(--ink-mute); margin-top: 6px; letter-spacing: 0.05em; }
+
+/* ── CHOOSE ─────────────────────────────────────── */
+.choose-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.choose-card { padding: 36px 28px 28px; border-radius: 24px; transition: transform .4s; }
+.choose-card:hover { transform: translateY(-6px); }
+.choose-num { font-size: 36px; color: var(--gold); opacity: 0.5; letter-spacing: 0.05em; }
+.choose-title { font-size: 18px; font-weight: 500; color: var(--ink); margin-top: 16px; margin-bottom: 12px; }
+.choose-desc { color: var(--ink-soft); line-height: 1.6; font-size: 14px; }
+.choose-ornament { margin-top: 24px; opacity: 0.5; }
+
+/* ── BOOK CALL ──────────────────────────────────── */
+.book-call { padding: 60px; border-radius: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.calendar-mock { padding: 24px; border-radius: 20px; }
+.cm-head { display: flex; justify-content: space-between; align-items: center; color: var(--gold-light); font-size: 12px; letter-spacing: 0.2em; margin-bottom: 20px; }
+.cm-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+.cm-day-label { font-size: 10px; color: var(--ink-mute); text-align: center; padding: 6px 0; letter-spacing: 0.1em; }
+.cm-day { aspect-ratio: 1; display: flex; align-items: center; justify-content: center; font-size: 13px; color: var(--ink-soft); border-radius: 8px; transition: all .25s; }
+.cm-day.available { color: var(--gold-light); border: 1px solid rgba(229,193,88,0.3); cursor: pointer; }
+.cm-day.available:hover { background: rgba(229,193,88,0.1); }
+.cm-day.selected { background: linear-gradient(135deg, var(--gold-light), var(--gold-deep)); color: #1a0a2e; border: none; font-weight: 600; }
+.cm-slots { display: flex; gap: 8px; margin-top: 20px; }
+.cm-slot { flex: 1; padding: 10px; text-align: center; font-size: 12px; border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; color: var(--ink-soft); cursor: pointer; }
+.cm-slot.active { background: rgba(229,193,88,0.12); border-color: var(--gold); color: var(--gold-light); }
+
+/* ── PAGE HERO ──────────────────────────────────── */
+.page-hero { padding: 120px 0 20px; position: relative; z-index: 2; background: #ffffff; }
+.page-hero .container { max-width: var(--max); margin: 0 auto; padding: 0 32px; }
+.page-hero + .section { padding-top: 24px; }
+.page-hero-title { font-size: clamp(32px, 4.5vw, 60px); line-height: 1.05; font-weight: 300; color: #1a001f; letter-spacing: -0.03em; }
+.page-hero-title .serif { font-style: italic; font-weight: 500; }
+.page-hero-sub { font-size: 16px; color: #4a3450; max-width: 580px; margin-top: 16px; line-height: 1.65; }
+.page-hero .eyebrow { color: var(--gold-deep); }
+.page-hero .eyebrow-dot { background: var(--gold-deep); box-shadow: 0 0 8px var(--gold-deep); }
+.page-hero .gold-divider { background: linear-gradient(90deg, transparent, var(--gold-deep) 50%, transparent); }
+.page-hero .gold-shimmer {
+  background: linear-gradient(110deg, var(--gold-deep) 0%, var(--gold) 35%, var(--gold-deep) 55%, var(--gold) 75%, var(--gold-deep) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ── ABOUT ──────────────────────────────────────── */
+.about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: center; }
+.about-copy { padding: 48px; border-radius: 28px; }
+.about-mission { font-size: 24px; line-height: 1.4; color: var(--gold-light); font-style: italic; }
+.about-copy p { color: var(--ink-soft); line-height: 1.7; margin-bottom: 16px; }
+.about-visual { position: relative; aspect-ratio: 4/5; }
+.about-visual .image-card { position: absolute; inset: 0; }
+.about-visual .image-badge { bottom: -30px; left: -30px; right: auto; }
+
+.mission-banner { padding: 80px; border-radius: 32px; text-align: center; }
+.mission-banner .eyebrow { justify-content: center; display: inline-flex; }
+.mission-banner .section-title { max-width: 900px; margin: 0 auto; font-size: clamp(28px, 3.5vw, 44px); line-height: 1.3; font-weight: 300; }
+.mission-banner .hero-ctas { margin-top: 40px; justify-content: center; }
+
+/* ── PORTFOLIO ──────────────────────────────────── */
+.portfolio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+.property-card { border-radius: 24px; overflow: hidden; display: flex; flex-direction: column; transition: transform .4s, box-shadow .4s; }
+.property-card:hover { transform: translateY(-6px); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+.property-img { position: relative; height: 280px; overflow: hidden; }
+.property-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s; }
+.property-card:hover .property-img img { transform: scale(1.04); }
+.property-details { margin: 12px 0 20px; display: flex; flex-direction: column; gap: 6px; }
+.property-detail-row { font-size: 14px; color: var(--ink-soft); line-height: 1.5; }
+.pd-key { color: var(--ink-soft); }
+.pd-val { color: var(--ink); font-weight: 500; }
+.property-status {
+  position: absolute; top: 16px; left: 16px;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 14px; border-radius: 100px; font-size: 10px; letter-spacing: 0.2em;
+  background: rgba(12,4,24,0.7); backdrop-filter: blur(10px); color: var(--ink);
+  border: 1px solid var(--glass-border);
+}
+.ps-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold-light); }
+.property-status.closed .ps-dot { background: #94a3b8; }
+.property-status.underwriting .ps-dot { background: #fbbf24; }
+.property-status.coming-soon .ps-dot { background: #4ade80; }
+.property-body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
+.property-loc { font-size: 11px; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; }
+.property-name { font-size: 18px; font-weight: 700; margin: 0 0 4px; color: var(--ink); letter-spacing: 0.04em; text-transform: uppercase; }
+.property-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 24px 0; padding: 20px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.ps-val { font-size: 20px; color: var(--gold-light); line-height: 1; }
+.ps-key { font-size: 10px; color: var(--ink-mute); letter-spacing: 0.1em; margin-top: 6px; text-transform: uppercase; }
+
+.track-record {
+  padding: 60px; border-radius: 32px; text-align: center;
+  background: #fdf8f5 !important;
+  border: 1px solid rgba(120,0,144,0.10) !important;
+  backdrop-filter: none !important;
+  box-shadow: 0 6px 18px rgba(20,4,32,0.08) !important;
+}
+.track-record .eyebrow { justify-content: center; display: inline-flex; color: var(--gold-deep); }
+.track-record .eyebrow-dot { background: var(--gold-deep); box-shadow: 0 0 8px var(--gold-deep); }
+.tr-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-top: 40px; }
+.tr-big { font-size: 56px; line-height: 1; }
+.tr-label { font-size: 13px; color: #5a4060; margin-top: 12px; letter-spacing: 0.05em; }
+
+/* ── HOW ────────────────────────────────────────── */
+.steps { position: relative; max-width: 900px; margin: 0 auto; }
+.steps-rail {
+  position: absolute; left: 50%; top: 0; bottom: 0; width: 1px;
+  background: linear-gradient(180deg, transparent, var(--gold) 10%, var(--gold) 90%, transparent);
+  opacity: 0.3;
+}
+.step { display: grid; grid-template-columns: 100px 1fr; gap: 32px; padding: 32px; border-radius: 24px; margin-bottom: 32px; position: relative; align-items: center; width: 75%; }
+.step.left { margin-left: 0; }
+.step.right { margin-left: auto; }
+.step-num { font-size: 48px; color: var(--gold); line-height: 1; }
+.step-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 16px var(--gold); margin-top: 12px; }
+.step-title { font-size: 22px; font-weight: 500; color: var(--ink); margin-bottom: 8px; }
+.step-desc { color: var(--ink-soft); line-height: 1.6; }
+
+/* ── EDUCATION ──────────────────────────────────── */
+.ebook { padding: 60px; border-radius: 32px; display: grid; grid-template-columns: 1fr 1.4fr; gap: 60px; align-items: center; }
+.ebook-cover { aspect-ratio: 3/4; padding: 32px; border-radius: 8px; position: relative; background: linear-gradient(135deg, var(--bg-2), var(--bg-1)); overflow: hidden; box-shadow: 30px 30px 80px rgba(0,0,0,0.5); transform: rotate(-3deg); }
+.eb-spine { position: absolute; left: 0; top: 0; bottom: 0; width: 16px; background: linear-gradient(90deg, rgba(0,0,0,0.4), transparent); }
+.eb-front { position: relative; height: 100%; display: flex; flex-direction: column; justify-content: space-between; }
+.eb-tiny { font-size: 10px; letter-spacing: 0.3em; color: var(--gold); }
+.eb-title { font-size: 36px; line-height: 1.1; color: var(--gold-light); }
+.eb-author { font-size: 12px; color: var(--ink-soft); letter-spacing: 0.1em; }
+.eb-emblem { position: absolute; bottom: 20px; right: 0; opacity: 0.7; }
+.inline-form { display: flex; gap: 8px; margin-top: 28px; padding: 6px; border-radius: 100px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.08); max-width: 480px; }
+.inline-form input { flex: 1; background: transparent; border: none; outline: none; color: var(--ink); padding: 0 20px; font-size: 14px; font-family: inherit; }
+.inline-form input::placeholder { color: var(--ink-mute); }
+
+.library-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.article-card { padding: 32px; border-radius: 20px; transition: transform .4s; cursor: pointer; }
+.article-card:hover { transform: translateY(-4px); }
+.article-tag { display: inline-block; padding: 4px 12px; border: 1px solid rgba(229,193,88,0.3); border-radius: 100px; font-size: 10px; letter-spacing: 0.2em; color: var(--gold-light); text-transform: uppercase; }
+.article-title { font-size: 20px; font-weight: 500; margin: 16px 0 12px; color: var(--ink); line-height: 1.3; }
+.article-desc { color: var(--ink-soft); line-height: 1.6; font-size: 14px; }
+.article-foot { display: flex; justify-content: space-between; margin-top: 24px; font-size: 12px; color: var(--ink-mute); letter-spacing: 0.05em; }
+
+/* ── FOUNDER ────────────────────────────────────── */
+.founder-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: center; }
+.founder-portrait { position: relative; aspect-ratio: 4/5; }
+.portrait-frame { position: absolute; inset: 0; padding: 12px; }
+.portrait-placeholder { width: 100%; height: 100%; border-radius: 16px; background: repeating-linear-gradient(45deg, rgba(229,193,88,0.06), rgba(229,193,88,0.06) 2px, transparent 2px, transparent 16px), linear-gradient(135deg, var(--bg-2), var(--bg-1)); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+.pp-mono { font-family: ui-monospace, monospace; font-size: 11px; letter-spacing: 0.2em; color: var(--ink-mute); }
+.founder-badge { position: absolute; bottom: -30px; right: -30px; padding: 24px 28px; border-radius: 20px; }
+.fb-tiny { font-size: 10px; letter-spacing: 0.2em; color: var(--gold); }
+.fb-name { font-size: 32px; color: var(--ink); margin-top: 6px; line-height: 1; }
+.fb-credentials { font-size: 11px; color: var(--ink-soft); margin-top: 8px; letter-spacing: 0.05em; }
+.founder-copy p { color: var(--ink-soft); line-height: 1.7; margin-bottom: 16px; }
+
+/* ── FAQ ────────────────────────────────────────── */
+.faq-list { display: flex; flex-direction: column; gap: 12px; }
+.faq-item { padding: 24px 28px; border-radius: 20px; cursor: pointer; transition: background .25s; }
+.faq-item:hover { background: rgba(255,255,255,0.06); }
+.faq-q { display: grid; grid-template-columns: 60px 1fr 40px; align-items: center; gap: 16px; }
+.faq-num { font-size: 20px; color: var(--gold); }
+.faq-q-text { font-size: 17px; color: var(--ink); font-weight: 500; }
+.faq-toggle { font-size: 24px; color: var(--gold-light); text-align: right; font-weight: 300; }
+.faq-a { padding: 16px 0 8px 76px; color: var(--ink-soft); line-height: 1.7; font-size: 15px; }
+
+/* ── CONTACT ────────────────────────────────────── */
+.contact-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; align-items: start; }
+.contact-form { padding: 48px; border-radius: 28px; }
+.field { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+.field label { font-size: 11px; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; }
+.field input, .field select, .field textarea {
+  background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1);
+  padding: 14px 18px; border-radius: 12px; color: var(--ink); font-family: inherit; font-size: 14px;
+  outline: none; transition: border-color .25s;
+}
+.field input:focus, .field select:focus, .field textarea:focus { border-color: var(--gold); }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.accred { display: flex; align-items: center; gap: 12px; padding: 16px 20px; border-radius: 12px; margin-bottom: 24px; font-size: 13px; color: var(--ink-soft); }
+.accred input { accent-color: var(--gold); }
+.sent-state { text-align: center; padding: 40px 20px; }
+.sent-glyph { display: flex; justify-content: center; margin-bottom: 24px; }
+.sent-state h3 { font-size: 32px; color: var(--ink); margin-bottom: 12px; }
+.sent-state p { color: var(--ink-soft); }
+
+.contact-info { display: flex; flex-direction: column; gap: 16px; }
+.info-card { padding: 24px 28px; border-radius: 20px; }
+.info-tiny { font-size: 10px; letter-spacing: 0.3em; color: var(--gold); }
+.info-big { display: block; font-size: 18px; color: var(--ink); margin-top: 8px; line-height: 1.4; font-weight: 500; }
+
+/* ── LOGIN ──────────────────────────────────────── */
+.login-card { max-width: 480px; margin: 60px auto; padding: 48px; border-radius: 28px; }
+.login-card p { color: var(--ink-soft); margin: 16px 0 28px; }
+.login-form .field { margin-bottom: 16px; }
+.login-form .btn { margin-top: 12px; }
+
+/* ── FOOTER ─────────────────────────────────────── */
+.footer { padding: 80px 0 40px; position: relative; z-index: 2; background: #ffffff; }
+.footer-banner { padding: 80px 60px; border-radius: 32px; text-align: center; margin-bottom: 80px; }
+.footer-headline { font-size: clamp(36px, 5vw, 56px); line-height: 1.05; font-weight: 500; color: #1a001f; margin-bottom: 20px; }
+.footer-banner p { color: var(--ink-soft); max-width: 580px; margin: 0 auto 32px; line-height: 1.6; }
+
+.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 60px; padding: 60px 0 40px; border-top: 1px solid rgba(86,0,104,0.18); }
+.footer-brand .nav-brand { margin-bottom: 20px; }
+.footer-tag { color: var(--gold-deep); font-family: var(--display-font); font-style: italic; font-size: 18px; }
+.footer-col h4 { font-size: 12px; letter-spacing: 0.3em; color: var(--gold-deep); text-transform: uppercase; margin-bottom: 16px; }
+.footer-col a, .footer-col span { display: block; color: #4a3450; padding: 6px 0; font-size: 14px; transition: color .2s; }
+.footer-col a:hover { color: var(--purple); }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; border-top: 1px solid rgba(86,0,104,0.15); font-size: 12px; color: #5a4060; gap: 24px; }
+.footer-disclaim { max-width: 600px; text-align: right; line-height: 1.5; }
+
+/* ── RESPONSIVE ─────────────────────────────────── */
+@media (max-width: 1100px) {
+  .values-grid, .choose-grid, .tr-grid { grid-template-columns: repeat(2, 1fr); }
+  .reasons-grid { grid-template-columns: repeat(2, 1fr); }
+  .library-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 1100px) {
+  .nav-links, .nav-cta { display: none; }
+  .nav-burger { display: flex; }
+}
+@media (max-width: 840px) {
+  .mobile-menu { display: flex; flex-direction: column; gap: 12px; margin-top: 12px; padding: 24px; border-radius: 24px; }
+  .mobile-menu a { padding: 10px 14px; color: var(--ink-soft); border-radius: 12px; }
+  .mobile-menu a.active { color: var(--gold-light); background: rgba(229,193,88,0.06); }
+  .hero { grid-template-columns: 1fr; padding-top: 100px; padding-bottom: 40px; gap: 32px; }
+  .hero-card-frame { display: none; }
+  .promise-grid, .about-grid, .founder-grid, .ebook, .deal-inner, .book-call, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .values-grid, .choose-grid, .portfolio-grid, .library-grid, .reasons-grid, .tr-grid { grid-template-columns: 1fr !important; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+  .footer-disclaim { text-align: left; }
+  .step { width: 100%; grid-template-columns: 70px 1fr; }
+  .steps-rail { display: none; }
+  .hero-stats { flex-wrap: wrap; }
+  .container { padding: 0 20px; }
+  .section { padding: 60px 0; }
+  .banner-glass, .deal-banner, .book-call, .track-record, .mission-banner, .ebook, .footer-banner, .contact-form { padding: 40px 28px; }
+  .field-row { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+
+<script type="text/babel">
+
+// ─────────────────────────────────────────────────────────────────────────────
+// tweaks-panel.jsx (inlined)
+// ─────────────────────────────────────────────────────────────────────────────
+
+const __TWEAKS_STYLE = `
+  .twk-panel{position:fixed;right:16px;bottom:16px;z-index:2147483646;width:280px;
+    max-height:calc(100vh - 32px);display:flex;flex-direction:column;
+    transform:scale(var(--dc-inv-zoom,1));transform-origin:bottom right;
+    background:rgba(250,249,247,.78);color:#29261b;
+    -webkit-backdrop-filter:blur(24px) saturate(160%);backdrop-filter:blur(24px) saturate(160%);
+    border:.5px solid rgba(255,255,255,.6);border-radius:14px;
+    box-shadow:0 1px 0 rgba(255,255,255,.5) inset,0 12px 40px rgba(0,0,0,.18);
+    font:11.5px/1.4 ui-sans-serif,system-ui,-apple-system,sans-serif;overflow:hidden}
+  .twk-hd{display:flex;align-items:center;justify-content:space-between;
+    padding:10px 8px 10px 14px;cursor:move;user-select:none}
+  .twk-hd b{font-size:12px;font-weight:600;letter-spacing:.01em}
+  .twk-x{appearance:none;border:0;background:transparent;color:rgba(41,38,27,.55);
+    width:22px;height:22px;border-radius:6px;cursor:default;font-size:13px;line-height:1}
+  .twk-x:hover{background:rgba(0,0,0,.06);color:#29261b}
+  .twk-body{padding:2px 14px 14px;display:flex;flex-direction:column;gap:10px;
+    overflow-y:auto;overflow-x:hidden;min-height:0;
+    scrollbar-width:thin;scrollbar-color:rgba(0,0,0,.15) transparent}
+  .twk-row{display:flex;flex-direction:column;gap:5px}
+  .twk-row-h{flex-direction:row;align-items:center;justify-content:space-between;gap:10px}
+  .twk-lbl{display:flex;justify-content:space-between;align-items:baseline;
+    color:rgba(41,38,27,.72)}
+  .twk-lbl>span:first-child{font-weight:500}
+  .twk-val{color:rgba(41,38,27,.5);font-variant-numeric:tabular-nums}
+  .twk-sect{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+    color:rgba(41,38,27,.45);padding:10px 0 0}
+  .twk-sect:first-child{padding-top:0}
+  .twk-field{appearance:none;width:100%;height:26px;padding:0 8px;
+    border:.5px solid rgba(0,0,0,.1);border-radius:7px;
+    background:rgba(255,255,255,.6);color:inherit;font:inherit;outline:none}
+  .twk-field:focus{border-color:rgba(0,0,0,.25);background:rgba(255,255,255,.85)}
+  select.twk-field{padding-right:22px;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path fill='rgba(0,0,0,.5)' d='M0 0h10L5 6z'/></svg>");
+    background-repeat:no-repeat;background-position:right 8px center}
+  .twk-slider{appearance:none;-webkit-appearance:none;width:100%;height:4px;margin:6px 0;
+    border-radius:999px;background:rgba(0,0,0,.12);outline:none}
+  .twk-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;
+    width:14px;height:14px;border-radius:50%;background:#fff;
+    border:.5px solid rgba(0,0,0,.12);box-shadow:0 1px 3px rgba(0,0,0,.2);cursor:default}
+  .twk-toggle{position:relative;width:32px;height:18px;border:0;border-radius:999px;
+    background:rgba(0,0,0,.15);transition:background .15s;cursor:default;padding:0}
+  .twk-toggle[data-on="1"]{background:#34c759}
+  .twk-toggle i{position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;
+    background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.25);transition:transform .15s}
+  .twk-toggle[data-on="1"] i{transform:translateX(14px)}
+`;
+
+function useTweaks(defaults) {
+  const [values, setValues] = React.useState(defaults);
+  const setTweak = React.useCallback((keyOrEdits, val) => {
+    const edits = typeof keyOrEdits === 'object' && keyOrEdits !== null
+      ? keyOrEdits : { [keyOrEdits]: val };
+    setValues((prev) => ({ ...prev, ...edits }));
+  }, []);
+  return [values, setTweak];
+}
+
+function TweaksPanel({ title = 'Tweaks', children }) {
+  const [open, setOpen] = React.useState(false);
+  const dragRef = React.useRef(null);
+  const offsetRef = React.useRef({ x: 16, y: 16 });
+
+  React.useEffect(() => {
+    const onMsg = (e) => {
+      const t = e?.data?.type;
+      if (t === '__activate_edit_mode') setOpen(true);
+      else if (t === '__deactivate_edit_mode') setOpen(false);
+    };
+    window.addEventListener('message', onMsg);
+    window.parent.postMessage({ type: '__edit_mode_available' }, '*');
+    return () => window.removeEventListener('message', onMsg);
+  }, []);
+
+  if (!open) return null;
+  return (
+    <>
+      <style>{__TWEAKS_STYLE}</style>
+      <div ref={dragRef} className="twk-panel"
+           style={{ right: offsetRef.current.x, bottom: offsetRef.current.y }}>
+        <div className="twk-hd">
+          <b>{title}</b>
+          <button className="twk-x" onClick={() => setOpen(false)}>✕</button>
+        </div>
+        <div className="twk-body">{children}</div>
+      </div>
+    </>
+  );
+}
+
+function TweakSection({ title, label, children }) {
+  return (
+    <>
+      <div className="twk-sect">{title || label}</div>
+      {children}
+    </>
+  );
+}
+
+function TweakRow({ label, value, children }) {
+  return (
+    <div className="twk-row">
+      <div className="twk-lbl">
+        <span>{label}</span>
+        {value != null && <span className="twk-val">{value}</span>}
+      </div>
+      {children}
+    </div>
+  );
+}
+
+function TweakSlider({ label, value, min = 0, max = 100, step = 1, unit = '', onChange }) {
+  return (
+    <TweakRow label={label} value={`${value}${unit}`}>
+      <input type="range" className="twk-slider" min={min} max={max} step={step}
+             value={value} onChange={(e) => onChange(Number(e.target.value))} />
+    </TweakRow>
+  );
+}
+
+function TweakToggle({ label, value, onChange }) {
+  return (
+    <div className="twk-row" style={{flexDirection:'row',alignItems:'center',justifyContent:'space-between',gap:10}}>
+      <div className="twk-lbl"><span>{label}</span></div>
+      <button type="button" className="twk-toggle" data-on={value ? '1' : '0'}
+              onClick={() => onChange(!value)}><i /></button>
+    </div>
+  );
+}
+
+function TweakSelect({ label, value, options, onChange }) {
+  return (
+    <TweakRow label={label}>
+      <select className="twk-field" value={value} onChange={(e) => onChange(e.target.value)}>
+        {options.map((o) => {
+          const v = typeof o === 'object' ? o.value : o;
+          const l = typeof o === 'object' ? o.label : o;
+          return <option key={v} value={v}>{l}</option>;
+        })}
+      </select>
+    </TweakRow>
+  );
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// app.jsx (inlined)
+// ─────────────────────────────────────────────────────────────────────────────
+
+const { useState, useEffect, useRef, useMemo } = React;
+
+const TWEAK_DEFAULTS = {
+  "palette": "amethyst",
+  "displayFont": "Cormorant Garamond",
+  "showOrbs": true,
+  "showGrain": true,
+  "glassIntensity": 18
+};
+
+const PALETTES = {
+  amethyst: {
+    name: "Amethyst & Gold",
+    bg0: "#0a000f", bg1: "#160020", bg2: "#2a0040",
+    purple: "#780090", deep: "#560068",
+    gold: "#e5c158", goldDeep: "#b8923a", goldLight: "#f5d676",
+  },
+  plum: {
+    name: "Plum & Champagne",
+    bg0: "#100618", bg1: "#1f0a2b", bg2: "#3d1654",
+    purple: "#9333ea", deep: "#6b21a8",
+    gold: "#dfc189", goldDeep: "#a88e5e", goldLight: "#ecd6a4",
+  },
+  obsidian: {
+    name: "Obsidian Royal",
+    bg0: "#080513", bg1: "#160a2a", bg2: "#241252",
+    purple: "#6d28d9", deep: "#4c1d95",
+    gold: "#d4af37", goldDeep: "#9c7d24", goldLight: "#eccc6e",
+  },
+};
+
+function Atmosphere({ palette, showOrbs, showGrain }) {
+  return (
+    <div className="atmosphere" aria-hidden="true">
+      <div className="vignette"></div>
+      <div className="bg-grid"></div>
+      {showOrbs && (
+        <>
+          <div className="orb orb--a" style={{ background: `radial-gradient(circle at 30% 30%, ${palette.purple}cc, transparent 60%)` }}></div>
+          <div className="orb orb--b" style={{ background: `radial-gradient(circle at 70% 40%, ${palette.deep}, transparent 65%)` }}></div>
+          <div className="orb orb--c" style={{ background: `radial-gradient(circle at 50% 50%, ${palette.gold}55, transparent 60%)` }}></div>
+          <div className="orb orb--d" style={{ background: `radial-gradient(circle at 50% 50%, ${palette.purple}88, transparent 70%)` }}></div>
+        </>
+      )}
+      {showGrain && <div className="grain"></div>}
+    </div>
+  );
+}
+
+const NAV_ITEMS = [
+  { id: "home", label: "Home" },
+  { id: "about", label: "About Us" },
+  { id: "portfolio", label: "Portfolio" },
+  { id: "education", label: "Investor Education" },
+  { id: "faq", label: "FAQ" },
+  { id: "contact", label: "Contact" },
+];
+
+function Nav({ page, setPage }) {
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  return (
+    <header className={`nav-wrap ${scrolled ? "is-scrolled" : ""}`}>
+      <nav className="nav glass glass--strong">
+        <a className="nav-brand" onClick={(e) => { e.preventDefault(); setPage("home"); window.scrollTo({ top: 0 }); }} href="#">
+          <img src="LogoNew.png" alt="Kynectic Capital" style={{ height: "44px", width: "auto" }} />
+        </a>
+        <ul className="nav-links">
+          {NAV_ITEMS.map((n) => (
+            <li key={n.id}>
+              <a href="#" className={page === n.id || (n.anchor && page === "home") ? "" : ""}
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (n.anchor) {
+                    if (page !== "home") {
+                      setPage("home");
+                      setTimeout(() => { document.getElementById(n.anchor)?.scrollIntoView({ behavior: "smooth" }); }, 120);
+                    } else {
+                      document.getElementById(n.anchor)?.scrollIntoView({ behavior: "smooth" });
+                    }
+                  } else {
+                    setPage(n.id); window.scrollTo({ top: 0 });
+                  }
+                }}>
+                {n.label}
+                {page === n.id && <span className="nav-underline"></span>}
+              </a>
+            </li>
+          ))}
+          <li>
+            <a href="HarmonyGrove_Kynectic.html" className="nav-offering-link">✦ Open for Investing</a>
+          </li>
+        </ul>
+        <a className="btn btn--gold nav-cta" href="#" onClick={(e) => { e.preventDefault(); setPage("login"); }}>
+          <span>Client Login</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <button className="nav-burger" onClick={() => setMobileOpen(!mobileOpen)} aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+      {mobileOpen && (
+        <div className="mobile-menu glass glass--strong">
+          {NAV_ITEMS.map((n) => (
+            <a key={n.id} href="#" className={page === n.id ? "active" : ""}
+              onClick={(e) => {
+                e.preventDefault(); setMobileOpen(false);
+                if (n.anchor) {
+                  if (page !== "home") { setPage("home"); setTimeout(() => { document.getElementById(n.anchor)?.scrollIntoView({ behavior: "smooth" }); }, 120); }
+                  else { document.getElementById(n.anchor)?.scrollIntoView({ behavior: "smooth" }); }
+                } else { setPage(n.id); window.scrollTo({ top: 0 }); }
+              }}>
+              {n.label}
+            </a>
+          ))}
+          <a href="#" className="btn btn--gold" onClick={(e) => { e.preventDefault(); setPage("login"); setMobileOpen(false); }}>Client Login →</a>
+        </div>
+      )}
+    </header>
+  );
+}
+
+function Eyebrow({ children }) {
+  return <div className="eyebrow"><span className="eyebrow-dot"></span>{children}</div>;
+}
+function GoldDivider({ width = 80 }) {
+  return <div className="gold-divider" style={{ width }}></div>;
+}
+function Btn({ variant = "gold", onClick, children, href = "#" }) {
+  return (
+    <a className={`btn btn--${variant}`} href={href} onClick={(e) => { if (onClick) { e.preventDefault(); onClick(); } }}>
+      <span>{children}</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+        <path d="M5 12h14M13 5l7 7-7 7"/>
+      </svg>
+    </a>
+  );
+}
+
+function HomePage({ setPage }) {
+  return (
+    <>
+      <div className="hero-video-wrap">
+      <video className="hero-bg-video" autoPlay loop muted playsInline>
+        <source src="bannervideo.webm" type="video/webm"/>
+      </video>
+      <div className="hero-video-overlay"></div>
+      <section className="hero">
+        <div className="hero-inner">
+          <div className="hero-pill glass glass--soft">
+            <span className="pill-dot"></span>
+            <span>Invest with Clarity. Thrive with Momentum.</span>
+          </div>
+          <h1 className="hero-title">
+            You work hard,<br/>
+            <span className="serif gold-shimmer">your money</span><br/>
+            should too.
+          </h1>
+          <p className="hero-sub">
+            More free time. Less tax drag. A portfolio that grows while you sleep — built on real apartments, real cash flow, and a team that treats your capital like their own.
+          </p>
+          <div className="hero-ctas">
+            <Btn variant="gold" onClick={() => setPage("contact")}>Invest Passively</Btn>
+            <Btn variant="glass" onClick={() => document.getElementById("how-it-works")?.scrollIntoView({ behavior: "smooth" })}>Learn How It Works</Btn>
+          </div>
+          <div className="hero-stats">
+            <div className="stat">
+              <div className="stat-num serif">598</div>
+              <div className="stat-label">Units across portfolio</div>
+            </div>
+            <div className="stat-sep"></div>
+            <div className="stat">
+              <div className="stat-num serif">17.4<span className="pct">%</span></div>
+              <div className="stat-label">Avg projected AAR<br/>(Class B)</div>
+            </div>
+            <div className="stat-sep"></div>
+            <div className="stat">
+              <div className="stat-num serif">$48M+</div>
+              <div className="stat-label">Assets transacted</div>
+            </div>
+          </div>
+        </div>
+        <div className="hero-card-frame">
+          <a className="floating-card fc-gold-card fc-1" href="HarmonyGrove_Kynectic.html" style={{textDecoration:"none"}}>
+            <div className="fc-row"><span className="fc-gold-dot"></span><span className="fc-gold-label">Open for Investing</span></div>
+            <div className="fc-gold-name">Harmony Grove<br/>Apartments</div>
+            <div className="fc-gold-loc">Marietta, GA · 75 Units · Value-Add</div>
+            <div className="fc-gold-stats">
+              <div className="fc-gold-stat">
+                <div className="fc-gold-stat-val">20%</div>
+                <div className="fc-gold-stat-lbl">Target AAR</div>
+              </div>
+              <div className="fc-gold-stat">
+                <div className="fc-gold-stat-val">$35K+</div>
+                <div className="fc-gold-stat-lbl">Yr-1 Tax Savings</div>
+              </div>
+            </div>
+            <span className="fc-gold-cta">View Offering →</span>
+          </a>
+          <div className="floating-card card-purple fc-2">
+            <div className="fc-tiny">JUST ACQUIRED</div>
+            <div className="fc-big serif" style={{fontSize:"18px",lineHeight:"1.3",marginTop:"6px"}}>The Park at Arlington</div>
+            <div className="fc-trend" style={{color:"var(--gold-light)"}}>✦ 188 Units · Covington, GA</div>
+          </div>
+          <div className="floating-card card-gold fc-3" style={{maxWidth:"280px"}}>
+            <div className="fc-tiny">INVESTOR TESTIMONIAL</div>
+            <div className="fc-big serif" style={{fontSize:"15px",lineHeight:"1.6",fontWeight:"400",marginTop:"8px",fontStyle:"italic",color:"#4a0058"}}>"Working with Kynectic has been tremendously easy. I am always excited to see distributions in my bank."</div>
+            <div className="fc-trend" style={{marginTop:"10px",color:"rgba(74,0,88,0.75)"}}>— Thomas J., Investor</div>
+          </div>
+        </div>
+      </section>
+      </div>
+
+
+      <section className="section section--white">
+        <div className="container">
+          <Eyebrow>THE KYNECTIC PROMISE</Eyebrow>
+          <div className="promise-grid">
+            <div className="promise-copy">
+              <h2 className="section-title">Create wealth,<br/><span className="serif gold-shimmer">by working less.</span></h2>
+              <GoldDivider/>
+              <p className="lede">You want financial growth, stability, and freedom — but not another responsibility competing for your time.</p>
+              <p>We find the deals, run the operations, and handle every detail. You collect the income, build equity, and keep more of what you earn. Completely hands-off.</p>
+              <div className="hero-ctas"><Btn variant="gold" onClick={() => { setPage("portfolio"); window.scrollTo({ top: 0 }); }}>View Offerings</Btn></div>
+            </div>
+            <div className="promise-visual">
+              <div className="image-stack">
+                <div className="image-card card-purple">
+                  <video autoPlay loop muted playsInline style={{width:"100%",height:"100%",objectFit:"cover",borderRadius:"20px",display:"block"}}>
+                    <source src="promise.webm" type="video/webm"/>
+                  </video>
+                </div>
+                <div className="image-badge card-gold">
+                  <div className="ib-tiny">OUR PROMISE</div>
+                  <div className="serif" style={{fontSize:"16px",lineHeight:"1.55",fontStyle:"italic",marginTop:"8px",maxWidth:"210px",color:"#4a0058"}}>"We put in the work so you don't have to."</div>
+                </div>
+                <div className="image-orb-1"></div>
+                <div className="image-orb-2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--light">
+        <div className="container">
+          <div className="section-head center">
+            <Eyebrow>OUR FOUNDATION</Eyebrow>
+            <h2 className="section-title">The <span className="serif" style={{color:"var(--purple)"}}>Four Pillars</span></h2>
+            <p className="section-sub">Core values that shape every decision we make on your behalf.</p>
+          </div>
+          <div className="values-grid">
+            {[
+              { name: "Integrity", desc: "We honor our word. Every commitment, every disclosure, every dollar." },
+              { name: "Transparency", desc: "Clear reporting. Open books. No surprises — only what's verifiable." },
+              { name: "Discipline", desc: "Conservative underwriting. Stress-tested assumptions. Patience over hype." },
+              { name: "Partnership", desc: "We invest alongside you. Our incentives are perfectly aligned with yours." },
+            ].map((v, i) => (
+              <div className={`value-card ${i % 2 === 0 ? "card-purple" : "card-gold"}`} key={v.name}>
+                <div className="value-roman serif">{["I","II","III","IV"][i]}</div>
+                <div className="value-icon" style={{color: i % 2 === 0 ? "var(--gold-light)" : "#560068"}}>
+                  <svg viewBox="0 0 64 64" width="48" height="48" aria-hidden="true">
+                    {i === 0 && <path d="M32 8 L52 18 V34 C52 46 42 54 32 58 C22 54 12 46 12 34 V18 Z" fill="none" stroke="currentColor" strokeWidth="2"/>}
+                    {i === 1 && <><circle cx="32" cy="32" r="22" fill="none" stroke="currentColor" strokeWidth="2"/><circle cx="32" cy="32" r="10" fill="none" stroke="currentColor" strokeWidth="2"/></>}
+                    {i === 2 && <><rect x="14" y="14" width="36" height="36" fill="none" stroke="currentColor" strokeWidth="2"/><path d="M14 26 H50 M14 38 H50 M26 14 V50 M38 14 V50" stroke="currentColor" strokeWidth="1" opacity="0.5"/></>}
+                    {i === 3 && <><circle cx="22" cy="32" r="12" fill="none" stroke="currentColor" strokeWidth="2"/><circle cx="42" cy="32" r="12" fill="none" stroke="currentColor" strokeWidth="2"/></>}
+                  </svg>
+                </div>
+                <h3 className="value-name">{v.name}</h3>
+                <p className="value-desc">{v.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--white" style={{paddingTop:"20px", paddingBottom:"20px"}}>
+        <div className="container">
+          <div style={{position:"relative", borderRadius:"28px", overflow:"hidden", aspectRatio:"21/7", boxShadow:"0 8px 24px rgba(20,4,32,0.12), 0 2px 6px rgba(20,4,32,0.06)", border:"1px solid rgba(184,146,58,0.30)"}}>
+            <img src="cheerful-medical-professionals-.jpeg" alt="Healthcare professionals investing for their future" style={{width:"100%", height:"100%", objectFit:"cover", objectPosition:"center 30%", display:"block"}}/>
+            <div style={{position:"absolute", inset:0, background:"linear-gradient(90deg, rgba(86,0,104,0.55) 0%, rgba(86,0,104,0.15) 45%, transparent 70%)", pointerEvents:"none"}}></div>
+            <div style={{position:"absolute", left:"6%", top:"50%", transform:"translateY(-50%)", maxWidth:"460px", color:"var(--gold-light)"}}>
+              <div style={{fontSize:"11px", letterSpacing:"0.35em", color:"var(--gold-light)", textTransform:"uppercase", marginBottom:"14px", fontWeight:600}}>BUILT FOR HIGH EARNERS</div>
+              <div className="serif" style={{fontSize:"clamp(22px, 2.6vw, 36px)", lineHeight:"1.15", fontWeight:500, color:"#ffffff", textShadow:"0 2px 14px rgba(20,4,32,0.55)"}}>Doctors, attorneys, founders — investors whose time is worth more than another side hustle.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--white">
+        <div className="container">
+          <div className="banner-glass card-purple">
+            <div className="banner-glow"></div>
+            <div className="banner-inner">
+              <Eyebrow>FROM THE FOUNDER</Eyebrow>
+              <h2 className="section-title serif" style={{fontStyle:"italic", fontWeight:500, fontSize:"clamp(16px,2vw,28px)", lineHeight:1.4}}>
+                "I spent over a decade as a Physician Assistant across orthopedics, neurosurgery, trauma, and general surgery — long cases, demanding schedules, and real clinical burnout. I was earning well, but I had no time and no plan. Real estate changed that. Not because I left medicine, but because my capital finally started working as hard as I did."
+              </h2>
+              <p className="section-sub" style={{marginTop:32, letterSpacing:"0.08em", fontSize:14}}>— Dr. Anita Akpunku, DMSC, PA-C · Founder &amp; Managing Partner, Kynectic Capital</p>
+              <div className="hero-ctas" style={{marginTop:40}}>
+                <Btn variant="gold" onClick={() => setPage("portfolio")}>View Current Offerings</Btn>
+                <Btn variant="glass" onClick={() => setPage("contact")}>Join Investor Community</Btn>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--white">
+        <div className="container">
+          <div className="promise-grid">
+            <div className="promise-copy">
+              <Eyebrow>DID YOU KNOW?</Eyebrow>
+              <h2 className="section-title">You can <span className="serif gold-shimmer">invest</span> with your<br/>old 401K or IRA.</h2>
+              <GoldDivider/>
+              <p className="lede">Self-directed retirement accounts unlock passive multifamily income, real-asset appreciation, and significant tax advantages — without triggering a taxable event.</p>
+              <p>If you have an old 401K from a previous employer or an existing IRA, our team will walk you through every step of rolling it into institutional-grade multifamily real estate.</p>
+              <div className="hero-ctas"><Btn variant="gold" onClick={() => { setPage("ira"); window.scrollTo({ top: 0 }); }}>Learn More</Btn></div>
+            </div>
+            <div className="promise-visual">
+              <div className="image-stack">
+                <div className="image-card card-purple">
+                  <img src="IRA.jpeg" alt="Roll your IRA or 401K into multifamily real estate" style={{width:"100%",height:"100%",objectFit:"cover",borderRadius:"20px",display:"block"}}/>
+                </div>
+                <div className="image-badge card-gold">
+                  <div className="ib-tiny">TAX-ADVANTAGED INVESTING</div>
+                  <div className="serif" style={{fontSize:"15px",lineHeight:"1.55",fontStyle:"italic",marginTop:"8px",maxWidth:"230px",color:"#4a0058"}}>Roll over your old 401K or IRA with no taxable event.</div>
+                </div>
+                <div className="image-orb-1"></div>
+                <div className="image-orb-2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--white">
+        <div className="container">
+          <div className="section-head">
+            <Eyebrow>THE ASSET CLASS</Eyebrow>
+            <h2 className="section-title">Why <span className="serif gold-shimmer">Multifamily</span> Works</h2>
+          </div>
+          <div className="reasons-grid">
+            {[
+              { t: "Strong Demand", d: "Housing is a basic need. Multifamily stays in demand across every economic environment and outperforms during volatility.", img: "why-01.jpg" },
+              { t: "Predictable Cash Flow", d: "Professionally managed apartment communities generate consistent rental income distributed directly to investors.", img: "why-02.jpg" },
+              { t: "Built-In Appreciation", d: "Through renovations and operational improvements, we increase property value regardless of market fluctuations.", img: "why-03.jpg" },
+              { t: "Inflation Protection", d: "Rents tend to rise with inflation, helping protect your purchasing power.", img: "why-04.jpg" },
+              { t: "Long-Term Appreciation", d: "Grow wealth through strategically selected real estate built for long-term value.", img: "why-05.jpg" },
+              { t: "Tax Savings Through Depreciation", d: "Accelerated depreciation lets you shelter significant income on paper — high earners can offset up to 45% in year-one tax savings.", img: "why-06.jpg", badge: "Up to 45%" },
+            ].map((r, i) => (
+              <article className={`reason-card ${i % 2 === 0 ? "card-purple" : "card-gold"}`} key={r.t} style={{ animationDelay: `${i * 0.9}s`, animationDuration: `${6 + i * 0.7}s` }}>
+                <div className="reason-img">
+                  <img src={r.img} alt={r.t}/>
+                  <div className="reason-img-overlay"></div>
+                  {r.badge && (
+                    <div style={{ position:"absolute", top:16, right:16, background:"linear-gradient(135deg,var(--gold-light),var(--gold-deep))", color:"#1a0a2e", padding:"6px 14px", borderRadius:"100px", fontSize:12, fontWeight:700, letterSpacing:"0.05em", zIndex:2 }}>{r.badge}</div>
+                  )}
+                </div>
+                <div className="reason-body">
+                  <div className="reason-index serif">0{i+1}</div>
+                  <h3 className="reason-title">{r.t}</h3>
+                  <p className="reason-desc">{r.d}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+          <div className="center mt-48">
+            <Btn variant="gold" onClick={() => { setPage("education"); window.scrollTo({ top: 0 }); }}>Learn Why Multifamily Wins</Btn>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--white" id="how-it-works">
+        <div className="container">
+          <div className="section-head center">
+            <Eyebrow>THE INVESTOR JOURNEY</Eyebrow>
+            <h2 className="section-title">How It <span className="serif gold-shimmer">Works</span></h2>
+            <p className="section-sub" style={{maxWidth:"560px",margin:"16px auto 0"}}>Five clear steps from first conversation to capital returned — built around your time, not ours.</p>
+          </div>
+          <div className="steps" style={{marginTop:"48px"}}>
+            <div className="steps-rail"></div>
+            {[
+              { n: "01", t: "Join the Investor List", d: "Verify accreditation and get access to upcoming opportunities." },
+              { n: "02", t: "Review the Offering", d: "We send you a full investment package outlining the business plan, projected returns, and timeline." },
+              { n: "03", t: "Invest with Confidence", d: "Sign the subscription documents and fund your investment securely." },
+              { n: "04", t: "Receive Cash Flow & Updates", d: "Investors receive quarterly updates, distributions, and a year-end K-1 for tax benefits." },
+              { n: "05", t: "Exit or Refinance", d: "Upon sale or refinance, investors receive their profits plus return of capital." },
+            ].map((s, i) => (
+              <div className={`step ${i % 2 === 0 ? "card-purple" : "card-gold"} ${i % 2 ? "right" : "left"}`} key={s.n}>
+                <div className="step-num-col"><div className="step-num serif">{s.n}</div><div className="step-dot"></div></div>
+                <div className="step-body"><h3 className="step-title">{s.t}</h3><p className="step-desc">{s.d}</p></div>
+              </div>
+            ))}
+          </div>
+          <div className="center mt-48">
+            <Btn variant="gold" onClick={() => setPage("contact")}>Start the Conversation</Btn>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--white">
+        <div className="container">
+          <div className="deal-banner card-purple">
+            <div className="deal-orbs"></div>
+            <div className="deal-inner" style={{gridTemplateColumns:"1fr 1.4fr"}}>
+              <div style={{borderRadius:"20px", overflow:"hidden", border:"1px solid rgba(229,193,88,0.40)", boxShadow:"0 20px 50px -20px rgba(0,0,0,0.45)", aspectRatio:"4/3"}}>
+                <img src="park.jpg.png" alt="The Park at Arlington — 188-unit multifamily, Covington, GA" style={{width:"100%", height:"100%", objectFit:"cover", display:"block"}}/>
+              </div>
+              <div className="deal-right">
+                <div style={{gridColumn:"span 2"}}>
+                  <span className="deal-badge">DEAL CLOSED</span>
+                  <h2 className="serif deal-title" style={{marginTop:"12px"}}>188-Unit Multifamily<br/>Opportunity — Georgia</h2>
+                  <p className="deal-sub">Join our list of upcoming opportunities.</p>
+                </div>
+                <div className="deal-stat"><span className="deal-check">✓</span><div><div className="deal-stat-big serif">17.35%</div><div className="deal-stat-label">AAR</div></div></div>
+                <div className="deal-stat"><span className="deal-check">✓</span><div><div className="deal-stat-big serif">$45.5K</div><div className="deal-stat-label">Yr-1 tax savings per $100K</div></div></div>
+                <Btn variant="gold" onClick={() => setPage("contact")}>Join Investor List</Btn>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--white">
+        <div className="container">
+          <div className="section-head center">
+            <Eyebrow>THE KYNECTIC ADVANTAGE</Eyebrow>
+            <h2 className="section-title">Why Investors<br/><span className="serif gold-shimmer">Choose Kynectic Capital</span></h2>
+            <p className="section-sub">Disciplined underwriting, aligned incentives, and transparent communication — a trusted investment experience.</p>
+          </div>
+          <div className="choose-grid">
+            {[
+              { t: "Professional & Disciplined", d: "Every deal undergoes conservative underwriting, stress testing, and market analysis." },
+              { t: "Aligned Interests", d: "We invest our own capital alongside our investors — your success is our success." },
+              { t: "Educational & Transparent", d: "Clear explanations, regular updates, and communication you can actually understand." },
+              { t: "Proven Partnerships", d: "We collaborate only with experienced operators who have strong track records." },
+            ].map((c, i) => (
+              <div className={`choose-card ${i % 2 === 0 ? "card-gold" : "card-purple"}`} key={c.t}>
+                <div className="choose-num serif">0{i+1}</div>
+                <h3 className="choose-title">{c.t}</h3>
+                <p className="choose-desc">{c.d}</p>
+                <div className="choose-ornament">
+                  <svg viewBox="0 0 100 12" width="100" height="12">
+                    <path d="M0 6 H40" stroke="currentColor" strokeWidth="1" opacity="0.7"/>
+                    <circle cx="50" cy="6" r="3" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.7"/>
+                    <path d="M60 6 H100" stroke="currentColor" strokeWidth="1" opacity="0.7"/>
+                  </svg>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--white">
+        <div className="container">
+          <div className="book-call card-gold">
+            <div className="bc-content">
+              <Eyebrow>SPEAK WITH OUR TEAM</Eyebrow>
+              <h2 className="section-title serif">Book a Free Call</h2>
+              <p className="section-sub">A 20-minute conversation. No pressure. Just clarity on whether passive multifamily fits into your wealth plan.</p>
+              <div className="hero-ctas"><Btn variant="gold" onClick={() => setPage("contact")}>Schedule a Call</Btn></div>
+            </div>
+            <div className="bc-visual">
+              <div className="calendar-mock" style={{background:"rgba(255,255,255,0.35)", border:"1px solid rgba(86,0,104,0.30)", borderRadius:"20px"}}>
+                <div className="cm-head" style={{color:"#4a0058"}}><span>NOVEMBER 2025</span><span>›</span></div>
+                <div className="cm-grid">
+                  {["S","M","T","W","T","F","S"].map((d,i)=>(<div key={i} className="cm-day-label" style={{color:"rgba(74,0,88,0.65)"}}>{d}</div>))}
+                  {Array.from({length: 30}).map((_, i) => (
+                    <div key={i} className={`cm-day ${[5,12,18,25].includes(i) ? "available" : ""} ${i === 18 ? "selected" : ""}`} style={i === 18 ? {background:"linear-gradient(135deg,#780090,#560068)", color:"#f5d676", border:"none", fontWeight:600} : [5,12,18,25].includes(i) ? {color:"#4a0058", border:"1px solid rgba(86,0,104,0.40)"} : {color:"rgba(74,0,88,0.78)"}}>{i+1}</div>
+                  ))}
+                </div>
+                <div className="cm-slots">
+                  <div className="cm-slot" style={{border:"1px solid rgba(86,0,104,0.25)", color:"rgba(74,0,88,0.78)"}}>9:00 AM</div>
+                  <div className="cm-slot active" style={{background:"rgba(86,0,104,0.15)", borderColor:"#560068", color:"#4a0058"}}>11:30 AM</div>
+                  <div className="cm-slot" style={{border:"1px solid rgba(86,0,104,0.25)", color:"rgba(74,0,88,0.78)"}}>2:00 PM</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
+
+function AboutPage({ setPage }) {
+  return (
+    <>
+      <section className="page-hero"><div className="container">
+        <Eyebrow>WHO WE ARE</Eyebrow>
+        <h1 className="page-hero-title">About <span className="serif gold-shimmer">Kynectic</span></h1>
+        <GoldDivider width={140}/>
+      </div></section>
+      <section className="section section--white"><div className="container">
+        <div className="founder-grid">
+          <div className="founder-portrait">
+            <div className="portrait-frame card-purple" style={{padding:"12px"}}>
+              <img src="Headssot.png.webp" alt="Dr. Anita Akpunku — Founder & Managing Partner, Kynectic Capital" style={{width:"100%",height:"100%",objectFit:"cover",objectPosition:"center top",borderRadius:"16px"}}/>
+            </div>
+            <div className="founder-badge card-gold">
+              <div className="fb-tiny">FOUNDER &amp; MANAGING PARTNER</div>
+              <div className="fb-name serif">Dr. Anita Akpunku</div>
+              <div className="fb-credentials">DMSC, PA-C</div>
+            </div>
+          </div>
+          <div className="founder-copy">
+            <Eyebrow>MEET THE FOUNDER</Eyebrow>
+            <h2 className="section-title serif">Dr. Anita Akpunku,<br/><span className="gold-shimmer">DMSC, PA-C</span></h2>
+            <p style={{color:"var(--gold-deep)", fontWeight:600, fontSize:"15px", letterSpacing:"0.06em", margin:"8px 0 20px"}}>Founder &amp; Managing Partner, Kynectic Capital</p>
+            <GoldDivider/>
+            <p>Dr. Anita Akpunku, DMSC, PA-C, is a multi-specialized Physician Assistant, real estate investor, community mentor, and the founder of Kynectic Capital, a private equity firm created to help busy professionals build long-term wealth through passive real estate investing. Her journey began in medicine, where she practiced across orthopedics, neurosurgery, trauma, and general surgery, ultimately earning her Doctor of Medical Science (DMSC) with an emphasis on advanced clinical leadership and high-level decision-making.</p>
+            <p>Despite a strong clinical career, Anita quickly recognized a universal truth: high income alone does not create financial freedom. Her personal experience balancing a demanding medical career with wealth-building strategies is the foundation of Kynectic Capital's investor-focused approach. With LP investments in multiple multifamily assets and Co-GP experience, she brings disciplined decision-making, transparency, and investor-aligned leadership to every project.</p>
+            <p>Between long surgical cases, demanding schedules, and clinical burnout, she saw how many high-earning professionals weren't building wealth simply because they lacked the time, access, or guidance to do so. Determined to change that, she immersed herself in real estate investing, building a 14-door personal portfolio, becoming an LP in multiple multifamily communities, and eventually serving as a Co-GP.</p>
+            <p>Kynectic Capital was founded to deliver exactly that: trusted partnerships, disciplined underwriting, transparent communication, and opportunities designed to help investors create freedom without adding another job to their already demanding lives. She brings integrity, transparency, and disciplined decision-making to every deal — ensuring investors feel confident, supported, and informed.</p>
+            <div className="hero-ctas"><Btn variant="gold" onClick={() => setPage("contact")}>Schedule a free 30 mins</Btn></div>
+          </div>
+        </div>
+      </div></section>
+      <section className="section section--white"><div className="container">
+        <div className="about-grid">
+          <div className="about-copy card-purple" style={{padding:"48px", borderRadius:"28px"}}>
+            <h3 className="about-mission serif">To give busy professionals access to institutional-grade investment opportunities — without the complexity of active real estate.</h3>
+            <GoldDivider/>
+            <p>Kynectic Capital is a private real estate investment firm that partners with experienced operators to acquire strong, cash-flowing multifamily communities in growing U.S. markets.</p>
+            <p>We focus on long-term fundamentals, disciplined underwriting, and investor-aligned strategies that prioritize capital preservation and steady returns.</p>
+            <p>Whether you're a high-income earner, a healthcare professional, or someone preparing for long-term financial freedom, Kynectic Capital is built to help you grow with clarity, transparency and confidence.</p>
+          </div>
+          <div className="about-visual">
+            <div className="image-card card-purple" style={{overflow:"hidden", padding:"12px"}}>
+              <video autoPlay loop muted playsInline style={{position:"absolute",top:"50%",left:"50%",width:"177%",height:"177%",objectFit:"cover",borderRadius:"20px",display:"block",transform:"translate(-50%,-50%) rotate(-90deg)",transformOrigin:"center center"}}>
+                <source src="building-2025-12-17-03-39-43-utc-HEVC Broadband HD (and 4G LTE and higher).mov" type="video/mp4"/>
+              </video>
+            </div>
+            <div className="image-badge card-gold">
+              <div className="ib-tiny">ANITA · FOUNDER</div>
+              <div className="serif" style={{fontSize:"15px",lineHeight:"1.6",color:"#4a0058",fontStyle:"italic",margin:"10px 0 8px",maxWidth:"220px"}}>"Every dollar we raise, I invest alongside. That's not a policy — it's a promise."</div>
+            </div>
+          </div>
+        </div>
+      </div></section>
+      <section className="section section--white"><div className="container">
+        <div className="section-head center">
+          <Eyebrow>OUR APPROACH</Eyebrow>
+          <h2 className="section-title">Institutional discipline.<br/><span className="serif gold-shimmer">Investor-first experience.</span></h2>
+        </div>
+        <div className="choose-grid">
+          {[
+            { t: "Professional & Disciplined Approach", d: "We evaluate each opportunity using conservative assumptions and data-driven analysis. If the numbers don't make sense, we don't move forward." },
+            { t: "Aligned Interests", d: "We invest our own capital in every deal. When you win, we win — and when you grow, we grow." },
+            { t: "Educational & Transparent", d: "We take the complexity out of real estate investing. From clear communication to accessible updates, you always know what you're invested in and why." },
+            { t: "Dual Strategy: Co-GP + Investor Access", d: "We partner with trusted operators and bring thoroughly vetted, high-quality opportunities to our investor community." },
+          ].map((c, i) => (
+            <div className={`choose-card ${i % 2 === 0 ? "card-purple" : "card-gold"}`} key={c.t}>
+              <div className="choose-num serif">0{i+1}</div>
+              <h3 className="choose-title">{c.t}</h3>
+              <p className="choose-desc">{c.d}</p>
+            </div>
+          ))}
+        </div>
+      </div></section>
+    </>
+  );
+}
+
+function PortfolioPage({ setPage }) {
+  const properties = [
+    { name: "The Park at Arlington", img: "park.jpg.png", details: [{ k: "Location", v: "Covington, GA" }, { k: "Target Returns", v: "17% to 18% Annually" }, { k: "Acquired", v: "February 2026" }, { k: "Target Hold Period", v: "5 Years" }] },
+    { name: "The Rise", img: "rise.jpg", details: [{ k: "Location", v: "Conyers, GA" }, { k: "Target Returns", v: "15% to 18% Annually" }, { k: "Acquired", v: "August 2025" }, { k: "Target Hold Period", v: "5 Years" }] },
+    { name: "Grove Parkview", img: "grove.jpg", details: [{ k: "Location", v: "Atlanta, GA" }, { k: "Target Returns", v: "15% to 18% Annually" }, { k: "Acquired", v: "March 2025" }, { k: "Target Hold Period", v: "5 Years" }] },
+    { name: "14 Doors Across Multiple States", img: "14door.jpeg", details: [{ k: "Strategy", v: "Long-Distance Rentals" }, { k: "Focus", v: "Value-Add Improvements" }, { k: "Returns", v: "Cash Flow + Appreciation" }] },
+  ];
+  return (
+    <>
+      <section className="page-hero"><div className="container">
+        <Eyebrow>OUR PORTFOLIO</Eyebrow>
+        <h1 className="page-hero-title">Curated <span className="serif gold-shimmer">Multifamily</span><br/>Opportunities</h1>
+        <GoldDivider width={140}/>
+        <p className="page-hero-sub">Every property in the Kynectic portfolio is stress-tested, institutionally underwritten, and operated by partners with proven track records.</p>
+      </div></section>
+      <section className="section section--white"><div className="container">
+        <div className="portfolio-grid">
+          {properties.map((p, i) => (
+            <article className={`property-card ${i % 2 === 0 ? "card-purple" : "card-gold"}`} key={p.name}>
+              <div className="property-img">
+                <img src={p.img} alt={p.name}/>
+              </div>
+              <div className="property-body">
+                <h3 className="property-name">{p.name}</h3>
+                <div className="property-details">
+                  {p.details.map((d) => (<div className="property-detail-row" key={d.k}><span className="pd-key">{d.k}:</span> <span className="pd-val">{d.v}</span></div>))}
+                </div>
+                <Btn variant="glass" onClick={() => setPage("contact")}>Request the deck</Btn>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div></section>
+      <section className="section section--white"><div className="container">
+        <div className="track-record">
+          <Eyebrow>TRACK RECORD AT A GLANCE</Eyebrow>
+          <div className="tr-grid">
+            <div className="tr-stat"><div className="tr-big serif gold-shimmer">$48M+</div><div className="tr-label">Assets transacted</div></div>
+            <div className="tr-stat"><div className="tr-big serif gold-shimmer">598</div><div className="tr-label">Units across portfolio</div></div>
+            <div className="tr-stat"><div className="tr-big serif gold-shimmer">17.4%</div><div className="tr-label">Avg projected AAR (Class B)</div></div>
+            <div className="tr-stat"><div className="tr-big serif gold-shimmer">100%</div><div className="tr-label">Distributions on schedule</div></div>
+          </div>
+        </div>
+      </div></section>
+    </>
+  );
+}
+
+function HowPage({ setPage }) {
+  const steps = [
+    { n: "01", t: "Join the Investor List", d: "Verify accreditation and get access to upcoming opportunities." },
+    { n: "02", t: "Review the Offering", d: "We send you a full investment package outlining the business plan, projected returns, and timeline." },
+    { n: "03", t: "Invest with Confidence", d: "Sign the subscription documents and fund your investment securely." },
+    { n: "04", t: "Receive Cash Flow & Updates", d: "Investors receive quarterly updates, distributions, and a year-end K-1 for tax benefits." },
+    { n: "05", t: "Exit or Refinance", d: "Upon sale or refinance, investors receive their profits plus return of capital." },
+  ];
+  return (
+    <>
+      <section className="page-hero"><div className="container">
+        <Eyebrow>THE INVESTOR JOURNEY</Eyebrow>
+        <h1 className="page-hero-title">How It <span className="serif gold-shimmer">Works</span></h1>
+        <GoldDivider width={140}/>
+        <p className="page-hero-sub">Five clear steps from first conversation to capital returned — built around your time, not ours.</p>
+      </div></section>
+      <section className="section section--white"><div className="container">
+        <div className="steps">
+          <div className="steps-rail"></div>
+          {steps.map((s, i) => (
+            <div className={`step ${i % 2 === 0 ? "card-purple" : "card-gold"} ${i % 2 ? "right" : "left"}`} key={s.n}>
+              <div className="step-num-col"><div className="step-num serif">{s.n}</div><div className="step-dot"></div></div>
+              <div className="step-body"><h3 className="step-title">{s.t}</h3><p className="step-desc">{s.d}</p></div>
+            </div>
+          ))}
+        </div>
+      </div></section>
+    </>
+  );
+}
+
+function EducationPage({ setPage }) {
+  const [openArticle, setOpenArticle] = useState(null);
+
+  // Push a history entry when opening an article so browser back works
+  const openArticleView = (i) => {
+    setOpenArticle(i);
+    history.pushState({ page: "education", article: i }, "", window.location.pathname + "#article-" + i);
+    window.scrollTo({ top: 0 });
+  };
+
+  // Close article when browser back is pressed
+  useEffect(() => {
+    const onPop = () => {
+      if (openArticle !== null) setOpenArticle(null);
+    };
+    window.addEventListener("popstate", onPop);
+    return () => window.removeEventListener("popstate", onPop);
+  }, [openArticle]);
+  const articles = [
+    {
+      t: "Multifamily 101", d: "The foundational primer on how apartment investments produce four return drivers simultaneously.", tag: "Primer", read: "8 min read",
+      content: [
+        { h: "What Is Multifamily Real Estate?", p: "Multifamily real estate refers to residential properties with two or more units — from small duplexes to large apartment communities with hundreds of doors. Institutional-grade multifamily (typically 50+ units) is where private equity, family offices, and sophisticated investors have quietly built generational wealth for decades. Kynectic focuses exclusively on this segment." },
+        { h: "The Four Return Drivers", p: "Unlike stocks, multifamily produces returns from four simultaneous sources. Cash flow is the monthly rental income after expenses — distributed to investors quarterly. Forced appreciation is the value you create by increasing revenue or reducing costs, independent of market conditions. Amortization means tenants pay down your mortgage over time, building equity even while you sleep. And tax benefits — specifically depreciation — let you shelter significant income on paper, often turning a cash-positive investment into a paper loss." },
+        { h: "Why Passive Investors Prefer It", p: "A passive investor in a multifamily syndication is a Limited Partner (LP). You contribute capital, review quarterly reports, and receive distributions. The sponsor (General Partner) handles acquisitions, financing, property management, and eventual sale. You own a fractional interest in a real asset without managing tenants, toilets, or maintenance calls." },
+        { h: "How Kynectic Structures Deals", p: "Kynectic operates as a Co-GP, partnering with experienced regional operators who have direct market expertise. We underwrite conservatively — stress-testing vacancy rates, cap rate expansion, and rent growth assumptions — and present only deals that make sense across multiple market scenarios. Investor capital is returned first, before the GP shares in profits." },
+        { h: "What to Expect as a First-Time LP", p: "After funding your investment, you'll receive a K-1 at year end for tax filing and quarterly investor updates detailing occupancy, collections, and capital improvements. Most deals run 3–7 years before a sale or refinance event, at which point investors receive their equity gains plus return of capital." },
+      ]
+    },
+    {
+      t: "Understanding AAR vs. IRR", d: "Why average annual return and internal rate of return tell different stories — and which matters when.", tag: "Returns", read: "6 min read",
+      content: [
+        { h: "The Two Numbers Every LP Should Understand", p: "Sponsors project returns using several metrics. The two you'll encounter most often are Average Annual Return (AAR) and Internal Rate of Return (IRR). They measure different things, and a deal can look great on one while being mediocre on the other. Knowing the difference protects you from being misled by a single headline number." },
+        { h: "What AAR Actually Measures", p: "AAR (also called Average Annual Return or Cash-on-Cash) is simple: total profit divided by years held, expressed as a percentage of invested capital. If you invest $100,000, receive $70,000 in distributions over 5 years, and get $130,000 at sale, your total profit is $100,000 on $100,000 invested — a 20% AAR. It's intuitive and comparable across deals." },
+        { h: "What IRR Actually Measures", p: "IRR is a time-weighted return. It accounts for when cash flows occur — $10,000 received in year one is worth more than $10,000 in year five. A deal that pays heavy early distributions has a higher IRR than one that back-loads all returns at sale, even if the total dollar return is identical. IRR is the metric private equity uses internally to compare deals with different timing profiles." },
+        { h: "When Each Metric Matters", p: "AAR is most useful when comparing the total magnitude of returns across deals with similar hold periods. IRR matters when comparing deals with very different cash flow timing — for example, a value-add deal that pays little in years 1–2 while renovations complete versus a stabilized deal with immediate strong distributions. A sophisticated investor asks for both." },
+        { h: "Kynectic's Approach", p: "We report both AAR and IRR projections in every offering package, along with an equity multiple (how many times your capital is returned). We also run downside scenarios — showing returns at 10% lower rent growth and a 50bps cap rate expansion — so you can see how the deal performs if things go sideways. Conservative underwriting is our non-negotiable." },
+      ]
+    },
+    {
+      t: "Bonus Depreciation Explained", d: "How accelerated depreciation can shelter ordinary income and amplify your year-one tax position.", tag: "Tax", read: "10 min read",
+      content: [
+        { h: "Why Real Estate Is the Ultimate Tax Shelter", p: "The IRS allows property owners to deduct the theoretical 'wear and tear' of a building over time — even though real estate often appreciates in value. This paper loss, called depreciation, can offset real income, reducing your tax bill without affecting your cash flow. For high-income earners in the 37% bracket, this is one of the most powerful wealth-building tools available." },
+        { h: "How Standard Depreciation Works", p: "Under standard straight-line depreciation, a residential building (excluding land) is depreciated over 27.5 years. A $2,000,000 building generates roughly $72,700 per year in paper losses. If you own 10% of the deal, your annual depreciation deduction is $7,270 — useful, but not transformative on its own." },
+        { h: "What Accelerated and Bonus Depreciation Changes", p: "A Cost Segregation Study reclassifies portions of the building into shorter depreciation schedules — 5, 7, or 15 years instead of 27.5. Personal property (appliances, carpeting, fixtures) and land improvements (parking lots, landscaping) qualify for these shorter lives. Under the Tax Cuts and Jobs Act (TCJA), assets with a depreciable life under 20 years can be 100% expensed in year one — that's bonus depreciation." },
+        { h: "A Real-World Example", p: "On a $5M acquisition, a cost segregation study might reclassify $1.2M into short-life assets eligible for bonus depreciation. In year one, that generates $1.2M in paper losses for the partnership. If you invested $100K and own 2% of the deal, your share of that loss is $24,000 — which could reduce a $400,000 taxable income to $376,000, saving you roughly $8,880 in federal taxes in year one alone. Some deals generate even larger year-one deductions." },
+        { h: "Passive Activity Rules and the Real Estate Professional Exception", p: "Depreciation losses are classified as passive losses, which generally can only offset passive income — not W-2 wages or business income. However, passive losses can offset distributions from other passive investments, and they carry forward indefinitely. Physicians, engineers, and executives who qualify as Real Estate Professionals under IRS rules (750+ hours/year in real estate activities) can use these losses against active income — a powerful strategy for the right investor." },
+        { h: "What Kynectic Does", p: "Every Kynectic acquisition includes a cost segregation study in the first year of ownership. We coordinate with investors' CPAs to deliver K-1s with the relevant depreciation allocations clearly labeled. We do not give tax advice, but we structure deals to maximize the legitimate tax benefits available to our investors and connect them with real estate tax specialists when needed." },
+      ]
+    },
+    {
+      t: "Reading a Private Placement Memorandum", d: "A line-by-line guide to the document that governs your investment — what to look for and what to skip.", tag: "Diligence", read: "12 min read",
+      content: [
+        { h: "What a PPM Is and Why It Exists", p: "A Private Placement Memorandum is the legal document governing your investment in a real estate syndication. It's prepared by the sponsor's securities attorney and filed under a Regulation D exemption (typically 506(b) or 506(c)), allowing the sponsor to raise capital from accredited investors without a public offering. The PPM is long — often 80–150 pages — but most of that length is standard legal boilerplate. Here's what actually matters." },
+        { h: "The Executive Summary and Business Plan", p: "The first substantive section describes the property, the market thesis, the value-add strategy, and the projected timeline. Read this carefully. Ask: Is the rent growth assumption realistic for this submarket? What's the exit cap rate assumption — and is it conservative given where rates are? A sponsor projecting 3% rent growth in a flat market or assuming a compressed exit cap is a red flag." },
+        { h: "The Offering Terms", p: "This section details the equity split between LPs and GPs, the preferred return, the waterfall, and the promote structure. A typical structure: 8% preferred return to LPs, then 70/30 or 80/20 split of remaining profits. The promote (GP's profit share above pref) incentivizes the sponsor to maximize returns. Make sure the preferred return is cumulative — meaning unpaid preferred accrues until paid — and understand whether it's compounding or non-compounding." },
+        { h: "Risk Factors", p: "This section is written by lawyers to be comprehensive rather than specific. Read it anyway. Look for risks specific to this deal: is the market highly supply-constrained or are new units being delivered? Is the property in a flood zone? Is there a large tenant concentration (e.g., Section 8 or corporate housing) that could create vacancy risk? Generic risks are expected; deal-specific risks buried in this section deserve attention." },
+        { h: "The Financials and Projections", p: "Request the operating model (often a separate Excel file). Look at the T-12 (trailing 12 months of actual income and expenses) and compare it to the sponsor's pro forma. How aggressive is the rental rate assumption? What's the underwritten vacancy rate versus current actual vacancy? Are capex reserves adequate — typically $200–400 per unit per year for value-add deals? A sponsor who won't share the T-12 is a red flag." },
+        { h: "Sponsor Track Record and Fees", p: "The PPM will list the sponsor's biography and prior deals. Look for: completed full-cycle deals (not just acquisitions), consistent returns across market cycles, and relevant asset size experience. Fees matter too — acquisition fees (1–2%), asset management fees (1–2% of gross revenue), and disposition fees (0.5–1%) are standard. Anything above those ranges deserves a question." },
+        { h: "What to Skip", p: "The subscription agreement and operating agreement are largely standard legal documents. You should read them — or have your attorney review them — before signing. But the representations and warranties, indemnification clauses, and arbitration provisions are standard in virtually every offering and rarely negotiable. Focus your time on the business plan, financials, and offering terms." },
+      ]
+    },
+    {
+      t: "The Power of Cost Segregation", d: "Why a $100K investment can deliver $45K in year-one paper losses without affecting cash flow.", tag: "Tax", read: "9 min read",
+      content: [
+        { h: "What Is a Cost Segregation Study?", p: "A cost segregation study is an engineering analysis of a property that reclassifies building components from the standard 27.5-year depreciation schedule to shorter 5-, 7-, or 15-year schedules — or to full immediate expensing under bonus depreciation rules. The study is performed by a qualified engineer and CPA team, and its findings are the foundation for your depreciation deductions." },
+        { h: "What Gets Reclassified", p: "Interior personal property: flooring, appliances, cabinetry, lighting fixtures, and specialty plumbing. Land improvements: parking lots, sidewalks, fencing, landscaping, irrigation systems, and outdoor lighting. These categories typically represent 20–40% of a building's acquisition cost and qualify for accelerated or bonus depreciation schedules." },
+        { h: "The Math on a $100K Investment", p: "Imagine a $5M apartment complex with $1.5M in reclassified short-life assets. Under 100% bonus depreciation, the full $1.5M is deducted in year one. If you invested $100,000 and own 2% of the deal, your share of that deduction is $30,000. At a 37% marginal tax rate, that's $11,100 in federal taxes avoided — in year one alone. On deals where reclassification is 30–40% of purchase price, year-one deductions can easily reach $40–50K per $100K invested." },
+        { h: "Bonus Depreciation Phase-Down Schedule", p: "The TCJA introduced 100% bonus depreciation for qualifying assets placed in service after September 27, 2017. However, that rate is phasing down: 80% in 2023, 60% in 2024, 40% in 2025, 20% in 2026, and 0% from 2027 unless Congress acts. Deals closing today still benefit meaningfully, but the window is narrowing. Legislative extensions are possible but not guaranteed." },
+        { h: "How Passive Loss Rules Apply", p: "The depreciation losses generated flow through to LPs as passive losses on their K-1. These can offset other passive income (e.g., distributions from other real estate investments or other passive activities). For investors who qualify as Real Estate Professionals or who have other passive income to offset, the benefit is immediate. Others may carry the losses forward to offset future passive income or gains at sale." },
+        { h: "Cost Segregation vs. Standard Depreciation: A Side-by-Side", p: "On a $5M building with standard depreciation, year-one LP depreciation per $100K invested is roughly $3,600. With cost segregation and 80% bonus depreciation (2023 rules), the same investor might receive $26,000–$35,000 in year-one deductions. The difference compounds over the hold period through reduced tax drag on distributions." },
+      ]
+    },
+    {
+      t: "Operator Diligence Checklist", d: "The exact 24-point checklist Kynectic uses to vet every operating partner before deploying a dollar.", tag: "Diligence", read: "7 min read",
+      content: [
+        { h: "Why Operator Quality Is the Deal", p: "A great market with a poor operator produces mediocre outcomes. A strong operator in a decent market often produces excellent ones. At Kynectic, we believe operator diligence is the most important element of the underwriting process. The numbers in a model are only as credible as the team executing them." },
+        { h: "Track Record (Points 1–6)", p: "1. Full-cycle deals completed — not just acquisitions. Anyone can buy; exits reveal execution quality. 2. Asset class match — have they operated this property type and size before? 3. Geographic experience — do they have boots on the ground in this specific market? 4. Vintage diversity — how did their 2019 acquisitions perform through 2020–2021? 5. Occupancy history across the portfolio — average occupancy above 92%? 6. Distribution consistency — were distributions paused or cut during Covid or rising rate environments?" },
+        { h: "Financial Strength (Points 7–12)", p: "7. Balance sheet — do they have sufficient reserves for capital calls? 8. Existing portfolio health — are current deals stabilized or in distress? 9. Lender relationships — do they have existing relationships with agency lenders (Fannie/Freddie)? 10. Loan history — any defaults, workouts, or extensions? 11. Co-investment — does the GP invest their own capital in every deal? 12. Fee alignment — are fees structured to incentivize performance, not just deal volume?" },
+        { h: "Operational Capability (Points 13–18)", p: "13. Property management — do they self-manage or use third-party PM? If third-party, who and what's their track record? 14. Revenue management — do they use dynamic pricing tools (RealPage, Yardi)? 15. Renovation experience — have they completed comparable value-add scopes on time and on budget? 16. Vendor relationships — do they have preferred contractor pricing? 17. Maintenance response times — what's the average ticket close time? 18. Resident retention rates — high turnover is expensive and signals management issues." },
+        { h: "Communication and Reporting (Points 19–22)", p: "19. Reporting cadence — monthly or quarterly investor updates? 20. Report quality — do they include T-12 actuals vs. pro forma comparisons, or just narrative updates? 21. Responsiveness — how quickly do they respond to LP questions? 22. Portal access — do investors have real-time visibility into financials and documents?" },
+        { h: "References and Reputation (Points 23–24)", p: "23. LP references — ask for three LPs who have been in at least two deals with them. Ask specifically: Were distributions ever paused? How did they communicate when things got hard? Would you invest again? 24. Industry reputation — ask other operators, brokers, and lenders in the market what they think. A sponsor's reputation in their backyard tells you more than their pitch deck." },
+        { h: "Kynectic's Standard", p: "Every operating partner Kynectic works with has cleared all 24 points. We conduct in-person property tours, reference calls, and independent market verification before presenting any deal to our investors. If an operator can't answer questions 1–24 clearly and confidently, we don't move forward — regardless of how attractive the deal looks on paper." },
+      ]
+    },
+  ];
+
+  if (openArticle !== null) {
+    const a = articles[openArticle];
+    return (
+      <>
+        <section className="page-hero"><div className="container">
+          <button onClick={() => { history.back(); }} style={{background:"none",border:"none",color:"var(--gold-deep)",cursor:"pointer",fontSize:"13px",letterSpacing:"0.06em",marginBottom:"20px",padding:"0",display:"flex",alignItems:"center",gap:"6px"}}>← Back to Library</button>
+          <div style={{display:"inline-block",padding:"4px 14px",borderRadius:"100px",border:"1px solid rgba(184,146,58,0.50)",fontSize:"11px",fontWeight:600,letterSpacing:"0.12em",textTransform:"uppercase",color:"var(--gold-deep)",marginBottom:"16px",background:"rgba(245,214,118,0.12)"}}>{a.tag}</div>
+          <h1 className="page-hero-title">{a.t}</h1>
+          <GoldDivider width={140}/>
+          <p className="page-hero-sub">{a.d} · {a.read}</p>
+        </div></section>
+        <section className="section section--white"><div className="container" style={{maxWidth:"760px"}}>
+          {a.content.map((s, i) => (
+            <div key={i} style={{marginBottom:"40px"}}>
+              <h3 style={{fontFamily:"var(--display-font)",fontSize:"22px",fontWeight:500,color:"#1a001f",marginBottom:"12px",lineHeight:"1.3"}}>{s.h}</h3>
+              <p style={{fontSize:"16px",color:"#4a3450",lineHeight:"1.85"}}>{s.p}</p>
+            </div>
+          ))}
+          <div style={{marginTop:"56px",paddingTop:"40px",borderTop:"1px solid rgba(86,0,104,0.12)"}}>
+            <p style={{fontSize:"13px",color:"#5a4060",marginBottom:"24px"}}>Ready to put this knowledge to work?</p>
+            <div className="hero-ctas">
+              <Btn variant="gold" onClick={() => setPage("contact")}>Invest with Kynectic</Btn>
+              <Btn variant="glass" onClick={() => { history.back(); }} style={{color:"var(--gold-deep)",borderColor:"rgba(184,146,58,0.55)"}}>Back to Library</Btn>
+            </div>
+          </div>
+        </div></section>
+      </>
+    );
+  }
+
+  return (
+    <>
+      <section className="page-hero"><div className="container">
+        <Eyebrow>INVESTOR EDUCATION</Eyebrow>
+        <h1 className="page-hero-title">Learn Before<br/>You <span className="serif gold-shimmer">Invest</span></h1>
+        <GoldDivider width={140}/>
+        <p className="page-hero-sub">Free, no-fluff education built for high-income earners who want to understand exactly what they're buying.</p>
+      </div></section>
+      <section className="section section--white"><div className="container">
+        <div className="section-head"><Eyebrow>THE LIBRARY</Eyebrow><h2 className="section-title">Articles & <span className="serif gold-shimmer">guides</span></h2></div>
+        <div className="library-grid">
+          {articles.map((a, i) => (
+            <article className={`article-card ${i % 2 === 0 ? "card-purple" : "card-gold"}`} key={a.t} style={{cursor:"pointer"}} onClick={() => openArticleView(i)}>
+              <div className="article-tag">{a.tag}</div>
+              <h3 className="article-title">{a.t}</h3>
+              <p className="article-desc">{a.d}</p>
+              <div className="article-foot"><span>{a.read}</span><span className="gold">Read →</span></div>
+            </article>
+          ))}
+        </div>
+      </div></section>
+    </>
+  );
+}
+
+function FAQPage() {
+  const faqs = [
+    { q: "What is passive multifamily investing?", a: "It's the structure where you invest capital alongside a professional sponsor (Kynectic) who acquires, operates, and eventually sells an apartment community. You receive distributions, tax benefits, and a share of proceeds at sale — without managing tenants, toilets, or trash." },
+    { q: "Who can invest with Kynectic Capital?", a: "Most offerings are open to accredited investors as defined by SEC Rule 501. We verify accreditation as part of onboarding and can walk you through the process." },
+    { q: "What is the minimum investment?", a: "Minimums typically start at $50,000–$100,000 depending on the offering. We'll share the exact figure with each opportunity." },
+    { q: "How are returns paid out?", a: "Most deals distribute cash flow quarterly via ACH directly to your account. A larger share of returns is realized at sale or refinance." },
+    { q: "What are the tax benefits?", a: "Multifamily real estate offers depreciation — including accelerated and bonus depreciation — that can offset distributions and, in some cases, other passive income. We issue an annual K-1 for each investment." },
+    { q: "What is a typical hold period?", a: "Most Kynectic offerings target a 3–7 year hold, with the exact timeline disclosed in each business plan." },
+    { q: "How do I get started?", a: "Join our investor list to receive education, market updates, and access to upcoming offerings. When a deal opens, you'll receive the full investment package to review." },
+  ];
+  const [open, setOpen] = useState(0);
+  return (
+    <>
+      <section className="page-hero"><div className="container">
+        <Eyebrow>FREQUENTLY ASKED</Eyebrow>
+        <h1 className="page-hero-title">Your <span className="serif gold-shimmer">Questions</span><br/>Answered</h1>
+        <GoldDivider width={140}/>
+      </div></section>
+      <section className="section section--white"><div className="container container--narrow">
+        <div className="faq-list">
+          {faqs.map((f, i) => (
+            <div className={`faq-item ${i % 2 === 0 ? "card-purple" : "card-gold"} ${open === i ? "open" : ""}`} key={f.q} onClick={() => setOpen(open === i ? -1 : i)}>
+              <div className="faq-q">
+                <span className="faq-num serif">0{i+1}</span>
+                <span className="faq-q-text">{f.q}</span>
+                <span className="faq-toggle">{open === i ? "–" : "+"}</span>
+              </div>
+              {open === i && <div className="faq-a">{f.a}</div>}
+            </div>
+          ))}
+        </div>
+      </div></section>
+    </>
+  );
+}
+
+function ContactPage() {
+  const [sent, setSent] = useState(false);
+  const [form, setForm] = useState({ name: "", email: "", phone: "", invest: "", message: "" });
+  const onChange = (k) => (e) => setForm({ ...form, [k]: e.target.value });
+  return (
+    <>
+      <section className="page-hero"><div className="container">
+        <Eyebrow>CONTACT US</Eyebrow>
+        <h1 className="page-hero-title">Let's <span className="serif gold-shimmer">Connect</span></h1>
+        <GoldDivider width={140}/>
+        <p className="page-hero-sub">Tell us a little about yourself and we'll be in touch within one business day.</p>
+      </div></section>
+      <section className="section section--white"><div className="container">
+        <div className="contact-grid">
+          <div className="contact-form card-purple">
+            {!sent ? (
+              <form onSubmit={(e) => { e.preventDefault(); setSent(true); }}>
+                <div className="field"><label>Full Name</label><input type="text" required value={form.name} onChange={onChange("name")} placeholder="Jane Smith"/></div>
+                <div className="field-row">
+                  <div className="field"><label>Email</label><input type="email" required value={form.email} onChange={onChange("email")} placeholder="jane@example.com"/></div>
+                  <div className="field"><label>Phone</label><input type="tel" value={form.phone} onChange={onChange("phone")} placeholder="(555) 123-4567"/></div>
+                </div>
+                <div className="field">
+                  <label>Investment range</label>
+                  <select value={form.invest} onChange={onChange("invest")}>
+                    <option value="">Select a range</option>
+                    <option>$50K – $100K</option><option>$100K – $250K</option>
+                    <option>$250K – $500K</option><option>$500K+</option>
+                  </select>
+                </div>
+                <div className="field"><label>What would you like to discuss?</label><textarea rows="4" value={form.message} onChange={onChange("message")} placeholder="A bit about your goals…"/></div>
+                <div className="accred" style={{background:"rgba(245,214,118,0.12)", border:"1px solid rgba(245,214,118,0.30)"}}>
+                  <input type="checkbox" id="accred" required/>
+                  <label htmlFor="accred" style={{color:"var(--gold-light)"}}>I confirm I am an accredited investor or qualified to participate.</label>
+                </div>
+                <button type="submit" className="btn btn--gold btn--full">
+                  <span>Submit & Join Investor List</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                </button>
+              </form>
+            ) : (
+              <div className="sent-state">
+                <div className="sent-glyph" style={{color:"var(--gold-light)"}}>
+                  <svg viewBox="0 0 64 64" width="80" height="80">
+                    <circle cx="32" cy="32" r="30" fill="none" stroke="currentColor" strokeWidth="1.5"/>
+                    <path d="M20 32 L28 40 L44 24" stroke="currentColor" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
+                  </svg>
+                </div>
+                <h3 className="serif">Thank you, {form.name || "investor"}.</h3>
+                <p>We've received your details. A member of the Kynectic team will reach out shortly.</p>
+              </div>
+            )}
+          </div>
+          <aside className="contact-info">
+            <div className="info-card card-gold"><div className="info-tiny">EMAIL</div><a className="info-big" href="mailto:anita@kynecticcap.com">anita@kynecticcap.com</a></div>
+            <div className="info-card card-purple"><div className="info-tiny">PHONE</div><a className="info-big" href="tel:+14302437221">+1 (430) 243‑7221</a></div>
+            <div className="info-card card-gold"><div className="info-tiny">OFFICE</div><div className="info-big">1800 S Loop 288<br/>396 670, Denton, TX 76208</div></div>
+            <div className="info-card card-purple"><div className="info-tiny">FOLLOW</div><a className="info-big" href="https://www.instagram.com/kynecticcapital/" target="_blank" rel="noreferrer">@kynecticcapital</a></div>
+          </aside>
+        </div>
+      </div></section>
+    </>
+  );
+}
+
+function IRAPage({ setPage }) {
+  const [open, setOpen] = useState(0);
+  const benefits = [
+    { t: "Tax-Deferred Compounding", d: "Distributions and gains stay inside your retirement account and grow without annual tax drag. The money you'd lose to taxes keeps working for you for decades." },
+    { t: "Depreciation Pass-Through", d: "Multifamily investments generate accelerated and bonus depreciation. Inside a Roth IRA, those tax shields amplify the effective compounding rate. Inside a traditional IRA, they support the long-term plan." },
+    { t: "No Taxable Event", d: "A direct trustee-to-trustee rollover from a former employer's 401K or an existing IRA into a self-directed account is not a taxable event. You preserve every dollar of principal." },
+    { t: "Real-Asset Backing", d: "Your retirement is no longer tied exclusively to public markets. Apartments produce cash flow, hold real value, and historically outperform equities through inflationary periods." },
+  ];
+  const steps = [
+    { n: "01", t: "Open a Self-Directed Account", d: "Work with a qualified custodian (we'll introduce you to vetted partners) to open a Self-Directed IRA or Solo 401K. The account is in your name and you retain control of investment decisions." },
+    { n: "02", t: "Roll Over Your Existing Funds", d: "A direct trustee-to-trustee rollover from a former employer's 401K or a traditional IRA moves your balance into the new account. No taxes. No penalties. Typically completes in 2–4 weeks." },
+    { n: "03", t: "Subscribe to a Kynectic Offering", d: "When a deal is ready, the subscription documents are signed by your IRA custodian on behalf of your retirement account. Funds wire directly from the IRA — never through you personally." },
+    { n: "04", t: "Receive Returns Tax-Advantaged", d: "Quarterly distributions and eventual exit proceeds flow back into your IRA. Inside a Roth, future withdrawals are tax-free. Inside a traditional, taxes are deferred until retirement." },
+  ];
+  const faqs = [
+    { q: "What is a Self-Directed IRA?", a: "A Self-Directed IRA (SDIRA) is a retirement account that gives you the freedom to invest in alternative assets — private real estate, syndications, notes, and more — beyond the stocks, bonds, and mutual funds offered by traditional brokerages. The custodian holds the assets; you direct the strategy." },
+    { q: "Can I use an old employer's 401K?", a: "Yes. A 401K from a previous employer is one of the most common funding sources for self-directed real estate investing. The balance can be rolled into a Self-Directed IRA without any taxable event. Active 401Ks at a current employer typically cannot be rolled over until you separate from that employer, though some plans permit in-service rollovers." },
+    { q: "What about a Solo 401K?", a: "If you have any 1099 or self-employment income, a Solo 401K can be an even more powerful vehicle than an SDIRA — higher contribution limits, no UBIT on leveraged real estate, and the ability to take a loan against the balance. We'll help you determine the right structure for your situation." },
+    { q: "Are there minimums?", a: "Most Kynectic offerings require a $50,000–$100,000 minimum investment, which can be funded entirely from retirement account assets. There is no separate minimum for retirement-account investors." },
+    { q: "What is UBIT and does it affect me?", a: "Unrelated Business Income Tax (UBIT) can apply to debt-financed real estate held inside an IRA. For most multifamily syndications, UBIT is limited and is offset by depreciation losses, often resulting in $0 owed. A Solo 401K is generally exempt from UBIT on leveraged real estate, which is why it's often the preferred vehicle for high earners with self-employment income." },
+    { q: "How long does a rollover take?", a: "A direct trustee-to-trustee rollover typically takes 2–4 weeks from the day paperwork is submitted. Our team coordinates with your custodian to keep the process moving so you don't miss an offering deadline." },
+    { q: "Which custodians do you work with?", a: "We work with several established self-directed custodians and can introduce you to the right one based on your account type, fee preferences, and timeline. We don't receive referral fees — our only criterion is fit for the investor." },
+  ];
+  return (
+    <>
+      <section className="page-hero"><div className="container">
+        <Eyebrow>RETIREMENT-FUNDED INVESTING</Eyebrow>
+        <h1 className="page-hero-title">Invest with your <span className="serif gold-shimmer">IRA</span> or<br/>old 401K.</h1>
+        <GoldDivider width={140}/>
+        <p className="page-hero-sub">Self-directed retirement accounts unlock passive multifamily income, real-asset appreciation, and significant tax advantages — without triggering a taxable event. Here's exactly how it works.</p>
+      </div></section>
+
+      <section className="section section--white"><div className="container">
+        <div className="promise-grid">
+          <div className="promise-copy">
+            <Eyebrow>THE OPPORTUNITY</Eyebrow>
+            <h2 className="section-title">Your retirement<br/><span className="serif gold-shimmer">deserves real assets</span>.</h2>
+            <GoldDivider/>
+            <p className="lede">Most retirement accounts sit in stocks, bonds, and target-date funds — fully exposed to public-market volatility and inflation.</p>
+            <p>A Self-Directed IRA or Solo 401K lets you redirect a portion of those funds into institutional-grade multifamily real estate. You keep every existing tax advantage of the retirement account, and you add the cash flow, appreciation, and depreciation benefits of real estate ownership.</p>
+            <p>The rollover itself is not a taxable event. Your principal stays whole. Your money simply moves from a brokerage that limits your choices into a custodian that lets you decide.</p>
+            <div className="hero-ctas"><Btn variant="gold" onClick={() => setPage("contact")}>Talk to Our Team</Btn></div>
+          </div>
+          <div className="promise-visual">
+            <div className="image-stack">
+              <div className="image-card card-purple">
+                <img src="IRA.jpeg" alt="Roll your IRA or 401K into multifamily real estate" style={{width:"100%",height:"100%",objectFit:"cover",borderRadius:"20px",display:"block"}}/>
+              </div>
+              <div className="image-badge card-gold">
+                <div className="ib-tiny">NO TAXABLE EVENT</div>
+                <div className="serif" style={{fontSize:"15px",lineHeight:"1.55",fontStyle:"italic",marginTop:"8px",maxWidth:"230px",color:"#4a0058"}}>"Rollovers preserve every dollar of principal."</div>
+              </div>
+              <div className="image-orb-1"></div>
+              <div className="image-orb-2"></div>
+            </div>
+          </div>
+        </div>
+      </div></section>
+
+      <section className="section section--white"><div className="container">
+        <div className="section-head center">
+          <Eyebrow>WHY IT WORKS</Eyebrow>
+          <h2 className="section-title">Four advantages your<br/><span className="serif gold-shimmer">brokerage won't give you</span>.</h2>
+        </div>
+        <div className="choose-grid">
+          {benefits.map((b, i) => (
+            <div className={`choose-card ${i % 2 === 0 ? "card-purple" : "card-gold"}`} key={b.t}>
+              <div className="choose-num serif">0{i+1}</div>
+              <h3 className="choose-title">{b.t}</h3>
+              <p className="choose-desc">{b.d}</p>
+            </div>
+          ))}
+        </div>
+      </div></section>
+
+      <section className="section section--white"><div className="container">
+        <div className="section-head center">
+          <Eyebrow>THE PROCESS</Eyebrow>
+          <h2 className="section-title">From rollover to <span className="serif gold-shimmer">first distribution</span>.</h2>
+          <p className="section-sub" style={{maxWidth:"560px",margin:"16px auto 0"}}>Four clear steps. Our team coordinates with your custodian end-to-end so you don't lose a week to paperwork.</p>
+        </div>
+        <div className="steps" style={{marginTop:"48px"}}>
+          <div className="steps-rail"></div>
+          {steps.map((s, i) => (
+            <div className={`step ${i % 2 === 0 ? "card-purple" : "card-gold"} ${i % 2 ? "right" : "left"}`} key={s.n}>
+              <div className="step-num-col"><div className="step-num serif">{s.n}</div><div className="step-dot"></div></div>
+              <div className="step-body"><h3 className="step-title">{s.t}</h3><p className="step-desc">{s.d}</p></div>
+            </div>
+          ))}
+        </div>
+      </div></section>
+
+      <section className="section section--white"><div className="container container--narrow">
+        <div className="section-head">
+          <Eyebrow>COMMON QUESTIONS</Eyebrow>
+          <h2 className="section-title">Answers before you <span className="serif gold-shimmer">roll over</span>.</h2>
+        </div>
+        <div className="faq-list">
+          {faqs.map((f, i) => (
+            <div className={`faq-item ${i % 2 === 0 ? "card-purple" : "card-gold"} ${open === i ? "open" : ""}`} key={f.q} onClick={() => setOpen(open === i ? -1 : i)}>
+              <div className="faq-q">
+                <span className="faq-num serif">0{i+1}</span>
+                <span className="faq-q-text">{f.q}</span>
+                <span className="faq-toggle">{open === i ? "–" : "+"}</span>
+              </div>
+              {open === i && <div className="faq-a">{f.a}</div>}
+            </div>
+          ))}
+        </div>
+      </div></section>
+
+      <section className="section section--white"><div className="container">
+        <div className="banner-glass card-purple">
+          <div className="banner-glow"></div>
+          <div className="banner-inner">
+            <Eyebrow>READY WHEN YOU ARE</Eyebrow>
+            <h2 className="section-title serif" style={{fontWeight:500, fontSize:"clamp(22px,3vw,40px)", lineHeight:1.2}}>
+              Let's see if your retirement account is a fit for the next Kynectic offering.
+            </h2>
+            <p className="section-sub" style={{marginTop:24, fontSize:16, maxWidth:580, marginLeft:"auto", marginRight:"auto"}}>A 20-minute call. We'll walk through your account type, your goals, and the right rollover path — no obligation, no sales pitch.</p>
+            <div className="hero-ctas" style={{marginTop:32, justifyContent:"center"}}>
+              <Btn variant="gold" onClick={() => setPage("contact")}>Contact Us</Btn>
+            </div>
+          </div>
+        </div>
+      </div></section>
+
+      <div style={{padding:"0 32px 24px", textAlign:"center", background:"#ffffff", position:"relative", zIndex:2}}>
+        <p style={{fontSize:"11px", color:"#5a4060", maxWidth:760, margin:"0 auto", lineHeight:1.6}}>Kynectic Capital is not a tax advisor, CPA, or attorney. The information on this page is general in nature and is not a substitute for personalized professional advice. Investors should consult their own tax and legal counsel before initiating a rollover or investing retirement-account funds.</p>
+      </div>
+    </>
+  );
+}
+
+function LoginPage() {
+  return (
+    <section className="page-hero"><div className="container">
+      <div className="login-card card-purple">
+        <Eyebrow>CLIENT LOGIN</Eyebrow>
+        <h1 className="page-hero-title" style={{color:"var(--gold-light)"}}>Investor <span className="serif gold-shimmer">Portal</span></h1>
+        <GoldDivider width={120}/>
+        <p>Access your investments, K-1s, distributions, and quarterly reports.</p>
+        <form className="login-form">
+          <div className="field"><label>Email</label><input type="email" placeholder="you@email.com"/></div>
+          <div className="field"><label>Password</label><input type="password" placeholder="••••••••"/></div>
+          <button type="button" className="btn btn--gold btn--full"><span>Sign In</span></button>
+        </form>
+        <p className="muted small">Powered by Cashflow Portal · 256-bit encrypted</p>
+      </div>
+    </div></section>
+  );
+}
+
+function Footer({ setPage, page }) {
+  return (
+    <footer className="footer" style={page === "contact" || page === "about" || page === "ira" ? {paddingTop:"0"} : {}}>
+      <div className="container">
+        {page !== "about" && page !== "contact" && page !== "ira" && (
+        <div className="footer-banner card-purple">
+          <h2 className="footer-headline serif">Start Building Wealth Through<br/><span className="gold-shimmer">Passive Real Estate</span></h2>
+          <p>Join our investor list to receive new opportunities, updates, and education designed to help you invest with clarity and confidence.</p>
+          <div className="hero-ctas center-flex"><Btn variant="gold" onClick={() => setPage("contact")}>Join Investor List</Btn></div>
+        </div>
+        )}
+        <div className="footer-grid">
+          <div className="footer-brand">
+            <div className="nav-brand">
+              <img src="LogoNew.png" alt="Kynectic Capital" style={{ height: "48px", width: "auto" }} />
+            </div>
+            <p className="footer-tag">Invest with Clarity. Thrive with Momentum.</p>
+          </div>
+          <div className="footer-col">
+            <h4>Company</h4>
+            <a href="#" onClick={(e) => { e.preventDefault(); setPage("about"); }}>About Us</a>
+
+            <a href="#" onClick={(e) => { e.preventDefault(); setPage("how"); }}>How it Works</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); setPage("faq"); }}>FAQ</a>
+          </div>
+          <div className="footer-col">
+            <h4>Invest</h4>
+            <a href="#" onClick={(e) => { e.preventDefault(); setPage("portfolio"); }}>Portfolio</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); setPage("education"); }}>Investor Education</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); setPage("contact"); }}>Contact Us</a>
+            <a href="#" onClick={(e) => { e.preventDefault(); setPage("login"); }}>Client Login</a>
+          </div>
+          <div className="footer-col">
+            <h4>Contact</h4>
+            <a href="mailto:anita@kynecticcap.com">anita@kynecticcap.com</a>
+            <a href="tel:+14302437221">+1 (430) 243‑7221</a>
+            <a href="https://www.instagram.com/kynecticcapital/" target="_blank" rel="noreferrer">Instagram</a>
+            <span className="muted">1800 S Loop 288 396 670<br/>Denton, TX 76208, USA</span>
+          </div>
+        </div>
+        <div className="footer-bottom">
+          <span>All Rights Reserved © 2025 Kynectic Capital Investment</span>
+          <span className="footer-disclaim">Past performance is not indicative of future results. Investments involve risk. Offerings are limited to accredited investors.</span>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+function MyTweaks({ tweaks, setTweak }) {
+  return (
+    <TweaksPanel>
+      <TweakSection title="Palette">
+        <TweakSelect label="Color theme" value={tweaks.palette} onChange={(v) => setTweak("palette", v)}
+          options={[
+            { value: "amethyst", label: "Amethyst & Gold" },
+            { value: "plum", label: "Plum & Champagne" },
+            { value: "obsidian", label: "Obsidian Royal" },
+          ]}
+        />
+      </TweakSection>
+      <TweakSection title="Typography">
+        <TweakSelect label="Display font" value={tweaks.displayFont} onChange={(v) => setTweak("displayFont", v)}
+          options={[
+            { value: "Cormorant Garamond", label: "Cormorant Garamond" },
+            { value: "Playfair Display", label: "Playfair Display" },
+            { value: "DM Serif Display", label: "DM Serif Display" },
+          ]}
+        />
+      </TweakSection>
+      <TweakSection title="Atmosphere">
+        <TweakToggle label="Animated orbs" value={tweaks.showOrbs} onChange={(v) => setTweak("showOrbs", v)}/>
+        <TweakToggle label="Film grain" value={tweaks.showGrain} onChange={(v) => setTweak("showGrain", v)}/>
+        <TweakSlider label="Glass blur" value={tweaks.glassIntensity} onChange={(v) => setTweak("glassIntensity", v)} min={6} max={32} step={1}/>
+      </TweakSection>
+    </TweaksPanel>
+  );
+}
+
+function App() {
+  const [tweaks, setTweak] = useTweaks(TWEAK_DEFAULTS);
+
+  // Read initial page from hash so back/forward works on reload too
+  const getInitialPage = () => {
+    const h = window.location.hash.replace("#", "");
+    return h || "home";
+  };
+  const [page, setPageState] = useState(getInitialPage);
+
+  // Wrap setPage so every navigation creates a real browser history entry
+  const setPage = (newPage) => {
+    setPageState(newPage);
+    const hash = newPage === "home" ? "" : "#" + newPage;
+    history.pushState({ page: newPage }, "", window.location.pathname + hash);
+  };
+
+  // Handle browser back / forward
+  useEffect(() => {
+    // Seed the initial history entry so the very first back-press doesn't leave the SPA
+    history.replaceState({ page: page }, "", window.location.pathname + (page === "home" ? "" : "#" + page));
+
+    const onPop = (e) => {
+      const p = (e.state && e.state.page) ? e.state.page : "home";
+      setPageState(p);
+      window.scrollTo({ top: 0 });
+    };
+    window.addEventListener("popstate", onPop);
+    return () => window.removeEventListener("popstate", onPop);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const palette = PALETTES[tweaks.palette] || PALETTES.amethyst;
+
+  useEffect(() => {
+    const r = document.documentElement;
+    r.style.setProperty("--bg-0", palette.bg0);
+    r.style.setProperty("--bg-1", palette.bg1);
+    r.style.setProperty("--bg-2", palette.bg2);
+    r.style.setProperty("--purple", palette.purple);
+    r.style.setProperty("--deep", palette.deep);
+    r.style.setProperty("--gold", palette.gold);
+    r.style.setProperty("--gold-deep", palette.goldDeep);
+    r.style.setProperty("--gold-light", palette.goldLight);
+    r.style.setProperty("--glass-blur", `${tweaks.glassIntensity}px`);
+    r.style.setProperty("--display-font", `'${tweaks.displayFont}', 'Cormorant Garamond', serif`);
+  }, [palette, tweaks.glassIntensity, tweaks.displayFont]);
+
+  const svgDefs = (
+    <svg width="0" height="0" style={{ position: "absolute" }} aria-hidden="true">
+      <defs>
+        <linearGradient id="gold-grad" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stopColor="var(--gold-light)" />
+          <stop offset="50%" stopColor="var(--gold)" />
+          <stop offset="100%" stopColor="var(--gold-deep)" />
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+
+  let body;
+  switch (page) {
+    case "about": body = <AboutPage setPage={setPage}/>; break;
+    case "portfolio": body = <PortfolioPage setPage={setPage}/>; break;
+    case "how": body = <HowPage setPage={setPage}/>; break;
+    case "education": body = <EducationPage setPage={setPage}/>; break;
+    case "ira": body = <IRAPage setPage={setPage}/>; break;
+    case "faq": body = <FAQPage/>; break;
+    case "contact": body = <ContactPage/>; break;
+    case "login": body = <LoginPage/>; break;
+    default: body = <HomePage setPage={setPage}/>;
+  }
+
+  return (
+    <>
+      {svgDefs}
+      <Atmosphere palette={palette} showOrbs={tweaks.showOrbs} showGrain={tweaks.showGrain}/>
+      <Nav page={page} setPage={setPage}/>
+      <main>{body}</main>
+      <Footer setPage={setPage} page={page}/>
+      <MyTweaks tweaks={tweaks} setTweak={setTweak}/>
+    </>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+</script>
+</body>
+</html>
