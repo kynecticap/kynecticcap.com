@@ -2071,6 +2071,44 @@ function IRAPage({ setPage }) {
   );
 }
 
+function BookCallPage({ setPage }) {
+  useEffect(() => {
+    const SRC = "https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js";
+    if (document.querySelector(`script[src="${SRC}"]`)) return;
+    const script = document.createElement("script");
+    script.src = SRC;
+    script.type = "text/javascript";
+    document.body.appendChild(script);
+  }, []);
+  return (
+    <>
+      <section className="page-hero"><div className="container">
+        <Eyebrow>BOOK A CALL</Eyebrow>
+        <h1 className="page-hero-title">Pick a time that <span className="serif gold-shimmer">works for you</span>.</h1>
+        <GoldDivider width={140}/>
+        <p className="page-hero-sub">Thanks for reaching out. Choose a 20-minute window below and Dr. Anita will meet you on Zoom — no pressure, no sales pitch, just clarity on whether passive multifamily fits into your wealth plan.</p>
+      </div></section>
+
+      <section className="section section--white" style={{paddingTop:"24px"}}><div className="container">
+        <div
+          className="meetings-iframe-container"
+          data-src="https://meetings-na2.hubspot.com/anita-akpunku?embed=true"
+          style={{minHeight:"720px", width:"100%", borderRadius:"20px", overflow:"hidden", border:"1px solid rgba(127,2,137,0.18)", boxShadow:"0 6px 18px rgba(20,4,32,0.08)"}}
+        ></div>
+      </div></section>
+
+      <section className="section section--white"><div className="container">
+        <div className="contact-grid" style={{gridTemplateColumns:"1fr 1fr 1fr 1fr", gap:"16px"}}>
+          <div className="info-card card-gold"><div className="info-tiny">EMAIL</div><a className="info-big" href="mailto:anita@kynecticcap.com" style={{fontSize:"14px"}}>anita@kynecticcap.com</a></div>
+          <div className="info-card card-purple"><div className="info-tiny">PHONE</div><a className="info-big" href="tel:+14302437221" style={{fontSize:"14px"}}>+1 (430) 243‑7221</a></div>
+          <div className="info-card card-gold"><div className="info-tiny">OFFICE</div><div className="info-big" style={{fontSize:"13px"}}>1800 S Loop 288 #396-673<br/>Denton, Texas 76202</div></div>
+          <div className="info-card card-purple"><div className="info-tiny">FOLLOW</div><a className="info-big" href="https://www.instagram.com/kynecticcapital/" target="_blank" rel="noreferrer" style={{fontSize:"14px"}}>@kynecticcapital</a></div>
+        </div>
+      </div></section>
+    </>
+  );
+}
+
 function LoginPage() {
   return (
     <section className="page-hero"><div className="container">
@@ -2235,6 +2273,7 @@ function App() {
     case "how": body = <HowPage setPage={setPage}/>; break;
     case "education": body = <EducationPage setPage={setPage}/>; break;
     case "ira": body = <IRAPage setPage={setPage}/>; break;
+    case "book": body = <BookCallPage setPage={setPage}/>; break;
     case "faq": body = <FAQPage/>; break;
     case "contact": body = <ContactPage/>; break;
     case "login": body = <LoginPage/>; break;
