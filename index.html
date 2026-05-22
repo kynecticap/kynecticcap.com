@@ -2251,6 +2251,7 @@ function App() {
   // Wrap setPage so every navigation creates a real browser history entry
   const setPage = (newPage) => {
     setPageState(newPage);
+    window.scrollTo({ top: 0 });
     const hash = newPage === "home" ? "" : "#" + newPage;
     history.pushState({ page: newPage }, "", window.location.pathname + hash);
   };
