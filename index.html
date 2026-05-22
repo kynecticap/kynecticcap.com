@@ -1543,7 +1543,7 @@ function HomePage({ setPage }) {
 
       <section className="section section--white">
         <div className="container">
-          <div className="book-call card-gold">
+          <div id="book-call" className="book-call card-gold">
             <div className="bc-content">
               <Eyebrow>SPEAK WITH OUR TEAM</Eyebrow>
               <h2 className="section-title serif">Book a Free Call</h2>
@@ -1591,7 +1591,7 @@ function AboutPage({ setPage }) {
             <p>Despite a strong clinical career, Anita quickly recognized a universal truth: high income alone does not create financial freedom. Her personal experience balancing a demanding medical career with wealth-building strategies is the foundation of Kynectic Capital's investor-focused approach. With LP investments in multiple multifamily assets and Co-GP experience, she brings disciplined decision-making, transparency, and investor-aligned leadership to every project.</p>
             <p>Between long surgical cases, demanding schedules, and clinical burnout, she saw how many high-earning professionals weren't building wealth simply because they lacked the time, access, or guidance to do so. Determined to change that, she immersed herself in real estate investing, building a 14-door personal portfolio, becoming an LP in multiple multifamily communities, and eventually serving as a Co-GP.</p>
             <p>Kynectic Capital was founded to deliver exactly that: trusted partnerships, disciplined underwriting, transparent communication, and opportunities designed to help investors create freedom without adding another job to their already demanding lives. She brings integrity, transparency, and disciplined decision-making to every deal — ensuring investors feel confident, supported, and informed.</p>
-            <div className="hero-ctas"><Btn variant="gold" onClick={() => setPage("contact")}>Schedule a free 30 mins</Btn></div>
+            <div className="hero-ctas"><Btn variant="gold" onClick={() => { setPage("home"); setTimeout(() => document.getElementById("book-call")?.scrollIntoView({behavior:"smooth"}), 150); }}>Schedule a free 30 mins</Btn></div>
           </div>
         </div>
       </div></section>
