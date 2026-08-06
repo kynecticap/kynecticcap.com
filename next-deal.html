@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Something Big is Coming · Kynectic Capital</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --purple-deep: #14001f;
+      --purple-mid: #7f0289;
+      --gold: #e5c158;
+      --gold-deep: #c9a84c;
+      --ink: #f5f0ff;
+      --ink-mute: rgba(245,240,255,0.55);
+    }
+    body { background: var(--purple-deep); color: var(--ink); font-family: 'Inter', sans-serif; min-height: 100vh; overflow-x: hidden; }
+    .serif { font-family: 'Cormorant Garamond', serif; }
+
+    /* NAV */
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 48px; border-bottom: 1px solid rgba(229,193,88,0.12); }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-brand img { height: 36px; }
+    .nav-brand span { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; color: var(--ink); }
+    .nav-back { color: var(--gold); text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; opacity: 0.85; transition: opacity .2s; }
+    .nav-back:hover { opacity: 1; }
+
+    /* HERO */
+    .hero { min-height: 90vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 80px 24px; position: relative; overflow: hidden; }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 40%, rgba(127,2,137,0.35) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; z-index: 1; max-width: 780px; }
+
+    .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.25em; color: var(--gold); text-transform: uppercase; margin-bottom: 28px; display: flex; align-items: center; justify-content: center; gap: 10px; }
+    .eyebrow::before, .eyebrow::after { content: ''; flex: 0 0 32px; height: 1px; background: rgba(229,193,88,0.4); }
+
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(52px, 8vw, 96px); font-weight: 600; line-height: 1.05; margin-bottom: 28px; }
+    .gold-text { color: var(--gold); font-style: italic; }
+    .hero-sub { font-size: 17px; color: var(--ink-mute); line-height: 1.7; max-width: 560px; margin: 0 auto 48px; }
+
+    /* STATS ROW */
+    .stats-row { display: flex; align-items: center; justify-content: center; gap: 0; margin-bottom: 56px; flex-wrap: wrap; }
+    .stat-pill { padding: 20px 40px; border: 1px solid rgba(229,193,88,0.2); text-align: center; }
+    .stat-pill:first-child { border-radius: 16px 0 0 16px; }
+    .stat-pill:last-child { border-radius: 0 16px 16px 0; }
+    .stat-pill:not(:last-child) { border-right: none; }
+    .stat-big { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 600; color: var(--gold); line-height: 1; }
+    .stat-lbl { font-size: 11px; letter-spacing: 0.15em; color: var(--ink-mute); text-transform: uppercase; margin-top: 6px; }
+
+    /* MYSTERY CARD */
+    .mystery-card { background: rgba(127,2,137,0.12); border: 1px solid rgba(229,193,88,0.2); border-radius: 20px; padding: 40px; margin: 0 auto 56px; max-width: 560px; backdrop-filter: blur(12px); }
+    .mystery-line { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid rgba(229,193,88,0.1); font-size: 14px; }
+    .mystery-line:last-child { border-bottom: none; }
+    .mystery-key { color: var(--ink-mute); letter-spacing: 0.06em; }
+    .mystery-val { font-weight: 600; color: var(--ink); }
+    .mystery-val.redacted { background: rgba(229,193,88,0.15); border-radius: 4px; padding: 2px 14px; color: transparent; letter-spacing: 0.1em; position: relative; overflow: hidden; user-select: none; }
+    .mystery-val.redacted::after { content: '████████'; color: rgba(229,193,88,0.4); position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 12px; letter-spacing: 0.05em; }
+
+    /* FORM */
+    .form-wrap { max-width: 480px; margin: 0 auto; }
+    .form-label { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; display: block; }
+    .form-row { display: flex; gap: 12px; }
+    .form-input { flex: 1; background: rgba(255,255,255,0.06); border: 1px solid rgba(229,193,88,0.25); border-radius: 12px; padding: 14px 20px; color: var(--ink); font-size: 14px; font-family: inherit; outline: none; transition: border-color .2s; }
+    .form-input:focus { border-color: rgba(229,193,88,0.6); }
+    .form-input::placeholder { color: var(--ink-mute); }
+    .form-btn { background: linear-gradient(135deg, #e5c158, #c9a84c); color: #14001f; font-weight: 700; font-size: 13px; letter-spacing: 0.06em; border: none; border-radius: 12px; padding: 14px 28px; cursor: pointer; white-space: nowrap; font-family: inherit; transition: opacity .2s; }
+    .form-btn:hover { opacity: 0.88; }
+    .form-note { font-size: 11px; color: var(--ink-mute); margin-top: 12px; text-align: center; }
+    .success-msg { display: none; color: var(--gold); font-size: 14px; font-weight: 600; margin-top: 16px; text-align: center; }
+
+    /* BOTTOM STRIP */
+    .bottom-strip { border-top: 1px solid rgba(229,193,88,0.1); padding: 28px 48px; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: var(--ink-mute); flex-wrap: wrap; gap: 12px; }
+    .bottom-strip a { color: var(--gold); text-decoration: none; opacity: 0.8; }
+
+    @media (max-width: 640px) {
+      nav { padding: 16px 20px; }
+      .form-row { flex-direction: column; }
+      .stat-pill { padding: 16px 24px; }
+      .bottom-strip { padding: 20px; flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html">
+    <img src="LogoNew.png" alt="Kynectic Capital"/>
+    <span>KYNECTIC <span style="font-weight:400;opacity:0.6">CAPITAL</span></span>
+  </a>
+  <a class="nav-back" href="index.html">← Back to Home</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+
+    <div class="eyebrow">Next Acquisition · Confidential</div>
+
+    <h1>
+      Our <span class="gold-text">Biggest</span><br/>
+      Deal Yet.
+    </h1>
+
+    <p class="hero-sub">
+      We're under contract on the largest asset in Kynectic Capital's history.
+      We can't reveal the name yet — but we can tell you it's significant,
+      and early investors will have first access.
+    </p>
+
+    <div class="stats-row">
+      <div class="stat-pill">
+        <div class="stat-big">$77M+</div>
+        <div class="stat-lbl">Asset Value</div>
+      </div>
+      <div class="stat-pill">
+        <div class="stat-big">TBD</div>
+        <div class="stat-lbl">Target AAR</div>
+      </div>
+      <div class="stat-pill">
+        <div class="stat-big">🔒</div>
+        <div class="stat-lbl">Name Withheld</div>
+      </div>
+    </div>
+
+    <div class="mystery-card">
+      <div class="mystery-line">
+        <span class="mystery-key">Property Name</span>
+        <span class="mystery-val redacted">Undisclosed</span>
+      </div>
+      <div class="mystery-line">
+        <span class="mystery-key">Location</span>
+        <span class="mystery-val redacted">Undisclosed</span>
+      </div>
+      <div class="mystery-line">
+        <span class="mystery-key">Asset Class</span>
+        <span class="mystery-val">Multifamily · Value-Add</span>
+      </div>
+      <div class="mystery-line">
+        <span class="mystery-key">Asset Value</span>
+        <span class="mystery-val">$77M+</span>
+      </div>
+      <div class="mystery-line">
+        <span class="mystery-key">Status</span>
+        <span class="mystery-val" style="color:#e5c158;">Under Contract · PSA Pending</span>
+      </div>
+      <div class="mystery-line">
+        <span class="mystery-key">Full Reveal</span>
+        <span class="mystery-val">Coming Soon</span>
+      </div>
+    </div>
+
+    <div class="form-wrap">
+      <span class="form-label">Get notified the moment we go public</span>
+      <div class="form-row">
+        <input class="form-input" type="email" id="email-input" placeholder="your@email.com"/>
+        <button class="form-btn" onclick="handleSubmit()">Notify Me →</button>
+      </div>
+      <p class="form-note">Accredited investors only · No spam · Unsubscribe anytime</p>
+      <p class="success-msg" id="success-msg">✦ You're on the list. We'll be in touch soon.</p>
+    </div>
+
+  </div>
+</section>
+
+<div class="bottom-strip">
+  <span>© 2026 Kynectic Capital · All Rights Reserved</span>
+  <span>This page does not constitute an offer to sell securities. For accredited investors only.</span>
+  <a href="mailto:anita@kynecticcap.com">anita@kynecticcap.com</a>
+</div>
+
+<script>
+  function handleSubmit() {
+    const email = document.getElementById('email-input').value;
+    if (!email || !email.includes('@')) {
+      document.getElementById('email-input').style.borderColor = 'rgba(255,80,80,0.6)';
+      return;
+    }
+    document.getElementById('email-input').style.borderColor = 'rgba(229,193,88,0.6)';
+    document.querySelector('.form-btn').disabled = true;
+    document.querySelector('.form-btn').textContent = 'Done ✓';
+    document.getElementById('success-msg').style.display = 'block';
+    // Replace with your actual form handler / HubSpot form submission if needed
+    const hs = `https://forms.hsforms.com/submissions/v3/public/single/0/${email}`;
+  }
+</script>
+
+</body>
+</html>
