@@ -1682,6 +1682,7 @@ function AboutPage({ setPage }) {
 
 function PortfolioPage({ setPage }) {
   const properties = [
+    { name: "Harmony Grove Apartments", img: "hg-hero-wide.jpg", badge: "OPEN FOR INVESTING", details: [{ k: "Location", v: "Marietta, GA" }, { k: "Units", v: "75 Units · Studio, 1BR & 2BR" }, { k: "Target AAR", v: "20%+" }, { k: "Yr-1 Tax Savings", v: "$35K+" }, { k: "Target Hold Period", v: "5 Years" }] },
     { name: "The Park at Arlington", img: "park.jpg.png", details: [{ k: "Location", v: "Covington, GA" }, { k: "Target Returns", v: "17% to 18% Annually" }, { k: "Acquired", v: "February 2026" }, { k: "Target Hold Period", v: "5 Years" }] },
     { name: "The Rise", img: "rise.jpg", details: [{ k: "Location", v: "Conyers, GA" }, { k: "Target Returns", v: "15% to 18% Annually" }, { k: "Acquired", v: "August 2025" }, { k: "Target Hold Period", v: "5 Years" }] },
     { name: "Grove Parkview", img: "grove.jpg", details: [{ k: "Location", v: "Atlanta, GA" }, { k: "Target Returns", v: "15% to 18% Annually" }, { k: "Acquired", v: "March 2025" }, { k: "Target Hold Period", v: "5 Years" }] },
@@ -1699,14 +1700,16 @@ function PortfolioPage({ setPage }) {
         <div className="portfolio-grid">
           {properties.map((p, i) => (
             <article className={`property-card ${i % 2 === 0 ? "card-purple" : "card-gold"}`} key={p.name}>
-              <div className="property-img">
+              <div className="property-img" style={{position:"relative"}}>
                 <img src={p.img} alt={p.name}/>
+                {p.badge && <span style={{position:"absolute",top:"14px",left:"14px",background:"rgba(20,4,32,0.82)",color:"#e5c158",fontSize:"10px",fontWeight:700,letterSpacing:"0.18em",padding:"5px 12px",borderRadius:"20px",border:"1px solid rgba(229,193,88,0.4)",backdropFilter:"blur(6px)"}}>{p.badge}</span>}
               </div>
               <div className="property-body">
                 <h3 className="property-name">{p.name}</h3>
                 <div className="property-details">
                   {p.details.map((d) => (<div className="property-detail-row" key={d.k}><span className="pd-key">{d.k}:</span> <span className="pd-val">{d.v}</span></div>))}
                 </div>
+                {p.badge && <a href="HarmonyGrove_Kynectic.html" style={{display:"inline-block",marginTop:"16px",padding:"10px 22px",background:"linear-gradient(135deg,#e5c158,#c9a84c)",color:"#14001f",fontWeight:700,fontSize:"13px",borderRadius:"24px",textDecoration:"none",letterSpacing:"0.04em"}}>View Offering →</a>}
               </div>
             </article>
           ))}
