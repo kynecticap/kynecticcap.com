@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Montrose Berkeley Lake · Kynectic Capital</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --purple-deep:#14001f;--purple-mid:#7f0289;--gold:#e5c158;--gold-deep:#c9a84c;--ink:#f5f0ff;--ink-mute:rgba(245,240,255,0.60); }
+    html{scroll-behavior:smooth}
+    body{background:var(--purple-deep);color:var(--ink);font-family:'Inter',sans-serif;overflow-x:hidden}
+    .serif{font-family:'Cormorant Garamond',serif}
+    nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 48px;background:rgba(20,0,31,0.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(229,193,88,0.12)}
+    .nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+    .nav-brand img{height:34px}
+    .nav-brand span{font-size:13px;font-weight:700;letter-spacing:0.1em;color:var(--ink)}
+    .nav-links{display:flex;align-items:center;gap:28px}
+    .nav-links a{color:var(--ink-mute);text-decoration:none;font-size:13px;font-weight:500;transition:color .2s}
+    .nav-links a:hover{color:var(--gold)}
+    .nav-cta{background:linear-gradient(135deg,#e5c158,#c9a84c);color:#14001f!important;font-weight:700!important;padding:10px 22px;border-radius:24px}
+    .hero{position:relative;height:92vh;min-height:600px;display:flex;align-items:flex-end;overflow:hidden}
+    .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(20,0,31,0.97) 0%,rgba(20,0,31,0.5) 55%,rgba(20,0,31,0.15) 100%)}
+    .hero-content{position:relative;z-index:1;width:100%;max-width:1200px;margin:0 auto;padding:0 48px 64px}
+    .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(229,193,88,0.15);border:1px solid rgba(229,193,88,0.4);border-radius:20px;padding:6px 16px;font-size:11px;font-weight:700;letter-spacing:0.2em;color:var(--gold);margin-bottom:20px}
+    .badge-dot{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 8px var(--gold);animation:pulse 2s infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+    .hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,6vw,80px);font-weight:600;line-height:1.05;margin-bottom:16px}
+    .hero-sub{font-size:16px;color:var(--ink-mute);margin-bottom:32px;max-width:540px;line-height:1.6}
+    .hero-stats{display:flex;gap:36px;flex-wrap:wrap;align-items:center}
+    .hs-val{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:600;color:var(--gold);line-height:1}
+    .hs-lbl{font-size:11px;letter-spacing:0.14em;color:var(--ink-mute);text-transform:uppercase;margin-top:4px}
+    .hs-div{width:1px;height:40px;background:rgba(229,193,88,0.2)}
+    .section{padding:80px 0}
+    .container{max-width:1160px;margin:0 auto;padding:0 48px}
+    .eyebrow{font-size:11px;font-weight:700;letter-spacing:0.25em;color:var(--gold);text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+    .eyebrow::before{content:'';flex:0 0 24px;height:1px;background:rgba(229,193,88,0.35)}
+    .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,52px);font-weight:600;line-height:1.1;margin-bottom:20px}
+    .section-sub{font-size:16px;line-height:1.7;color:var(--ink-mute);max-width:600px;margin-bottom:48px}
+    .hl-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px}
+    .hl-card{background:rgba(127,2,137,0.12);border:1px solid rgba(229,193,88,0.15);border-radius:20px;padding:28px 24px}
+    .hl-icon{font-size:24px;margin-bottom:12px}
+    .hl-val{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:600;color:var(--gold);line-height:1;margin-bottom:6px}
+    .hl-lbl{font-size:11px;letter-spacing:0.1em;color:var(--gold);text-transform:uppercase;opacity:.7}
+    .hl-desc{font-size:13px;color:var(--ink-mute);margin-top:10px;line-height:1.5}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+    .prop-img{border-radius:20px;overflow:hidden}
+    .prop-img img{width:100%;height:380px;object-fit:cover;display:block}
+    .amenities-list{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:28px}
+    .amenity{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--ink-mute)}
+    .amenity-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);margin-top:6px;flex-shrink:0}
+    .thesis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+    .thesis-card{background:rgba(127,2,137,0.1);border:1px solid rgba(229,193,88,0.15);border-radius:20px;padding:32px 28px}
+    .thesis-num{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:600;color:rgba(229,193,88,0.25);line-height:1;margin-bottom:12px}
+    .thesis-title{font-size:14px;font-weight:700;color:var(--gold);margin-bottom:12px;letter-spacing:.04em}
+    .thesis-body{font-size:13px;color:var(--ink-mute);line-height:1.65}
+    .returns-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:48px}
+    .rc{border-radius:24px;padding:40px}
+    .rc-b{background:linear-gradient(145deg,rgba(127,2,137,0.25),rgba(127,2,137,0.08));border:1px solid rgba(229,193,88,0.22)}
+    .rc-c{background:linear-gradient(145deg,rgba(229,193,88,0.16),rgba(229,193,88,0.05));border:1px solid rgba(229,193,88,0.38)}
+    .rc-hdr{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+    .rc-title{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;margin-bottom:6px}
+    .rc-min{font-size:13px;color:var(--ink-mute);margin-bottom:28px}
+    .rc-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .rc-val{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;color:var(--gold);line-height:1}
+    .rc-lbl{font-size:11px;letter-spacing:.12em;color:var(--ink-mute);text-transform:uppercase;margin-top:4px}
+    .rc-pref{margin-top:20px;padding-top:20px;border-top:1px solid rgba(229,193,88,0.15);font-size:13px;color:var(--ink-mute)}
+    .rc-pref strong{color:var(--gold)}
+    .form-wrap{background:linear-gradient(145deg,rgba(127,2,137,0.2),rgba(20,0,31,0.9));border:1px solid rgba(229,193,88,0.2);border-radius:32px;padding:60px}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+    .form-copy h2{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:600;margin-bottom:16px;line-height:1.15}
+    .form-copy p{color:var(--ink-mute);font-size:15px;line-height:1.7;margin-bottom:16px}
+    .form-fields{display:flex;flex-direction:column;gap:14px}
+    .field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .flbl{font-size:12px;letter-spacing:.1em;color:var(--gold);text-transform:uppercase;margin-bottom:6px;display:block}
+    .fi,.fs,.ft{width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(229,193,88,0.2);border-radius:12px;padding:14px 18px;color:var(--ink);font-size:14px;font-family:inherit;outline:none;transition:border-color .2s}
+    .fi:focus,.fs:focus,.ft:focus{border-color:rgba(229,193,88,0.55);background:rgba(255,255,255,0.09)}
+    .fi::placeholder,.ft::placeholder{color:rgba(245,240,255,0.3)}
+    .fs{appearance:none;-webkit-appearance:none;cursor:pointer}
+    .fs option{background:#2a003f;color:var(--ink)}
+    .ft{resize:vertical;min-height:90px}
+    .fbtn{width:100%;background:linear-gradient(135deg,#e5c158,#c9a84c);color:#14001f;font-weight:700;font-size:15px;border:none;border-radius:12px;padding:16px;cursor:pointer;font-family:inherit;transition:opacity .2s,transform .15s}
+    .fbtn:hover{opacity:.88;transform:translateY(-1px)}
+    .success{display:none;text-align:center;padding:48px 24px}
+    .success h3{font-family:'Cormorant Garamond',serif;font-size:32px;color:var(--gold);margin-bottom:12px}
+    .success p{color:var(--ink-mute);font-size:15px}
+    .disclosure{padding:32px 48px;border-top:1px solid rgba(229,193,88,0.1);font-size:12px;color:rgba(245,240,255,0.28);line-height:1.7;max-width:1160px;margin:0 auto}
+    footer{background:rgba(0,0,0,0.4);border-top:1px solid rgba(229,193,88,0.1);padding:24px 48px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--ink-mute);flex-wrap:wrap;gap:12px}
+    footer a{color:var(--gold);text-decoration:none;opacity:.8}
+    @media(max-width:900px){
+      nav{padding:14px 20px}.nav-links{display:none}
+      .hero-content{padding:0 20px 48px}.container{padding:0 20px}
+      .hl-grid,.two-col,.thesis-grid,.returns-grid,.form-grid,.field-row{grid-template-columns:1fr}
+      .hero-stats{gap:20px}.form-wrap{padding:32px 20px}
+      footer{padding:20px;flex-direction:column;text-align:center}
+      .amenities-list{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html">
+    <img src="LogoNew.png" alt="Kynectic Capital"/>
+    <span>KYNECTIC <span style="font-weight:400;opacity:0.6">CAPITAL</span></span>
+  </a>
+  <div class="nav-links">
+    <a href="#overview">Overview</a>
+    <a href="#thesis">Thesis</a>
+    <a href="#returns">Returns</a>
+    <a href="#form" class="nav-cta">Express Interest →</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <img class="hero-img" src="montrose-aerial.jpg" alt="Montrose Berkeley Lake aerial — 492 units, Duluth GA"/>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="badge"><span class="badge-dot"></span> OPEN FOR INVESTING · ACCREDITED INVESTORS ONLY</div>
+    <h1>Montrose<br/><span style="color:var(--gold);font-style:italic;">Berkeley Lake</span></h1>
+    <p class="hero-sub">492 units on 41 acres in Duluth, Georgia — our largest acquisition to date, in partnership with XSITE Capital.</p>
+    <div class="hero-stats">
+      <div><div class="hs-val">$77.5M</div><div class="hs-lbl">Purchase Price</div></div>
+      <div class="hs-div"></div>
+      <div><div class="hs-val">492</div><div class="hs-lbl">Units</div></div>
+      <div class="hs-div"></div>
+      <div><div class="hs-val">16.5–18.2%</div><div class="hs-lbl">Avg Annual Return</div></div>
+      <div class="hs-div"></div>
+      <div><div class="hs-val">$100K</div><div class="hs-lbl">Min. Investment</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--purple-deep)" id="overview">
+  <div class="container">
+    <div class="eyebrow">The Opportunity</div>
+    <h2 class="section-title">A 41-acre institutional asset<br/><span style="color:var(--gold);font-style:italic;" class="serif">priced below appraised value.</span></h2>
+    <p class="section-sub">Purchased at $77.5MM against a 2023 appraised value of $91MM — with 179 units of renovation runway already proven by the current owner.</p>
+    <div class="hl-grid">
+      <div class="hl-card">
+        <div class="hl-icon">🏘️</div>
+        <div class="hl-val">492</div>
+        <div class="hl-lbl">Total Units</div>
+        <div class="hl-desc">Garden-style, 32 buildings on 41 acres in Gwinnett County, Atlanta MSA</div>
+      </div>
+      <div class="hl-card">
+        <div class="hl-icon">📈</div>
+        <div class="hl-val">93.5%</div>
+        <div class="hl-lbl">In-Place Occupancy</div>
+        <div class="hl-desc">Going-in 1.31x DSCR growing to 1.72x by Year 5 — 6 points of occupancy cushion</div>
+      </div>
+      <div class="hl-card">
+        <div class="hl-icon">🔨</div>
+        <div class="hl-val">179</div>
+        <div class="hl-lbl">Units to Renovate</div>
+        <div class="hl-desc">$15K per unit — same scope &amp; premiums already proven on 80 completed units on-site</div>
+      </div>
+      <div class="hl-card">
+        <div class="hl-icon">💰</div>
+        <div class="hl-val">~49%</div>
+        <div class="hl-lbl">Potential Tax Savings</div>
+        <div class="hl-desc">~$49K in Year-1 paper losses per $100K invested via cost segregation + 100% bonus depreciation</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:rgba(127,2,137,0.08)">
+  <div class="container">
+    <div class="two-col">
+      <div>
+        <div class="eyebrow">The Asset</div>
+        <h2 class="section-title">Amenities a new build<br/><span class="serif" style="color:var(--gold);font-style:italic;">cannot replicate at our basis.</span></h2>
+        <p class="section-sub" style="margin-bottom:0">Built in 1988 on 41 acres at just 12 units per acre. The amenity package alone is a competitive moat no new build in this submarket can match.</p>
+        <div class="amenities-list">
+          <div class="amenity"><span class="amenity-dot"></span>11,000+ SF Resort Pool &amp; Sundeck</div>
+          <div class="amenity"><span class="amenity-dot"></span>Turf Soccer Field</div>
+          <div class="amenity"><span class="amenity-dot"></span>1-Acre Lake with Dock</div>
+          <div class="amenity"><span class="amenity-dot"></span>Rogue Fitness Gym</div>
+          <div class="amenity"><span class="amenity-dot"></span>2 Dog Parks</div>
+          <div class="amenity"><span class="amenity-dot"></span>Clubhouse &amp; Business Center</div>
+          <div class="amenity"><span class="amenity-dot"></span>Walking Trails &amp; Grilling Stations</div>
+          <div class="amenity"><span class="amenity-dot"></span>Google Fiber</div>
+          <div class="amenity"><span class="amenity-dot"></span>Top-Rated Duluth Schools (A+)</div>
+          <div class="amenity"><span class="amenity-dot"></span>962 Parking Spaces (2.0/unit)</div>
+        </div>
+      </div>
+      <div class="prop-img">
+        <img src="montrose-pool.jpg" alt="Montrose Berkeley Lake — Resort-Style Pool"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--purple-deep)" id="thesis">
+  <div class="container">
+    <div class="eyebrow">Investment Thesis</div>
+    <h2 class="section-title">Three reasons we bought this.</h2>
+    <p class="section-sub">Not because it is cheap. Because the work is already de-risked.</p>
+    <div class="thesis-grid">
+      <div class="thesis-card">
+        <div class="thesis-num">01</div>
+        <div class="thesis-title">BASIS — BELOW APPRAISED VALUE</div>
+        <div class="thesis-body">$77.5MM purchase price against a 2023 county appraised value of $91MM. Projected exit is a conservative $118.4MM — an 8.85% compound annual growth in value over the hold.</div>
+      </div>
+      <div class="thesis-card">
+        <div class="thesis-num">02</div>
+        <div class="thesis-title">PROVEN RENOVATION RUNWAY</div>
+        <div class="thesis-body">The current owner already renovated 80 units and is collecting $150–$225/mo premiums. We renovate 179 more at $15K/unit — same scope, same finishes, same rents. Not a projection. A proven playbook.</div>
+      </div>
+      <div class="thesis-card">
+        <div class="thesis-num">03</div>
+        <div class="thesis-title">LOCATION — JOB-RICH &amp; SUPPLY-CONSTRAINED</div>
+        <div class="thesis-body">370,000+ jobs within 15 miles across Johns Creek, Alpharetta, and Perimeter Center. Atlanta added 61,953 residents in 2024–2025 alone — third fastest in the nation.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:rgba(127,2,137,0.08)" id="returns">
+  <div class="container">
+    <div class="eyebrow">Investor Returns</div>
+    <h2 class="section-title">Two ways to participate.</h2>
+    <p class="section-sub">Class B and Class C differ by minimum investment, preferred return, and profit split. Both figures are illustrative and net of all fees.</p>
+    <div class="returns-grid">
+      <div class="rc rc-b">
+        <div class="rc-hdr">Class B</div>
+        <div class="rc-title">Standard Offering</div>
+        <div class="rc-min">Minimum: <strong>$100,000</strong></div>
+        <div class="rc-stats">
+          <div><div class="rc-val">16.47%</div><div class="rc-lbl">Avg Annual Return</div></div>
+          <div><div class="rc-val">1.82x</div><div class="rc-lbl">Equity Multiple</div></div>
+          <div><div class="rc-val">13.73%</div><div class="rc-lbl">LP IRR</div></div>
+          <div><div class="rc-val">5.76%</div><div class="rc-lbl">Avg Cash-on-Cash</div></div>
+        </div>
+        <div class="rc-pref"><strong>6% preferred return</strong> · 70/30 profit split · 5-year hold</div>
+      </div>
+      <div class="rc rc-c">
+        <div class="rc-hdr" style="color:var(--purple-mid)">Class C</div>
+        <div class="rc-title">Premium Offering</div>
+        <div class="rc-min">Minimum: <strong>$250,000</strong></div>
+        <div class="rc-stats">
+          <div><div class="rc-val">18.22%</div><div class="rc-lbl">Avg Annual Return</div></div>
+          <div><div class="rc-val">1.91x</div><div class="rc-lbl">Equity Multiple</div></div>
+          <div><div class="rc-val">14.87%</div><div class="rc-lbl">LP IRR</div></div>
+          <div><div class="rc-val">6.13%</div><div class="rc-lbl">Avg Cash-on-Cash</div></div>
+        </div>
+        <div class="rc-pref" style="border-color:rgba(229,193,88,0.2)"><strong>7% preferred return</strong> · 75/25 profit split · 5-year hold</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--purple-deep)" id="form">
+  <div class="container">
+    <div class="form-wrap">
+      <div class="form-grid">
+        <div class="form-copy">
+          <div class="eyebrow">Express Interest</div>
+          <h2>Ready to learn more?</h2>
+          <p>Submit your details and the Kynectic team will reach out within one business day with the full offering package — financials, PPM, and next steps to secure your allocation.</p>
+          <p style="color:var(--gold);font-weight:600;font-size:14px">⚡ Allocations are confirmed in the order subscriptions are completed.</p>
+          <p style="font-size:12px;color:rgba(245,240,255,0.3);line-height:1.6;margin-top:20px">For accredited investors only. This form does not constitute an offer to sell securities. By submitting, you consent to being contacted by Kynectic Capital. Your information is held in strict confidence.</p>
+        </div>
+        <div>
+          <div class="form-fields" id="form-fields">
+            <div class="field-row">
+              <div><label class="flbl">First Name</label><input class="fi" type="text" id="fname" placeholder="First name"/></div>
+              <div><label class="flbl">Last Name</label><input class="fi" type="text" id="lname" placeholder="Last name"/></div>
+            </div>
+            <div><label class="flbl">Email Address</label><input class="fi" type="email" id="email" placeholder="your@email.com"/></div>
+            <div><label class="flbl">Phone Number</label><input class="fi" type="tel" id="phone" placeholder="+1 (555) 000-0000"/></div>
+            <div>
+              <label class="flbl">Investment Interest</label>
+              <select class="fs" id="investment">
+                <option value="" disabled selected>Select a class...</option>
+                <option value="classb">Class B — $100,000 minimum</option>
+                <option value="classc">Class C — $250,000 minimum</option>
+                <option value="more">$500,000+</option>
+                <option value="unsure">Not sure yet — send me info</option>
+              </select>
+            </div>
+            <div>
+              <label class="flbl">Are you an accredited investor?</label>
+              <select class="fs" id="accredited">
+                <option value="" disabled selected>Select...</option>
+                <option value="yes">Yes</option>
+                <option value="no">No / Not sure</option>
+              </select>
+            </div>
+            <div><label class="flbl">Questions or Comments (optional)</label><textarea class="ft" id="message" placeholder="Any questions about the deal, structure, or timeline?"></textarea></div>
+            <button class="fbtn" onclick="submitForm()">Request Full Offering Package →</button>
+          </div>
+          <div class="success" id="success-state">
+            <div style="font-size:48px;margin-bottom:16px">✦</div>
+            <h3>You're on the list.</h3>
+            <p>Thank you — a member of the Kynectic team will be in touch within one business day with your full offering package.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="disclosure">
+  <strong>Important Disclosures:</strong> This webpage is for informational purposes only and does not constitute an offer to sell, or a solicitation of an offer to purchase, any securities. Any offering will be made only pursuant to a Private Placement Memorandum (PPM) and subscription agreement. All financial projections are based on the August 14, 2026 underwriting model (v1.15) and are estimates only — not a guarantee of future results. Past performance is not indicative of future results. Available exclusively to accredited investors as defined under Rule 501(a) of Regulation D. Senior debt and preferred equity terms are indicative and not committed as of this date. © 2026 Kynectic Capital. All Rights Reserved. In partnership with XSITE Capital Investment LLC.
+</div>
+
+<footer>
+  <span>© 2026 Kynectic Capital · Montrose Berkeley Lake</span>
+  <span>For accredited investors only · Not an offer to sell securities</span>
+  <a href="mailto:anita@kynecticcap.com">anita@kynecticcap.com</a>
+</footer>
+
+<script>
+function submitForm(){
+  var fname=document.getElementById('fname').value.trim();
+  var lname=document.getElementById('lname').value.trim();
+  var email=document.getElementById('email').value.trim();
+  var investment=document.getElementById('investment').value;
+  var accredited=document.getElementById('accredited').value;
+  if(!fname||!lname){alert('Please enter your name.');return;}
+  if(!email||!email.includes('@')){alert('Please enter a valid email.');return;}
+  if(!investment){alert('Please select an investment class.');return;}
+  if(!accredited){alert('Please indicate your accredited investor status.');return;}
+  if(accredited==='no'){alert('This offering is available to accredited investors only. Please consult a financial advisor to determine your eligibility.');return;}
+  document.getElementById('form-fields').style.display='none';
+  document.getElementById('success-state').style.display='block';
+}
+</script>
+</body>
+</html>
